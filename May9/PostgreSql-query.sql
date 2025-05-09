@@ -204,6 +204,56 @@ call proc_OverdueRentals()
 
 
 
+--trigger based questions
+
+--1)Write a trigger that logs whenever a new customer is inserted.
+
+create table customer_log (
+    log_id serial primary key,
+    customer_id int,
+    action_time timestamp default now(),
+    action text
+);
+
+create or replace function log_new_customer()
+returns trigger as $$
+begin
+    insert into customer_log (customer_id, action)
+    values (new.customer_id, 'inserted');
+    return new;
+end;
+$$ language plpgsql;
+
+create trigger trg_log_customer_insert
+after insert on customer
+for each row
+execute function log_new_customer();
+
+select * from customer_log order by action_time DESC;
+
+
+--2)Create a trigger that prevents inserting a payment of amount 0.
+
+create or replace function prevent_zero_payment()
+returns trigger as $$
+begin
+    if new.amount = 0 then
+        raise exception 'zero amount payments are not allowed';
+    end if;
+    return new;
+end;
+$$ language plpgsql;
+
+create trigger trg_prevent_zero_payment
+before insert on payment
+for each row
+execute function prevent_zero_payment();
+
+
+--Set up a trigger to automatically set last_update on the film table before update.
+
+
+
 
 
 
