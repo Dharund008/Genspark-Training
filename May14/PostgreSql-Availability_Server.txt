@@ -1,0 +1,65 @@
+Availability of backend server
+--how to fix some system crash like things while requiring resources
+
+High Availability - minimizing the downtime :- maintaining high availability.
+
+Redundancy - one server takes data(transact happens),in other server(only read) just do read.so if first server fails, there is second server 
+
+
+1.Minimize Downtime
+2.Replication or redundancy 
+3.Auto recovery
+
+Non - Availability
+	1.Crash : auto recovery
+	2.Network failure 	: replication
+	3.Hardware failure	: replication
+	4.Maintenance time 	: Downtime - minimal
+
+Redundacy :-
+	(Master & Slave)
+	1.Master : primary data server
+	2.Slave	 : standby (read-only)
+-also use slave for load balancing when more network traffic.
+
+-when master crash/network failure/hardware failure : slave will take over (promotion) as master - to avoid downtime.
+
+-heavy traffic : we can use the slave as side along master :- Load Balancing
+
+Tools:- 
+1)replication manager : repmgr - node manager for failover
+2)connection pooling(load balancing) : PgBouncer
+3)Load balancing + connection pooling: Pgpool
+
+common-ones:-
+1.Zookeeper - distributed setups
+
+
+
+Replication :- creating redundancy
+copying from one server to another
+
+1)Streaming replication - uses a inbuilt tech (wal-write ahead log)
+
+	1.difficulty- replication here created is read only.
+
+2)Logical replication - version specific
+
+	1.table level
+	2.dont need to replicate everhything, only essential
+	3.bi-directional : from the replication, we can read inside master as well.
+	4.pubs/sub model
+
+3)Synchronise /Asynchronise :
+
+	1.sync is bit slower
+	2.Asyn is faster
+
+Best Practices:-
+1.dont del instead - archive
+2.Synchronise commit
+3.read only replication are been suggested - faster and used for analytical purposes.
+
+
+https://www.postgresql.org/docs/current/backup.html
+https://www.postgresql.org/docs/current/runtime-config-replication.html

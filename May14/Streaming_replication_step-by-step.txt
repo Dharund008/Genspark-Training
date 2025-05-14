@@ -1,0 +1,123 @@
+Setting up Replication (primary -> standby)
+---------------------------------------
+
+Step - 1 :- Create a folder for both primary and standby (ex: 'pri') in any drive (ex: 'd').
+
+step - 2 :- Open cmd as administrator and open with the bin folder in PostgreSQL installed path (c-drive).
+
+step - 3 :- Initialize the primary server data folder.
+		
+		initdb -D "D:/pri" :- Initializes a new PostgreSQL data directory.
+				*-D stands for Directory - where database will be stored.
+				* ensures to setup all the necessary files to run a server.
+
+step - 4 :- After initializing, open 'postgresql.conf' file in notepad and check for the port number and change it if necessary (ex.5433).
+
+step - 5 :- Next execute this command in cmd -> pg_ctl -D D:\pri -o "-p 5433" -l d:\pri\logfile start
+	
+		*Port establishing(Instance creation-primary) - start of server
+		*Starts the primary server using primary data directory (D:/pri) on port 5433.
+
+		*pg_ctl :- PostgreSQL utility to start/stop/cancel the server.
+		*-D D:\pri :- primary server directory.
+		*-o "-p 5433" :- passes -p flag to PostgreSQL to start the server on port 5433 instead of default 5432.
+		*-o :- let you pass custom options to PostgreSQL (postgre process).
+		*-p 5433 :- means run server on 5433.
+		*-l : stands for logfile 
+		*d:\pri\logfile :- here, the PostgreSQL will write logs and runtime messages.- help to check error, status.
+		*-l d:\pri\logfile :- writes the logs in logfile.
+		*start :- tells to starts the server.
+		
+		*By executing this command, indicates that server has started.
+
+step - 6 :- Then create a replication user.
+		-> psql -p 5433 -d postgres -c "CREATE ROLE replicator with REPLICATION LOGIN PASSWORD 'repl_pass';"
+
+		*connects to the primary server on port 5433 and creates a replication user/role.
+
+		*psql :- PostgreSQL interactive shell/command tool.
+		*-p 5433 :- tells the server to start on port 5433.
+		*-d postgres :- connects to the default database. (-d -> accessing database).
+		*-c :- used to run the command in quotes and exit directly from shell.
+		*create role replicator .... :- creates a user named replicator with replication privileges and setting up a password.
+		*repicator :- user_name, "repl_pass" :- password.
+
+		*This ensures that the user have created an replicator role, which allows to backup and stream wal.
+
+step - 7 :- Next take the backup from primary and set it up to standby server (d:\sec).
+		-> pg_basebackup -D d:\sec -Fp -Xs -P -R -h 127.0.0.1 -U replicator -p 5433 
+
+		*Ensure before, executing this the standby data folder(d:\sec) should be empty.
+
+		*pg_basebackup :- utitlity to take backup of primary server to standby server.
+
+		*-D d:\sec :- standby server data folder.
+		*-Fp :- tells the format of backup - Plain format (not tar/dir,actual file structure).
+		*-Xs :- to include the transaction logs(wal-write ahead logs) in backup.
+		*-Xs 's' :- tells to stream wal during backup so that standby gets all necessary files.
+		*-P :- shows live progress while copying files.
+		*-R :- helps to automatically write standby signals(replication settings). 
+			*creates a standby signal and postgre.auto.conf file to auto-start as standby server.
+		*-h 127.0.0.1 :- host ip of primary server.
+		*-U :- for connecting with the username created.
+		*-U replicator :- connect with the replication user created.(username -> replicator).
+		*-p 5433 :- tell the primary server port and to run in it.
+
+		*This ensures initializing of the standby folder in this command even.		
+		*This creates a replica data by copying everything from primary server on 127.0.0.1:5433.
+
+step - 8 :- Now if u check the standby folder, it gets initialized with necessary files. and as same check the port in same files (used with primary) 
+		and change as necessary(port :- 5435).
+
+		*initdb -D "D:/sec" -> we can also explicitly initialize the db.(Not Required)
+		*But the case is, when creating a replica : an error will occur that the standby folder is not empty.
+	
+		*pg_ctl -o "-p 5435" sets the port at runtime.(If needed)
+
+step - 9 :- Then, open another cmd as administrator with same file path as bin at PostgreSQL installed.
+
+step - 10 :- Execute this command there, pg_ctl -D D:\sec -o "-p 5435" -l d:\sec\logfile start
+	
+		*just like started the primary earlier, this command ensures of starting of standby server in port 5435.
+
+step - 11 :- Command this in primary cmd ->psql -p 5433 -d postgres 
+			
+		*helps to open interactive session to primary.
+		*can work/query under this mode.
+
+Step - 12 :- As same, in standby cmd ->psql -p 5435 -d postgres
+	
+		*interactive session to standby.
+
+step - 13 :- On primary cmd, ->select * from pg_stat_replication;
+	
+		*checks if replica is working.
+		
+		*shows details of standby connections(id,username,state,sync_state,lag etc..).
+		*If standby is connected, a row will be created with details of it.
+
+step - 14 :- On stanby cmd, ->select pg_is_in_recovery();
+
+		*tells if server is running in replica mode.
+	
+		*returns 't' : true -> is a standby or 'f' : false -> is a primary.
+
+Note:
+Do NOT run initdb for standby folder if using pg_basebackup.
+
+----->Take a full copy of the primary server's data, include the transaction logs, set it up to act as a standby(5435), and connect it to the primary at 127.0.0.1:5433 using the replicator user.
+
+
+*Now can perform queries in primary cmd and check the result of it in standby whether an connection is been valid!.
+
+ex:-
+Create table in primary
+
+Check in secondary
+
+Optional:
+To confirm WAL receiving on standby:
+    SELECT * FROM pg_stat_wal_receiver;
+
+
+
