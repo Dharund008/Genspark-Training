@@ -1,0 +1,15 @@
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.AssemblyInfoInputs.cache
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.AssemblyInfo.cs
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.csproj.CoreCompileInputs.cache
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.sourcelink.json
+D:\Genspark-Training\may20\task-questions\bin\Debug\net9.0\task-questions.exe
+D:\Genspark-Training\may20\task-questions\bin\Debug\net9.0\task-questions.deps.json
+D:\Genspark-Training\may20\task-questions\bin\Debug\net9.0\task-questions.runtimeconfig.json
+D:\Genspark-Training\may20\task-questions\bin\Debug\net9.0\task-questions.dll
+D:\Genspark-Training\may20\task-questions\bin\Debug\net9.0\task-questions.pdb
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.dll
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\refint\task-questions.dll
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.pdb
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\task-questions.genruntimeconfig.cache
+D:\Genspark-Training\may20\task-questions\obj\Debug\net9.0\ref\task-questions.dll

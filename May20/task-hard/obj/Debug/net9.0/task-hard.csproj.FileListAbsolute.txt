@@ -1,0 +1,15 @@
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.AssemblyInfoInputs.cache
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.AssemblyInfo.cs
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.csproj.CoreCompileInputs.cache
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.sourcelink.json
+D:\Genspark-Training\may20\task-hard\bin\Debug\net9.0\task-hard.exe
+D:\Genspark-Training\may20\task-hard\bin\Debug\net9.0\task-hard.deps.json
+D:\Genspark-Training\may20\task-hard\bin\Debug\net9.0\task-hard.runtimeconfig.json
+D:\Genspark-Training\may20\task-hard\bin\Debug\net9.0\task-hard.dll
+D:\Genspark-Training\may20\task-hard\bin\Debug\net9.0\task-hard.pdb
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.dll
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\refint\task-hard.dll
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.pdb
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\task-hard.genruntimeconfig.cache
+D:\Genspark-Training\may20\task-hard\obj\Debug\net9.0\ref\task-hard.dll

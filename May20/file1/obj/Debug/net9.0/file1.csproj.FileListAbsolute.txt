@@ -1,0 +1,15 @@
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.AssemblyInfoInputs.cache
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.AssemblyInfo.cs
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.csproj.CoreCompileInputs.cache
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.sourcelink.json
+D:\Genspark-Training\may20\file1\bin\Debug\net9.0\file1.exe
+D:\Genspark-Training\may20\file1\bin\Debug\net9.0\file1.deps.json
+D:\Genspark-Training\may20\file1\bin\Debug\net9.0\file1.runtimeconfig.json
+D:\Genspark-Training\may20\file1\bin\Debug\net9.0\file1.dll
+D:\Genspark-Training\may20\file1\bin\Debug\net9.0\file1.pdb
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.dll
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\refint\file1.dll
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.pdb
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\file1.genruntimeconfig.cache
+D:\Genspark-Training\may20\file1\obj\Debug\net9.0\ref\file1.dll
