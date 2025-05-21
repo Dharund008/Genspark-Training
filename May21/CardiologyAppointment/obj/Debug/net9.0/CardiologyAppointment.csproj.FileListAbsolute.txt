@@ -1,0 +1,15 @@
+D:\Genspark-Training\may21\CardiologyAppointment\bin\Debug\net9.0\CardiologyAppointment.exe
+D:\Genspark-Training\may21\CardiologyAppointment\bin\Debug\net9.0\CardiologyAppointment.deps.json
+D:\Genspark-Training\may21\CardiologyAppointment\bin\Debug\net9.0\CardiologyAppointment.runtimeconfig.json
+D:\Genspark-Training\may21\CardiologyAppointment\bin\Debug\net9.0\CardiologyAppointment.dll
+D:\Genspark-Training\may21\CardiologyAppointment\bin\Debug\net9.0\CardiologyAppointment.pdb
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.AssemblyInfoInputs.cache
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.AssemblyInfo.cs
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.csproj.CoreCompileInputs.cache
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.sourcelink.json
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.dll
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\refint\CardiologyAppointment.dll
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.pdb
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\CardiologyAppointment.genruntimeconfig.cache
+D:\Genspark-Training\may21\CardiologyAppointment\obj\Debug\net9.0\ref\CardiologyAppointment.dll
