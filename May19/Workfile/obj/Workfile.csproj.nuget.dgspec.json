@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Genspark-Training\\may19\\workfile\\Workfile.csproj": {}
+    "D:\\Genspark-Training\\May19\\Workfile\\Workfile.csproj": {}
   },
   "projects": {
-    "D:\\Genspark-Training\\may19\\workfile\\Workfile.csproj": {
+    "D:\\Genspark-Training\\May19\\Workfile\\Workfile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Genspark-Training\\may19\\workfile\\Workfile.csproj",
+        "projectUniqueName": "D:\\Genspark-Training\\May19\\Workfile\\Workfile.csproj",
         "projectName": "Workfile",
-        "projectPath": "D:\\Genspark-Training\\may19\\workfile\\Workfile.csproj",
+        "projectPath": "D:\\Genspark-Training\\May19\\Workfile\\Workfile.csproj",
         "packagesPath": "C:\\Users\\VC\\.nuget\\packages\\",
-        "outputPath": "D:\\Genspark-Training\\may19\\workfile\\obj\\",
+        "outputPath": "D:\\Genspark-Training\\May19\\Workfile\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VC\\AppData\\Roaming\\NuGet\\NuGet.Config"
