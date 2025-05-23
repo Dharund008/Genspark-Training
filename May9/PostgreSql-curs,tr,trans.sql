@@ -95,6 +95,8 @@ end $$;
 
 --4)Create a function using a cursor that collects titles of all films from a particular category.
 
+select * from category
+select * from film
 
 create or replace function func_category(fcat varchar(30))
 returns table(film_name varchar(30))
@@ -103,6 +105,7 @@ declare rec record;
 begin
 	for rec in select film.title as Title from film_category f join category c
 			on f.category_id=c.category_id join film on film.film_id = f.film_id
+			where c.name = fcat
 	loop
 		film_name:= rec.Title;
 		return next;
@@ -110,7 +113,7 @@ begin
 end $$
 language plpgsql;
  
-select * from func_category('Action')
+select * from func_category('Documentary')
 
 
 
@@ -135,6 +138,9 @@ select * from inventory;
 	close cur;
 end $$;
 
+
+
+--trigger based questions
 
 
 
