@@ -1,0 +1,15 @@
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.AssemblyInfoInputs.cache
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.AssemblyInfo.cs
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.csproj.CoreCompileInputs.cache
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.sourcelink.json
+D:\Genspark-Training\may22\taskfile\bin\Debug\net9.0\taskfile.exe
+D:\Genspark-Training\may22\taskfile\bin\Debug\net9.0\taskfile.deps.json
+D:\Genspark-Training\may22\taskfile\bin\Debug\net9.0\taskfile.runtimeconfig.json
+D:\Genspark-Training\may22\taskfile\bin\Debug\net9.0\taskfile.dll
+D:\Genspark-Training\may22\taskfile\bin\Debug\net9.0\taskfile.pdb
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.dll
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\refint\taskfile.dll
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.pdb
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\taskfile.genruntimeconfig.cache
+D:\Genspark-Training\may22\taskfile\obj\Debug\net9.0\ref\taskfile.dll
