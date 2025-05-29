@@ -1,0 +1,8 @@
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.csproj.AssemblyReference.cache
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.AssemblyInfoInputs.cache
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.AssemblyInfo.cs
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.csproj.CoreCompileInputs.cache
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.MvcApplicationPartsAssemblyInfo.cs
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.MvcApplicationPartsAssemblyInfo.cache
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May28/HospitalManagement/obj/Debug/net9.0/HospitalManagement.sourcelink.json
