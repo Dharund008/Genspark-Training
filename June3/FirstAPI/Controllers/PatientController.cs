@@ -15,10 +15,13 @@ namespace FirstAPI.Controllers
     public class PatientController : ControllerBase
     {
         private readonly IPatientService _patientService;
+        private readonly IAppointmentService _appointmentService;
 
-        public PatientController(IPatientService patientService)
+        public PatientController(IPatientService patientService, IAppointmentService appointmentService)
         {
             _patientService = patientService;
+            _appointmentService = appointmentService;
+
         }
 
         [HttpPost]
@@ -35,6 +38,22 @@ namespace FirstAPI.Controllers
             {
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpPost("add-appointment")]
+        [Authorize(Roles ="Patient")]
+        public async Task<ActionResult<Patient>> AddAppointment([FromBody] AppointmentRequestDTO request)
+        {
+            var app = await _appointmentService.AddAppointment(request);
+            if (app == null)
+            {
+                return BadRequest("Failed booking appointment");
+            }
+            else
+            {
+                return Ok(app);
+            }
+
         }
 
     }

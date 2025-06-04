@@ -4,13 +4,15 @@ using FirstAPI.Interfaces;
 using FirstAPI.Misc;
 using FirstAPI.Models;
 using FirstAPI.Repositories;
+using FirstAPI.Authorization;
 using FirstAPI.Services;
-using FirstAPI.Controllers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Npgsql.Replication.PgOutput.Messages;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +72,7 @@ builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
 builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddTransient<IPatientService, PatientService>();
 builder.Services.AddTransient<IOtherContextFunctionities, OtherFuncinalitiesImplementation>();
+builder.Services.AddTransient<IAppointmentService, AppointmentService>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
@@ -88,6 +91,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
                     };
                 });
+#endregion
+
+#region AuthorizationFilter
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ExperiencedDoctorOnly", policy =>
+        policy.RequireRole("Doctor")
+              .Requirements.Add(new MinimumExperienceRequirement(3))); // have 3+ years
+});
+
+builder.Services.AddScoped<IAuthorizationHandler, ExperienceHandler>();
 #endregion
 
 #region  Misc

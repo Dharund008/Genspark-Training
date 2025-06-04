@@ -13,7 +13,7 @@ namespace FirstAPI.Repositories
 
         public override async Task<Appointmnet> Get(string key)
         {
-            var appointment = await _clinicContext.Appointmnets.SingleOrDefaultAsync(p => p.AppointmnetNumber == key);
+            var appointment = await _clinicContext.Appointmnets.FirstOrDefaultAsync(p => p.AppointmnetNumber == key);
 
             return appointment??throw new Exception("No appointmnet with the given ID");
         }

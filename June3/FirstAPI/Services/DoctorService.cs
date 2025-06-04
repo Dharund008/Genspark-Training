@@ -2,8 +2,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FirstAPI.Interfaces;
 using FirstAPI.Misc;
+using FirstAPI.Contexts;
 using FirstAPI.Models;
 using FirstAPI.Models.DTOs.DoctorSpecialities;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace FirstAPI.Services
@@ -12,6 +14,7 @@ namespace FirstAPI.Services
     {
         DoctorMapper doctorMapper ;
         SpecialityMapper specialityMapper;
+        private readonly ClinicContext _clinicContext;
         private readonly IRepository<int, Doctor> _doctorRepository;
         private readonly IRepository<int, Speciality> _specialityRepository;
         private readonly IRepository<int, DoctorSpeciality> _doctorSpecialityRepository;
@@ -23,13 +26,15 @@ namespace FirstAPI.Services
         public DoctorService(IRepository<int, Doctor> doctorRepository,
                             IRepository<int, Speciality> specialityRepository,
                             IRepository<int, DoctorSpeciality> doctorSpecialityRepository,
-                            IRepository<string,User> userRepository,
+                            ClinicContext clinicContext,
+                            IRepository<string, User> userRepository,
                             IOtherContextFunctionities otherContextFunctionities,
                             IEncryptionService encryptionService,
                             IMapper mapper)
         {
             doctorMapper = new DoctorMapper();
             specialityMapper = new();
+            _clinicContext = clinicContext;
             _doctorRepository = doctorRepository;
             _specialityRepository = specialityRepository;
             _doctorSpecialityRepository = doctorSpecialityRepository;
@@ -104,9 +109,15 @@ namespace FirstAPI.Services
             return specialityIds;
         }
 
-        public Task<Doctor> GetDoctByName(string name)
+        public async Task<Doctor> GetDoctByName(string name)
         {
-            throw new NotImplementedException();
+            var doc = await _clinicContext.Doctors.FirstOrDefaultAsync(d => d.Email == name);
+            return doc;
+        }
+        public async Task<Doctor> GetDoctByEmail(string name)
+        {
+            var doc = await _clinicContext.Doctors.FirstOrDefaultAsync(d => d.Email == name);
+            return doc;
         }
 
         public async Task<ICollection<DoctorsBySpecialityResponseDto>> GetDoctorsBySpeciality(string speciality)

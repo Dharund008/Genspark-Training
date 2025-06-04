@@ -1,9 +1,11 @@
 using System.Threading.Tasks;
 using AutoMapper;
+using FirstAPI.Contexts;
 using FirstAPI.Interfaces;
 using FirstAPI.Misc;
 using FirstAPI.Models;
 using FirstAPI.Models.DTOs.DoctorSpecialities;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace FirstAPI.Services
@@ -11,6 +13,7 @@ namespace FirstAPI.Services
     public class PatientService : IPatientService
     {
         PatientMapper patientmapper;
+        private readonly ClinicContext _clinicContext;
         private readonly IRepository<int, Patient> _patientRepository;
         private readonly IRepository<string, User> _userRepository;
         private readonly IEncryptionService _encryptionService;
@@ -18,12 +21,14 @@ namespace FirstAPI.Services
 
         public PatientService(IRepository<int, Patient> patientrepository,
                             IRepository<string, User> userrepository,
+                            ClinicContext clinicContext,
                             IEncryptionService encryptionService,
                             IMapper mapper)
         {
             patientmapper = new PatientMapper();
             _patientRepository = patientrepository;
             _userRepository = userrepository;
+            _clinicContext = clinicContext;
             _encryptionService = encryptionService;
             _mapper = mapper;
         }
@@ -54,5 +59,12 @@ namespace FirstAPI.Services
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<Patient> GetPatient(string email)
+        {
+            var patient =await _clinicContext.Patients.FirstOrDefaultAsync(p => p.Email == email);
+            return patient;
+        }
+
+        
     }
 }

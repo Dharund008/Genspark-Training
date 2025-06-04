@@ -6,6 +6,8 @@ namespace FirstAPI.Interfaces
     public interface IDoctorService
     {
         public Task<Doctor> GetDoctByName(string name);
+
+        public Task<Doctor> GetDoctByEmail(string name);
         public Task<ICollection<DoctorsBySpecialityResponseDto>> GetDoctorsBySpeciality(string speciality);
         public Task<Doctor> AddDoctor(DoctorAddRequestDto doctor);
     }

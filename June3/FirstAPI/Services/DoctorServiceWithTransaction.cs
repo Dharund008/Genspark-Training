@@ -70,5 +70,10 @@ namespace FirstAPI.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task<Doctor> GetDoctByEmail(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
