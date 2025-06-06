@@ -1,0 +1,72 @@
+PostgreSQL Security 
+
+authentication
+	*pg_hba.conf - authentication records will be specified here.
+	
+	*md5 - basic password based authentication
+		*password here is simple hash
+
+	*scram-sha-256 - hashing algorithm is bit complex
+		*Advanced hashing with password
+
+	*peer - applicable only for Linux based systems.
+		
+	*cert - certification based authentication
+	
+	*trust - everyone can log on.
+
+encryption
+
+
+
+access control(Authorization) :-
+	-privileges 
+	*create an user and assign rights see if its working properly.(controlling access by creating authorization).
+
+	1.open cmd with bin in postgre 
+	2.connect primary server.-server starting
+	3.create an user/role
+->create role readonly(u-name) login password 'sample' :sample pass
+	4.psql -p 5433 -d postgres - interactive session
+	5.and then try 3 in it. -- created role
+	6.now create db -> create databse dbsample;
+	7.now give access to it,(read-only access)
+->grant connect on database dbsample(db_name) to readonly(u-name).
+	8. grant select on all tables in schema public to readonly; -provided readonly access to user-readonly.
+
+	9.now connect to postgre.(exit from interactive session).
+	10.psql -U readonly -d dbsample -p port 5433
+--returns created role but db not exist. /
+--returns with db interactive session.
+
+	>again postgre session,
+	11.grant access to 
+	->grant connect on database dbsample to readonly	
+	12.giving grant to future table - so, revoking the access - 
+
+	13.go to dbsample session(step10).
+	
+	14.now revoke the user access.
+	->revoke connect on database dbsample from readonly; and exit in session.
+
+		
+
+auditing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
