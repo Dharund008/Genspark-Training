@@ -1,0 +1,35 @@
+
+
+<h2>Customer Details</h2>
+
+<label>Name:</label>   <input type="text" [(ngModel)]="name" placeholder="Enter the name"> 
+
+<label>Email:</label> <input type="text" [(ngModel)]="email" placeholder="Enter the email"> 
+
+<label>Age:</label> <input type="number" [(ngModel)]="age" placeholder="Enter the age"> 
+<!-- <p *ngIf="isSubmitted">
+    Name : {{name}}
+</p>
+<p *ngIf="isSubmitted">
+    Email : {{email}}
+</p>
+
+<p *ngIf="isSubmitted">
+    Age : {{age}}
+</p> -->
+
+<button (click)="SubmitCustomer()">Submit</button>
+
+
+<div class="card" *ngIf="isSubmitted">
+    <p>Name: {{name}}</p>
+    <p>Email: {{email}}</p>
+    <p>Age: {{age}}</p>
+
+    <div class="likes-container">
+      <i class="bi bi-hand-thumbs-up" (click)="like()"></i>
+      <span class="count">{{likeCount}}</span>
+      <i class="bi bi-hand-thumbs-down" (click)="dislike()"></i>
+      <span class="count">{{dislikeCount}}</span>
+    </div>
+  </div>

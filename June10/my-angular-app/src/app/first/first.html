@@ -1,0 +1,79 @@
+<p>first works!</p>
+
+
+<h2>
+    <!-- interpolation : display a variable dynamically inside an HTML template.-->
+     Hello {{name}}
+
+     <!-- {{ name }} is replaced by the value of name inside first.component.ts -->
+       <!-- Whenever name changes, the UI updates dynamically. -->
+
+    <!-- flow of interpolation:
+    1) name is declared in first.component.ts under export class FirstComponent { }
+    2) name is passed to first.component.html
+    3) {{ name }} is replaced by the value of name in first.component.html -->
+</h2>
+
+<hr>
+    <!-- property binding : sets the value of an HTML element dynamically based on a component property -->
+    <h4>Property Binding</h4>
+    <input type="text" #hname [value]="uname" placeholder="Enter your name" />
+
+
+    <!-- flow of property binding:
+    1) name is declared in first.component.ts under export class FirstComponent { }
+    2) name is passed to first.component.html
+    3) [name] is replaced by the value of name in first.component.html
+    The input field will show "Ramu", but changes in the input won’t reflect in name. -->
+
+<hr>
+
+    <!-- Two way binding : sets the value of an HTML element dynamically based on a component property and also updates the component property -->
+
+    <input type="text"  [(ngModel)]="name"  placeholder="Enter your name" />
+
+    <!-- flow of two way binding:
+     Step 1: Import FormsModule in app.module.ts
+     Step 2: Define name inside first.component.ts
+     Step 3: Add Two-Way Binding in first.component.html
+
+    1) name is declared in first.component.ts under export class FirstComponent { }
+    2) name is passed to first.component.html
+    3) [[ngModel]] is replaced by the value of name in first.component.html
+    4) changes in the input field - goes changes -  in name in first.component.ts
+    5) changes in name in first.component.ts - goes changes -  in first.component.html(for every attributes using "name" prop)
+    changes in input field, instantly updates the "name" in ts file dynamically! -->
+
+
+<hr>
+
+    <button (click)="onButtonClick(hname.value)">Click Me</button> <!--only for property binding... -->
+
+<hr>
+        <h5>Event Binding</h5>
+
+    <!-- event binding : listens to user actions and triggers a function when an event (like a click) occurs. -->
+
+    <i [class]="clasName" (click)="toggleLike()" > </i>
+
+    <!-- when user click the icon/an thing/obj subjected to the "classname", calls the toggleLike() function in first.component.ts
+    the class property used to change the subject's(classname) style dynamically. -->
+
+    <!-- flow of event binding:
+    1) declare the function in first.component.ts
+    also declare the class property 
+    Step 1: Define toggleLike() inside first.component.ts
+    
+    2) pass the function to first.component.html
+    Step 2: Use Event Binding in first.component.html -->
+
+    <!-- User clicks on the heart icon (which has (click)="toggleLike()" attached).
+    toggleLike() runs:
+    If like was false, it becomes true, changing the heart to filled.
+    If like was true, it becomes false, switching back to empty.
+    Angular detects the change and updates the icon instantly. -->
+
+
+
+
+
