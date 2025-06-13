@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR Notify Client</title>
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+</head>
+<body>
+    <h2>📡 Real-time Notifications</h2>
+    <ul id="messages"></ul>
+
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+                            .withUrl("http://localhost:5184/notifications",{ //port is which is running the SignalR hub (backend)
+                                withCredentials:true
+                            })
+                            .withAutomaticReconnect()
+                            .build();
+
+        connection.on("ReceivedNotification", function (message) {
+            const li = document.createElement("li");
+            li.textContent = message;
+            //alert("New Notification: " + message);
+            document.getElementById("messages").appendChild(li);
+        });
+
+        connection.start().then(function () {
+            console.log("Connected to SignalR hub.");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+    </script>
+</body>
+</html>

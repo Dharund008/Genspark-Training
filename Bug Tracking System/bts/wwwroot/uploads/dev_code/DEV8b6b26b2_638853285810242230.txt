@@ -1,0 +1,5 @@
+flask
+torch
+sentence-transformers
+scikit-learn
+numpy==1.23.5
