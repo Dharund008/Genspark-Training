@@ -1,0 +1,22 @@
+<!-- <p>home works!</p> -->
+
+
+<div class="container">
+  <input type="text" [(ngModel)]="searchString" (input)="handleSearch()" placeholder="Search products..." />
+  
+  <div *ngIf="loading">
+    <div class="spinner-border text-primary"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card">
+        <img [src]="product.thumbnail" class="card-img-top" alt="{{product.title}}">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">Price: ${{product.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
