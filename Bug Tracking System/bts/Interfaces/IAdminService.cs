@@ -30,5 +30,8 @@ namespace Bts.Interfaces
         Task<IEnumerable<Bug>> GetAllBugsDeveloperAsync(string developerId); //can get all bugs assigned to an develoepr
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<IEnumerable<Bug>> GetAllBugsAsync();
+
+        Task<List<Developer>> GetAllDevelopersWithDeletedAsync();
+        Task<List<Tester>> GetAllTestersWithDeletedAsync();
     }
 }

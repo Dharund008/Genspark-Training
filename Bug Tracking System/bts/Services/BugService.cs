@@ -108,16 +108,23 @@ namespace Bts.Services
             _logger.LogInformation("Retrieved bugs page {Page} with page size {PageSize}", page, pageSize);
             return bugs;
         }
+        
+        public async Task<IEnumerable<Bug>> GetUnassignedBugsAsync()
+        {
+            return await _context.Bugs
+                .Where(b => string.IsNullOrEmpty(b.AssignedTo))
+                .ToListAsync();
+        }
 
 
         public async Task<List<Bug>> GetBugsByTesterId(string testerId)
         {
-                var bugs = await _context.Bugs
-                    .Include(b => b.CreatedByTester)
-                    .Where(b => b.CreatedBy == testerId)
-                    .ToListAsync();
-                _logger.LogInformation("Retrieved bugs by tester ID {TesterId}", testerId);
-                return bugs;
+            var bugs = await _context.Bugs
+                .Include(b => b.CreatedByTester)
+                .Where(b => b.CreatedBy == testerId)
+                .ToListAsync();
+            _logger.LogInformation("Retrieved bugs by tester ID {TesterId}", testerId);
+            return bugs;
         }
 
         public async Task<List<Bug>> GetBugsByDeveloperId(string developerId)

@@ -14,6 +14,8 @@ namespace Bts.Interfaces
         Task<bool> UpdateBugStatusAsync(int bugId, BugStatus newStatus);
 
         Task<string> UploadCodeAsync(IFormFile file, string developerId);
+
+        Task<IEnumerable<TesterInfoDTO>> GetTestersForMyBugsAsync(string developerId);
         // Task<Comment> AddCommentAsync(Comment comment);
     }
 }

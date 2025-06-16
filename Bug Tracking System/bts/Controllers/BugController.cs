@@ -34,6 +34,15 @@ namespace Bts.Controllers
             return Ok(bug);
         }
 
+        [HttpGet("unassigned")]
+        [Authorize(Roles = "ADMIN,TESTER")]
+        public async Task<IActionResult> GetUnassignedBugs()
+        {
+            var bugs = await _bugService.GetUnassignedBugsAsync();
+            _logger.LogInformation("Retrieved unassigned bugs. Count: {Count}", bugs.Count());
+            return Ok(bugs);
+        }
+
         [HttpGet("paginated-bugsall")]
         public async Task<ActionResult<IEnumerable<Bug>>> GetAllBugs(
             [FromQuery] int page = 1,

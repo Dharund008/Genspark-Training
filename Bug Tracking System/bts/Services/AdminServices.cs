@@ -50,7 +50,7 @@ namespace Bts.Services
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
         }
-        
+
 
         public async Task<Admin> GetByEmail(string mail)
         {
@@ -80,6 +80,11 @@ namespace Bts.Services
         {
             try
             {
+                if (adreq == null)
+                {
+                   throw new ArgumentNullException(nameof(adreq));
+                }
+            
                 var emailExists = await IsEmailExists(adreq.Email);
                 if (emailExists)
                 {
@@ -132,6 +137,10 @@ namespace Bts.Services
         {
             try
             {
+                if (devreq == null)
+                {
+                    throw new ArgumentNullException(nameof(devreq));
+                }
                 var existingDeveloper = await _context.Developers.FirstOrDefaultAsync(d => d.Email == devreq.Email);
                 if (existingDeveloper != null)
                 {
@@ -182,6 +191,11 @@ namespace Bts.Services
         {
             try
             {
+                throw new ArgumentNullException(nameof(tesreq));
+                if (tesreq == null)
+                {
+                    throw new ArgumentNullException(nameof(tesreq));
+                }
                 var existingDeveloper = await _context.Testers.FirstOrDefaultAsync(d => d.Email == tesreq.Email);
                 if (existingDeveloper != null)
                 {
@@ -232,7 +246,7 @@ namespace Bts.Services
             var bug = await _context.Bugs.FindAsync(bugId);
             if (bug == null) return false;
             var isBusy = await _context.Bugs
-                .AnyAsync(b => b.AssignedTo == developerId && 
+                .AnyAsync(b => b.AssignedTo == developerId &&
                    b.Status != BugStatus.Closed &&
                    !b.IsDeleted);
 
@@ -246,7 +260,7 @@ namespace Bts.Services
             _context.Bugs.Update(bug);
             var admin = _httpContextAccessor.HttpContext?.User?.FindFirst("MyApp_Id")?.Value; //in services u have to use httpaccessor but not in case of controller
                                                                                               //tobuglog
-            
+
             await _bugLogService.LogEventAsync(bugId, "StatusChanged : Assigned", admin);
 
             return true;
@@ -317,7 +331,7 @@ namespace Bts.Services
                     .ToListAsync();
             return bugs;
         }
-        
+
         public async Task<bool> DeleteDeveloperAsync(string devId)
         {
             var dev = await _context.Developers.FindAsync(devId);
@@ -348,6 +362,16 @@ namespace Bts.Services
         public async Task<IEnumerable<Bug>> GetAllBugsAsync()
         {
             return await _context.Bugs.ToListAsync();
+        }
+        
+        public async Task<List<Developer>> GetAllDevelopersWithDeletedAsync()
+        {
+            return await _context.Developers.IgnoreQueryFilters().ToListAsync();
+        }
+
+        public async Task<List<Tester>> GetAllTestersWithDeletedAsync()
+        {
+            return await _context.Testers.IgnoreQueryFilters().ToListAsync();
         }
         
     }

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Bts.Models
 {
@@ -10,8 +11,13 @@ namespace Bts.Models
         public string Password { get; set; } = string.Empty;
 
 
+        [JsonIgnore]
         public Admin? Admin { get; set; }
+
+        [JsonIgnore]
         public Developer? Developer { get; set; }
+
+        [JsonIgnore]
         public Tester? Tester { get; set; }
     }
 }

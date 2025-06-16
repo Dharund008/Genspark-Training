@@ -33,7 +33,7 @@ namespace Bts.Contexts
             modelBuilder.Entity<Comment>().HasKey(c => c.Id);
             modelBuilder.Entity<User>().HasKey(u => u.Id);
             modelBuilder.Entity<UploadedFileLog>().HasKey(up => up.Id);
-
+            modelBuilder.Entity<PasswordReset>().HasKey(p => p.Id);
 
            modelBuilder.Entity<Developer>().HasQueryFilter(d => !d.IsDeleted);
            modelBuilder.Entity<Tester>().HasQueryFilter(t => !t.IsDeleted);

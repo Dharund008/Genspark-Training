@@ -16,31 +16,43 @@ namespace Bts.Services
     {
         private readonly BugContext _context;
         private readonly IEncryptionService _encryptionService;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(BugContext context, IEncryptionService encryptionService)
+        public UserService(BugContext context, IEncryptionService encryptionService, ILogger<UserService> logger)
         {
             _context = context;
             _encryptionService = encryptionService;
+            _logger = logger;
         }
 
         public async Task<string?> GeneratePasswordResetTokenAsync(string email)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == email);
-            if (user == null) return null;
-
-            var token = Guid.NewGuid().ToString();
-
-            var resetEntry = new PasswordReset
+            try
             {
-                UserId = user.Id,
-                Token = token,
-                Expiry = DateTime.UtcNow.AddMinutes(15)
-            };
+                var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == email);
+                if (user == null) return null;
 
-            _context.PasswordResets.Add(resetEntry);
-            await _context.SaveChangesAsync();
+                var token = Guid.NewGuid().ToString();
 
-            return token; // email this to the user
+                var resetEntry = new PasswordReset
+                {
+                    UserId = user.Id,
+                    Token = token,
+                    Expiry = DateTime.UtcNow.AddMinutes(5)
+                };
+
+                _context.PasswordResets.Add(resetEntry);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Password reset token saved for user {UserId} with token {Token}", user.Id, token);
+
+                return token; // email this to the user
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error generating password reset token for email: {Email}", email);
+                return null;
+            }
+            
         }
 
         public async Task<bool> ResetPasswordAsync(ResetPasswordDTO dto)
@@ -88,7 +100,7 @@ namespace Bts.Services
                 }
             }
 
-            _context.PasswordResets.Remove(resetEntry); // remove used token
+            //_context.PasswordResets.Remove(resetEntry); // remove used token
             await _context.SaveChangesAsync();
 
             return true;

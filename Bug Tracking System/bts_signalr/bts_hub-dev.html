@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SignalR Notifications</title>
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        #messages { margin-top: 20px; list-style: square; padding-left: 20px; }
+        #status { margin-top: 10px; color: green; }
+    </style>
+
+</head>
+<body>
+    <h2>🔔 Bug Tracking System!</h2>
+
+    <!-- <label for="roleSelect">Select your role:</label>
+    <select id="roleSelect">
+        <option value="ADMIN">Admin</option>
+        <option value="TESTER">Tester</option>
+        <option value="DEVELOPER">Developer</option>
+    </select>
+
+    <button id="connectBtn" type="button">Connect</button>
+    <div id="status"></div>
+    <ul id="messages"></ul> -->
+
+    <p id="status">Connecting...</p>
+    <ul id="messages"></ul>
+
+    <script>
+    //     let connection ;
+
+    //     document.getElementById("connectBtn").addEventListener("click", async (e) => {
+
+    //         e.preventDefault(); 
+    //         console.log("clicked");
+    //         const role = document.getElementById("roleSelect").value;
+    //         const userId = role + "_" + Math.floor(Math.random() * 10000); // just for uniqueness
+          
+    //         if (connection) {
+    //             await connection.stop(); // Stop existing connection before creating a new one
+    //             console.log("Previous connection stopped.");
+    //         }
+
+    //         // Create SignalR connection
+    //         connection = new signalR.HubConnectionBuilder()
+    //             .withUrl(`http://localhost:5088/notificationHub?role=${role}&userId=${userId}`,{ //port is which is running the SignalR hub (backend)
+    //                             withCredentials:true
+    //                         })
+    //             .withAutomaticReconnect([0, 2000, 5000, 10000])
+    //             .build();
+
+    //         // When a message is received
+    //         connection.on("ReceiveMessage", (message) => {
+    //             const listItem = document.createElement("li");
+    //             listItem.textContent = message;
+    //             document.getElementById("messages").appendChild(listItem);
+    //         });
+    //         console.log("connection on");
+
+    //         connection.onclose(error => {
+    //             console.error("SignalR connection closed:", error);
+    //         });
+
+
+    //         // Start connection
+    //         connection.start()
+    //             .then(() => {
+    //                 document.getElementById("status").textContent = `✅ Connected as ${role}`;
+    //                 console.log(`Connected as ${role}`);
+    //             })
+    //             .catch(err => {
+    //                 console.error(err.toString());
+    //                 document.getElementById("status").textContent = `❌ Connection failed`;
+    //             });
+    //   });
+
+    const role = "DEVELOPER";
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(`http://localhost:5088/notificationHub?role=${role}`)
+            .build();
+
+        connection.on("ReceiveMessage", (message) => {
+            const li = document.createElement("li");
+            li.textContent = message;
+            document.getElementById("messages").appendChild(li);
+        });
+
+        connection.start()
+            .then(() => {
+                document.getElementById("status").textContent = `✅ Connected as ${role}`;
+                console.log("Connected to SignalR hub as", role);
+            })
+            .catch(err => {
+                console.error("SignalR connection failed:", err);
+                document.getElementById("status").textContent = "❌ Connection failed";
+            });
+    </script>
+</body>
+</html>
+

@@ -9,7 +9,8 @@ namespace Bts.Interfaces
         //Task<Tester> UpdateTester(int id);
         Task<Bug> CreateBugAsync(BugSubmissionDTO dto);
 
-        Task<Bug> UpdateBugAsync(int bugId,BugSubmissionDTO dto);
+        // Task<Bug> UpdateBugAsync(int bugId,BugSubmissionDTO dto);
+        Task<Bug> UpdateBugAsync(int bugId,UpdateBugPatchDTO dto);
 
         Task<IEnumerable<Bug>> GetMyReportedBugsAsync(string testerId);
         Task<bool> UpdateBugStatusAsync(int bugId, BugStatus newStatus);

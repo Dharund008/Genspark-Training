@@ -13,7 +13,7 @@ namespace Bts.Interfaces
         public Task<List<Bug>> GetBugsByTesterId(string testerId);
         public Task<List<Bug>> GetBugsByDeveloperId(string developerId);
 
-
+        Task<IEnumerable<Bug>> GetUnassignedBugsAsync();
         public Task<List<Bug>> SearchBugs(string searchTerm);
      }
 }

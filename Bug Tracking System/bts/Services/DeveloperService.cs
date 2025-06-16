@@ -118,6 +118,28 @@ namespace Bts.Services
             _logger.LogInformation("Retrieved all developers");
             return developers;
         }
+        public async Task<IEnumerable<TesterInfoDTO>> GetTestersForMyBugsAsync(string developerId)
+        {
+            var bugs = await _context.Bugs
+                .Where(b => b.AssignedTo == developerId)
+                .ToListAsync();
+
+            var testerIds = bugs.Select(b => b.CreatedBy).Distinct().ToList();
+
+            var testers = await _context.Testers
+                .Where(t => testerIds.Contains(t.Id))
+                .Select(t => new TesterInfoDTO
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Email = t.Email
+                })
+                .ToListAsync();
+
+            _logger.LogInformation("Developer {DeveloperId} viewed tester info for their assigned bugs", developerId);
+
+            return testers;
+        }
 
         public async Task<List<Developer>> GetDeveloperWithBugs()
         {

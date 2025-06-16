@@ -79,9 +79,49 @@ namespace Bts.Services
             return bug;
         }
 
-        public async Task<Bug> UpdateBugAsync(int bugId, BugSubmissionDTO dto)
+        // public async Task<Bug> UpdateBugAsync(int bugId, BugSubmissionDTO dto)
+        // {
+        //     _logger.LogInformation("UpdateBugAsync called by tester {TesterId} for bug {BugId}", _currentUserService.Id, bugId);
+
+        //     var tester = await _context.Testers.FirstOrDefaultAsync(t => t.Id == _currentUserService.Id);
+        //     if (tester == null)
+        //     {
+        //         _logger.LogWarning("Tester not found with ID {TesterId} in UpdateBugAsync", _currentUserService.Id);
+        //         throw new Exception("Tester not found");
+        //     }
+
+        //     var bug = await _context.Bugs.FirstOrDefaultAsync(b => b.Id == bugId && b.CreatedBy == tester.Id);
+        //     if (bug == null)
+        //     {
+        //         _logger.LogWarning("Bug {BugId} not found or unauthorized for tester {TesterId} in UpdateBugAsync", bugId, tester.Id);
+        //         throw new Exception("Bug not found or Unauthorized");
+        //     }
+
+        //     // Log before updating fields
+        //     _logger.LogDebug("Updating bug fields for bug {BugId}", bugId);
+
+        //     // Update only fields that are provided (partial update behavior)
+        //     if (!string.IsNullOrEmpty(dto.Title)) bug.Title = dto.Title;
+        //     if (!string.IsNullOrEmpty(dto.Description)) bug.Description = dto.Description;
+        //     if (dto.Priority != null) bug.Priority = dto.Priority;
+        //     if (!string.IsNullOrEmpty(dto.ScreenshotUrl)) bug.ScreenshotUrl = dto.ScreenshotUrl;
+
+        //     bug.UpdatedAt = DateTime.UtcNow;
+        //     _context.Bugs.Update(bug);
+
+        //     await _context.SaveChangesAsync();
+        //     _logger.LogInformation("Bug {BugId} updated in database by tester {TesterId}", bugId, tester.Id);
+
+        //     // Log bug event
+        //     await _bugLogService.LogEventAsync(bugId, "Bug details Updated", _currentUserService.Id);
+        //     _logger.LogInformation("Bug update event logged for bug {BugId} by tester {TesterId}", bugId, _currentUserService.Id);
+
+        //     return bug;
+        // }
+
+        public async Task<Bug> UpdateBugAsync(int bugId, UpdateBugPatchDTO dto)
         {
-            _logger.LogInformation("UpdateBugAsync called by tester {TesterId} for bug {BugId}", _currentUserService.Id, bugId);
+            _logger.LogInformation("UpdatePatchBugAsync called by tester {TesterId} for bug {BugId}", _currentUserService.Id, bugId);
 
             var tester = await _context.Testers.FirstOrDefaultAsync(t => t.Id == _currentUserService.Id);
             if (tester == null)
@@ -101,10 +141,9 @@ namespace Bts.Services
             _logger.LogDebug("Updating bug fields for bug {BugId}", bugId);
 
             // Update only fields that are provided (partial update behavior)
-            if (!string.IsNullOrEmpty(dto.Title)) bug.Title = dto.Title;
-            if (!string.IsNullOrEmpty(dto.Description)) bug.Description = dto.Description;
+            if (dto.Description != null) bug.Description = dto.Description;
             if (dto.Priority != null) bug.Priority = dto.Priority;
-            if (!string.IsNullOrEmpty(dto.ScreenshotUrl)) bug.ScreenshotUrl = dto.ScreenshotUrl;
+            if (dto.ScreenshotUrl != null) bug.ScreenshotUrl = dto.ScreenshotUrl;
 
             bug.UpdatedAt = DateTime.UtcNow;
             _context.Bugs.Update(bug);

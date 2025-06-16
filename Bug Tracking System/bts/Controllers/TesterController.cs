@@ -46,8 +46,29 @@ namespace Bts.Controllers
             return Ok(CreatedBug);
         }
 
+        [HttpPost("upload-screenshot")]
+        public async Task<IActionResult> UploadScreenshot(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                _logger.LogWarning("File not selected in UploadScreenshot");
+                return BadRequest("File not selected");
+            }
+
+            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+            var savePath = Path.Combine("wwwroot/screenshots", fileName);
+
+            using (var stream = new FileStream(savePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            _logger.LogInformation("Uploaded screenshot {FileName}", fileName);
+            return Ok(new { url = $"/screenshots/{fileName}" });
+        }
+
         [HttpPatch("update-bug-details")]
-        public async Task<IActionResult> UpdateBug([FromQuery] int bugId, [FromBody] BugSubmissionDTO dto)
+        public async Task<IActionResult> UpdateBug([FromQuery] int bugId, [FromBody] UpdateBugPatchDTO dto)
         {
             if (!Enum.IsDefined(typeof(BugPriority), dto.Priority))
             {
@@ -63,22 +84,6 @@ namespace Bts.Controllers
                     .SendAsync("ReceiveMessage", $"Tester {testerId} has updated a bug ({bugId})");
             _logger.LogInformation("Tester {TesterId} updated bug {BugId}", testerId, bugId);
             return Ok(updatedBug);
-        }
-
-
-
-        [HttpGet("my-bugs")]
-        public async Task<IActionResult> GetMyBugs()
-        {
-            var testerId = User.FindFirst("MyApp_Id")?.Value;
-            if (string.IsNullOrEmpty(testerId))
-            {
-                _logger.LogWarning("Unauthorized access attempt to GetMyBugs");
-                return Unauthorized();
-            }
-            var bugs = await _testerService.GetMyReportedBugsAsync(testerId);
-            _logger.LogInformation("Retrieved bugs for tester {TesterId}", testerId);
-            return Ok(bugs);
         }
 
 
@@ -112,6 +117,21 @@ namespace Bts.Controllers
         //     var added = await _testerService.AddCommentAsync(comment);
         //     return Ok(added);
         // }
+
+
+        [HttpGet("my-bugs")]
+        public async Task<IActionResult> GetMyBugs()
+        {
+            var testerId = User.FindFirst("MyApp_Id")?.Value;
+            if (string.IsNullOrEmpty(testerId))
+            {
+                _logger.LogWarning("Unauthorized access attempt to GetMyBugs");
+                return Unauthorized();
+            }
+            var bugs = await _testerService.GetMyReportedBugsAsync(testerId);
+            _logger.LogInformation("Retrieved bugs for tester {TesterId}", testerId);
+            return Ok(bugs);
+        }
 
         [HttpGet("tester-by-email")]
         public async Task<IActionResult> GetTesterByEmail([FromQuery] string email)
@@ -147,27 +167,7 @@ namespace Bts.Controllers
 
 
 
-        [HttpPost("upload-screenshot")]
-        public async Task<IActionResult> UploadScreenshot(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-            {
-                _logger.LogWarning("File not selected in UploadScreenshot");
-                return BadRequest("File not selected");
-            }
-
-            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var savePath = Path.Combine("wwwroot/screenshots", fileName);
-
-            using (var stream = new FileStream(savePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
-
-            _logger.LogInformation("Uploaded screenshot {FileName}", fileName);
-            return Ok(new { url = $"/screenshots/{fileName}" });
-        }
-
+        
 
     }
 }

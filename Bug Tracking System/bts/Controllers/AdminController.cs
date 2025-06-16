@@ -104,28 +104,6 @@ namespace Bts.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMIN")]
-        [HttpGet("check-user/{Email}")]
-        public async Task<IActionResult> CheckUser(string Email)
-        {
-            try
-            {
-                _logger.LogInformation("CheckUser called for email: {Email}", Email);
-                var userExists = await _adminService.IsEmailExists(Email);
-                if (userExists != false)
-                {
-                    _logger.LogInformation("User exists: {Email}", Email);
-                    return Ok(true);
-                }
-                _logger.LogWarning("User not found: {Email}", Email);
-                return NotFound(new { error = "User not found." });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error while checking user existence.");
-                return StatusCode(500, new { error = "Internal server error, please try again later." });
-            }
-        }
 
         [Authorize(Roles = "ADMIN")]
         [HttpPut("assign-bug")]
@@ -150,6 +128,26 @@ namespace Bts.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error while assigning bug.");
+                return StatusCode(500, new { error = "Internal server error, please try again later." });
+            }
+        }
+
+        [Authorize(Roles = "ADMIN")]
+        [HttpPut("close-bug/{bugId}")]
+        public async Task<IActionResult> CloseBug(int bugId)
+        {
+            try
+            {
+                var result = await _adminService.CloseBugAsync(bugId);
+                if (!result) return NotFound(new { error = "Bug not found." });
+
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"Admin has changed status of Bug ID: {bugId} to closed.");
+
+                return Ok(new { message = "Bug closed successfully." });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while closing bug.");
                 return StatusCode(500, new { error = "Internal server error, please try again later." });
             }
         }
@@ -187,35 +185,6 @@ namespace Bts.Controllers
             }
         }
 
-        [Authorize(Roles = "ADMIN")]
-        [HttpGet("available-developers")]
-        public async Task<IActionResult> GetAvailableDevelopers()
-        {
-            var developers = await _adminService.GetAvailableDevelopersAsync();
-            return Ok(developers);
-        }
-
-
-
-        [Authorize(Roles = "ADMIN")]
-        [HttpPut("close-bug/{bugId}")]
-        public async Task<IActionResult> CloseBug(int bugId)
-        {
-            try
-            {
-                var result = await _adminService.CloseBugAsync(bugId);
-                if (!result) return NotFound(new { error = "Bug not found." });
-
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"Admin has changed status of Bug ID: {bugId} to closed.");
-
-                return Ok(new { message = "Bug closed successfully." });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error while closing bug.");
-                return StatusCode(500, new { error = "Internal server error, please try again later." });
-            }
-        }
 
         [Authorize(Roles = "ADMIN")]
         [HttpDelete("delete-bug/{bugId}")]
@@ -242,6 +211,37 @@ namespace Bts.Controllers
             }
         }
 
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet("available-developers")]
+        public async Task<IActionResult> GetAvailableDevelopers()
+        {
+            var developers = await _adminService.GetAvailableDevelopersAsync();
+            return Ok(developers);
+        }
+        
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet("check-user/{Email}")]
+        public async Task<IActionResult> CheckUser(string Email)
+        {
+            try
+            {
+                _logger.LogInformation("CheckUser called for email: {Email}", Email);
+                var userExists = await _adminService.IsEmailExists(Email);
+                if (userExists != false)
+                {
+                    _logger.LogInformation("User exists: {Email}", Email);
+                    return Ok(true);
+                }
+                _logger.LogWarning("User not found: {Email}", Email);
+                return NotFound(new { error = "User not found." });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while checking user existence.");
+                return StatusCode(500, new { error = "Internal server error, please try again later." });
+            }
+        }
+
 
         [Authorize(Roles = "ADMIN")]
         [HttpGet("list-users")]
@@ -260,6 +260,24 @@ namespace Bts.Controllers
                 return StatusCode(500, new { error = "Internal server error, please try again later." });
             }
         }
+
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet("Every-developers")]
+        public async Task<IActionResult> GetAllDevelopersWithDeleted()
+        {
+            var developers = await _adminService.GetAllDevelopersWithDeletedAsync();
+            return Ok(developers);
+        }
+
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet("Every-testers")]
+        public async Task<IActionResult> GetAllTestersWithDeleted()
+        {
+            var testers = await _adminService.GetAllTestersWithDeletedAsync();
+            return Ok(testers);
+        }
+
+
         [Authorize(Roles = "ADMIN")]
         [HttpGet("all-bugs")]
         public async Task<IActionResult> GetAllBugs()
@@ -283,6 +301,8 @@ namespace Bts.Controllers
             });
         }
 
+
+        [Authorize(Roles = "ADMIN")]
         [HttpGet("all-tester-bugs")]
         public async Task<IActionResult> GetAllTesterBugs([FromQuery] string testerId)
         {
@@ -292,6 +312,8 @@ namespace Bts.Controllers
             return Ok(bugs);
         }
         
+
+        [Authorize(Roles = "ADMIN")]
         [HttpGet("all-developer-bugs")]
         public async Task<IActionResult> GetAllDeveloperBugs([FromQuery] string developerId)
         {
