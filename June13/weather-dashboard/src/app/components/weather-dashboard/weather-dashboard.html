@@ -1,0 +1,20 @@
+<!-- <p>weather-dashboard works!</p> -->
+
+<div class="dashboard">
+  <h2>Weather Dashboard</h2>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="weatherData; else loading">
+    <h3>{{ weatherData.name }}</h3>
+    <p> Temperature: {{ weatherData.main.temp }} °C</p>
+    <p> Condition: {{ weatherData.weather[0].description }}</p>
+    <p> Humidity: {{ weatherData.main.humidity }}%</p>
+    <p> Wind Speed: {{ weatherData.wind.speed }} km/h</p>
+  </div>
+
+  <ng-template #loading>
+    <p>🔄 Loading weather data...</p>
+  </ng-template>
+</div>
+
