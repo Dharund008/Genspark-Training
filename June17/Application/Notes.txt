@@ -1,0 +1,88 @@
+What are Observables?
+Observables are a core concept in RxJS (used by Angular).
+They represent a stream of data that you can listen to (subscribe to) and react when new data arrives.
+Think of them like a radio station: you “subscribe” to a channel, and whenever there’s a new song (data), you hear it.
+
+
+Why use Observables here?
+User input (search): You want to react every time the user types something, but not make an API call for every keystroke.
+API calls: HTTP requests in Angular return observables, so you can react when the data comes back (asynchronously).
+
+
+What does .subscribe() do?
+Subscribing means you start listening to the observable.
+When new data is emitted (like search results), your callback runs.
+Without subscribing, nothing happens—the observable is “cold” and won’t execute.
+
+Why do we need observables everywhere?
+User actions (like typing or scrolling) are asynchronous and event-driven.
+API calls are asynchronous (you don’t know when the server will respond).
+Observables let you react to these events in a clean, composable way.
+
+OnInit()
+This is where you initialize your component.
+ONly one time, when the component is created.
+Will be using it in the required main component.
+
+@Input :
+helps to get dat afrom parent (home) to child (product-card)
+we can use it to pass data from parent to child.
+! - used here, that denotes as it going to be trusted variable which will not be null assigned.
+
+.next :
+Pushes new values into an Observable manually.
+Think of next() like sending updates to subscribers:
+        You publish news (next()) → Readers (subscribe()) get notified.
+
+
+//in code : home.ts 
+this.searchSubject is an observable that emits search terms.
+The pipe chains operators to control how/when API calls happen.
+.subscribe() is where you handle the results (update products, total, etc).
+
+
+
+NOw in app compoennts:
+
+Routing : 
+Routing is a way to navigate between different views in an Angular application.
+provideRouter() - handles page navigation
+<router-outlet> - display contents based on the current route/URL .
+RouterLink - used to navigate between routes.
+
+//mainly for standalone components : use routermodule instead of routeroutlet in app.ts [import]
+
+routermodule - It registers routes and allows directives like routerLink to function correctly.
+                enables routing features
+                Without it, Angular wouldn’t recognize navigation commands like routerLink.
+                import { RouterModule } from '@angular/router';
+"<<<
+@Component({
+  standalone: true,
+  imports: [RouterModule],
+})
+export class AppComponent {}    >>>"
+
+routerOutlet : acts as a placeholder that dynamically loads the selected route’s component.
+                When a user clicks a routerLink, Angular replaces <router-outlet> with the corresponding component.
+                If missing, navigation would update the URL but wouldn’t display the new content
+
+Imagine Angular routing like a delivery service:
+
+RouterModule 📦 → Sets up the address (routes) and understands where to send packages (components).
+RouterOutlet 📬 → Acts as the mailbox, receiving the correct package based on the user’s selection.
+
+Example in action:
+User clicks "About" (routerLink="about") ✅
+Angular checks routes via RouterModule ✅
+It finds a match ({ path: 'about', component: AboutComponent }) ✅
+It replaces <router-outlet> with AboutComponent content ✅ like <app-about> 
+
+
+with june16task:
+Structured components (HomeComponent, ProductCardComponent, AboutComponent). 
+2️⃣ Basic Routing Setup → Users can navigate between /home and /about. 
+3️⃣ Dynamic Product Display → Fetched products dynamically using HttpClient. 
+4️⃣ Debounced Search (debounceTime()) → Prevented excessive API calls during typing. 
+5️⃣ Infinite Scroll & Pagination (limit, skip) → Automatically loads more products. 
+6️⃣ Loader Integration (loading state) → Displays while fetching products.

@@ -1,0 +1,20 @@
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: rgb(172, 170, 170);
+  padding: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+  padding: 20px;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}

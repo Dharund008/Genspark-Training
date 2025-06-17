@@ -1,0 +1,11 @@
+<div *ngIf="loading" class="loading">Loading product details...</div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="product" class="product-detail">
+  <img [src]="product.thumbnail" alt="{{ product.title }}">
+  <h2>{{ product.title }}</h2>
+  <p class="price">Price: ${{ product.price }}</p>
+  <p class="description">{{ product.description }}</p>
+  <button routerLink="/home">Back to Home</button>
+</div>

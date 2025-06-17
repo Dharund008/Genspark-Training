@@ -1,0 +1,25 @@
+.product-detail {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.product-detail img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.loading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.error {
+  text-align: center;
+  color: red;
+}

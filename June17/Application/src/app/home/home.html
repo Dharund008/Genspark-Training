@@ -1,0 +1,19 @@
+<!-- <p>home works!</p> -->
+
+
+<div class="home-container">
+  <input type="text" class="search-box" placeholder="Search products..."
+    [(ngModel)]="searchTerm" (ngModelChange)="onSearch()">
+
+  <div class="product-list" *ngIf="products.length > 0; else noResults">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+
+  <ng-template #noResults>
+    <div *ngIf="!loading" class="no-results">No results found.</div>
+  </ng-template>
+
+  <div class="loading-indicator" *ngIf="loading">Loading...</div>
+</div>
+
+<router-outlet></router-outlet>

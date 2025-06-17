@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.thumbnail {
+  max-width: 100px;
+  border-radius: 4px;
+}
+
+.price {
+  font-weight: bold;
+  color: #007bff;
+}
