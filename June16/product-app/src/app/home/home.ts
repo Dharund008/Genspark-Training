@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductModel } from '../Models/product';
 import { Product } from '../product/product';
+import { About } from '../about/about';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, Product],
+  imports: [FormsModule, CommonModule, About],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })

@@ -2,9 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { catchError, Observable, throwError } from "rxjs";
 
-@Injectable(
-  
-)
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
   private http = inject(HttpClient);
   private apiUrl = 'https://dummyjson.com/products/search';
