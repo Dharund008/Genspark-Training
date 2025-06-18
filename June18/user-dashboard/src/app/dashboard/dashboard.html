@@ -1,8 +1,15 @@
 <div class="user-list">
   <h2>User List</h2>
+
+  <div class="filter-bar">
+  <input type="text" class="form-control" placeholder="Search with gender/role/state..." [(ngModel)]="searchText" (input)="filterUsers()" />
+  <!-- <input type="text" class="form-control" placeholder="Search with role..." [(ngModel)]="searchRole" (input)="filterUsers()" />
+  <input type="text" class="form-control" placeholder="Search with state..." [(ngModel)]="searchState" (input)="filterUsers()" /> -->
+</div>
+
   
   <div class="user-cards">
-    @for (user of Users; track user.id) {
+    @for (user of filteredUsers; track user.id) {
       <div class="user-card">
         <img [src]="user.image" alt="Profile Picture" class="profile-image">
         <div class="user-info">
@@ -16,6 +23,6 @@
       </div>
     }
   </div>
-  <p>Total Users Loaded: {{ Users.length }}</p>
+  <p>Total Users Loaded: {{ filteredUsers.length }}</p>
 
 </div>

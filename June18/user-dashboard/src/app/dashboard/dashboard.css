@@ -32,3 +32,21 @@
 .user-info p {
   margin: 5px 0;
 }
+
+.form-control {
+  width: 300px;           /* Set a reasonable width */
+  max-width: 90%;         /* Responsive for smaller screens */
+  padding: 12px 16px;     /* More padding for better feel */
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 1.1rem;      /* Larger, clearer text */
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  border-color: #007bff;  /* Highlight on focus */
+  outline: none;
+  background-color: #f5faff;
+}
