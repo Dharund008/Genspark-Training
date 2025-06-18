@@ -1,0 +1,14 @@
+injecting the http client:
+
+1)constructor(private http: HttpClient) {}
+2)private http = inject(HttpClient);
+
+
+both are same ... 
+1) -> The HttpClient is injected into the service through the constructor, allowing it to be used throughout the class.
+This is the traditional way of injecting dependencies in Angular,
+
+2)Newer Approach with inject(): Instead of injecting HttpClient via the constructor, inject(HttpClient) directly retrieves the instance.
+inject() is a newer Angular feature that allows dependencies to be injected without using a constructor.
+This approach is useful when you need dependency injection outside of a class context (e.g., inside functions or standalone components).
+mainly best for services, working outsdie a class...

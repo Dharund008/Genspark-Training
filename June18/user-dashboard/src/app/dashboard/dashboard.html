@@ -1,0 +1,21 @@
+<div class="user-list">
+  <h2>User List</h2>
+  
+  <div class="user-cards">
+    @for (user of Users; track user.id) {
+      <div class="user-card">
+        <img [src]="user.image" alt="Profile Picture" class="profile-image">
+        <div class="user-info">
+          <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Gender:</strong> {{ user.gender }}</p>
+          <p><strong>Role:</strong> {{ user.role }}</p>
+          <p><strong>State:</strong> {{ user.address.state }}</p>
+        </div>
+      </div>
+    }
+  </div>
+  <p>Total Users Loaded: {{ Users.length }}</p>
+
+</div>
