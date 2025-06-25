@@ -1,0 +1,12 @@
+<h2 style="text-align: center;">Recipie List</h2>
+@if (recipes().length > 0) {
+  <div class="card-container">
+    @for (item of recipes(); track item.id) {
+      <app-recipe [recipe]="item"></app-recipe>
+    }
+  </div>
+} @else {
+  <div class="card-container">
+    No Recipes Found!
+  </div>
+}
