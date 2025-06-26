@@ -42,8 +42,10 @@ describe('RecipeService',()=>{
         };
 
         service.getRecipe(1).subscribe(recipe=>{
-            //expect(recipe).toEqual(recipe);
-            expect(recipe).toBe(recipes);
+            console.log(recipe);
+            expect(recipe).toEqual(recipes);
+            expect(Object.keys(recipe)).toEqual(Object.keys(recipes));
+            //expect(recipe).toBe(recipes);
         })
         const req = httpMock.expectOne('https://dummyjson.com/recipes/1');
         expect(req.request.method).toBe('GET');
