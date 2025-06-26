@@ -1,0 +1,144 @@
+Linux June26th
+Questions:
+1. You have a file with permissions -rw-r--r--, and you run chmod +x file.sh. What happens?
+2. What is the difference between chmod 744 file.txt and chmod u=rwx,go=r file.txt?
+3. What is the sticky bit, and when should you use it?
+4. You are told to give the owner full access, group only execute, and others no permissions. What symbolic command achieves this?
+5. What is umask, and why is it important?
+6. If the umask is 022, what are the default permissions for a new file and a new directory?
+7. Why is umask often set to 002 in development environments but 027 or 077 in production?
+8. useradd vs adduser
+
+
+Answer:
+
+1)
+- : regular file
+- Rw- : Owner : read & write 
+- R— : group : only read
+- R—  : others can only read
+
+-rw-r--r--    1 root     root            16 Jun 26 14:40 file1.txt
+
+After chmod command, adds the (+x) execute permission for everyone 
+[owner, group, others]
+
+Now, everyone can execute the file ..
+-rwxr-xr-x    1 root     root            16 Jun 26 14:40 file1.txt
+
+2)
+Chmod 744 means :
+7 - r(4) w(2) x(1) : rwx - Owner
+4 - r(4)- -  : r - - : Group has only read permission
+4 - r(4) - - : r - - : others can only read the file.
+
+-rwxr--r--    1 root     root             2 Jun 26 14:44 question2.txt
+
+Chmod u=rwx, go=r means:
+Same as  previous approach - uses letters to set exactly the same permissions in a more descriptive way. 
+
+chmod u=rwx,go=r question2.txt
+-rwxr--r--    1 root     root             2 Jun 26 14:44 question2.txt
+
+//its a more symbolic way
+
+3)
+Sticky Bit
+
+* Special permission only for directories (not files) where it behaves as a safety tool/lock which prevents the others users by deleting the files.
+* Incase of shared directories, many users used to save files In it. But, it might get into a cause where any user can delete others users file.
+* So, it prevents that by allowing the every users only to add and the owner of directory(root) to delete or rename it.
+
+4)
+Given:- 
+Owner : full access : rwx
+Group : only execute : —x
+Others : no permission  : - - -
+
+With symbolic command ( uses letters ),
+Chmod u=rwx,g=x,o= quest4.txt
+
+=> -rwx--x---    1 root     root             0 Jun 26 14:55 quest4.txt
+
+5 & 6)Umask : User file creation mask
+
+* A default privacy setting while creating a new file or folder.
+* Controls the default permission when the file / folder been created
+* By default, when any users create an file / folder 
+        * File : rw-rw-rw 
+        * Folder : rwxrwxrwx
+* So, every users might get the permission by default and it’s not good to set the permission every time when user creates it.
+* So, with the umask, can control the permission the owner wants it
+
+Example:
+
+So when files ( 666 ) / folder ( 777 ) is created, 
+
+=> if your umask is 022, then it subtracts from 
+	1. Files : 666 - 022 ‎ = 644 -> rw-r—r— 
+	Now, if an user creates file, it can only be readable .
+Only the owner can write.
+
+	2. Folder : 777 - 022 ‎ = 755 -> rwxr-xr-x
+	Now, only owner has permission to write.
+
+//Umask can be set according to the requirements & needs. 
+
+
+7)
+Yeah, in development environment the umask is 002
+ * because, they often work in shared groups : might require read and write others files too
+Files (666) : 664 -> rw-rw-r
+Folder (777) : 775 -> rwxrwxr-x
+
+And, 
+
+In production environment the umask is 027 / 077
+* Here. Only the production works takes on, might there be an chance of corrupting an file/folder.. so with 
+
+1. Umask : 027
+		* file (666) : 640 -> rw-r- - - - -
+			allows read and write only for owner  and group may need read access still but others dont have any .
+
+		* folder (777) : 750 -> rwxr-x - - -
+
+//limits the group access, no others permission	
+	
+2. Umask : 077
+
+		* file (666) : 600 -> rw- -  - - - - -
+		* folder (777) - 700 -> rwx- - - - - -
+		Allows only the owner can access. Useful for sensitive data’s
+
+//max security 
+
+
+8)
+AddUser vs UserAdd 
+
+-> both does the same functionality. 
+
+*AddUser :
+
+Automatically creates the home direct, sets shell and prompts a pass while adding it .
+
+
+=> sudo adduser newuser
+
+* Not sure available in every distress.
+
+*UserAdd :
+
+Need to go with manually
+Command it for creating home direct , setting shell, prompting for passed..
+
+=> sudo user add -m -s /bin/hash newuser
+=> sudo passed newuser
+[ ‘-m’ required mainly to create home directory]
+
+* Available in all distress 
+* Useful for full controlling 
+
+
+
+
