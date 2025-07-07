@@ -1,0 +1,81 @@
+.container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #ccc;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid #d32f2f;
+}
+.status {
+  margin-top: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #007bff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

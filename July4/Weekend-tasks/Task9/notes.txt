@@ -1,0 +1,21 @@
+continuation from 6,7,8:
+
+new service : with delays
+
+docker service create \
+  --name webapp \
+  --replicas 3 \
+  --update-delay 10s \
+  -p 8090:80 \
+  httpd
+
+
+--update-delay 10s → when updating, wait 10 seconds between each container update
+httpd → Apache server image
+
+
+verify: curl localhost:8090
+
+
+update image
+docker service update --image httpd:alpine task9

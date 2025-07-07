@@ -1,0 +1,36 @@
+swarm : docker swarm init
+Swarm initialized: current node (uq0qif4dym95nyqvhduvsqsj2) is now a manager.
+
+
+nginx with 3 relicas 
+
+docker service create \
+  --name nginx-web \
+  --replicas 3 \
+  -p 8086:80 \
+  nginx:alpine
+
+
+nginx-web → name of the service
+3 → create 3 containers across nodes (all machine for now)
+nginx:alpine → uses lightweight Nginx image
+
+
+check : docker service ls
+
+
+check task : docker service ps nginx-web (name)
+
+
+curl localhost:8086
+
+http://localhost:8086
+
+
+
+scale up replicas
+docker service scale nginx-web=5
+
+
+remover service
+docker service rm nginx-web

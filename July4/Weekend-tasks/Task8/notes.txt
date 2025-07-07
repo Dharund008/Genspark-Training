@@ -1,0 +1,11 @@
+continuation from 6,7:
+
+scale up to 5 replicas 
+docker service scale nginx-web=5
+
+
+vsrify : 
+docker service ls
+
+
+docker service ps nginx-web

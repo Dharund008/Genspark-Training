@@ -1,0 +1,23 @@
+1)swarm init
+
+2)next creating a service with visualizing
+
+docker service create \
+  --name task10 \
+  --publish 8089:8080 \
+  --constraint node.role==manager \
+  --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+  dockersamples/visualizer
+
+
+--constraint node.role==manager → only runs on Swarm manager node
+--mount …docker.sock → gives the container access to Docker API
+dockersamples/visualizer → the official Docker Swarm visualizer image
+
+
+then:
+
+http://localhost:8089
+
+
+results all replicas under servies and their image,tag,state with updated , id .....

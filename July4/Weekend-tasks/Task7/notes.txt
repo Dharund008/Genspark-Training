@@ -1,0 +1,17 @@
+continuation from task6 :
+
+
+update image:
+
+docker service update --image nginx:alpine nginx-web
+
+    pull the latest nginx:alpine image
+    do a rolling update (replacing old containers one-by-one)
+    keep the service running — zero downtime
+
+veryfing : docker service ps nginx-web
+
+
+detailed update settings : docker service inspect nginx-web --pretty
+
+

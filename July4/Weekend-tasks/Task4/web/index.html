@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doctor List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    h2 {
+      color: #1976d2;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 8px 12px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Doctor Directory</h2>
+  <ul id="doctorList">
+  </ul>
+
+  <script>
+    
+    async function fetchDoctors() {
+      try {
+        const response = await fetch('http://task4backend:5000/api/doctor/getdoctors');
+        if (!response.ok) {
+          throw new Error('Failed to fetch doctors');
+        }
+
+        const doctors = await response.json();
+
+        const listElement = document.getElementById('doctorList');
+        listElement.innerHTML = ''; 
+
+        doctors.forEach(doctor => {
+          const li = document.createElement('li');
+          li.textContent = `${doctor.id} - ${doctor.name}`;
+          listElement.appendChild(li);
+        });
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    }
+
+    window.onload = fetchDoctors;
+  </script>
+
+</body>
+</html>

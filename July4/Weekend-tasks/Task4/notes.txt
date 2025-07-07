@@ -1,0 +1,20 @@
+1)docker network create task4-network
+User-defined bridge networks so containers can communicate by name
+
+2) backend >docker file > build image > run container
+docker build -t task4-backend .
+
+docker run -d \
+> --name task4backend \
+> --network task4-network \
+> -p 5000:5000 \
+> task4-backend
+
+3) frontend > index.html > docker file > build image > run cotnainer on same network
+ docker build -t task4-frontend .
+
+ docker run -d \
+--name task4frontend \
+ --network task4-network \
+-p 8084:80 \
+task4-frontend

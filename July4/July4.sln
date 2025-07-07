@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Weekend-tasks", "Weekend-tasks", "{B70C08E5-E685-ACAF-03A6-BD21F2E17673}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task4", "Task4", "{50868919-E442-DB06-13EA-96D8536FBAB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApi", "Weekend-tasks\Task4\FirstApi\FirstApi.csproj", "{91A3C145-A58C-8DB7-9693-428B688284F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91A3C145-A58C-8DB7-9693-428B688284F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A3C145-A58C-8DB7-9693-428B688284F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A3C145-A58C-8DB7-9693-428B688284F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A3C145-A58C-8DB7-9693-428B688284F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50868919-E442-DB06-13EA-96D8536FBAB2} = {B70C08E5-E685-ACAF-03A6-BD21F2E17673}
+		{91A3C145-A58C-8DB7-9693-428B688284F0} = {50868919-E442-DB06-13EA-96D8536FBAB2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAE6C575-3047-4B8C-9185-936571960053}
+	EndGlobalSection
+EndGlobal

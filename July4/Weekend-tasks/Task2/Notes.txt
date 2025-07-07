@@ -1,0 +1,49 @@
+1) docker pull mysql:lastest (terminal)
+pull mysql image
+
+2)running the mysql contianer
+dharund@DharunDs-MacBook-Pro task2 % docker run -d \
+> --name mysql-container \
+> -e MYSQL_ROOT_PASSWORD=root123 \
+> -v mydbdata:/var/lib/mysql \
+> -p 3306:3306 \
+> mysql:latest
+
+naming the contianer , setting root password , an volume "mydbdata" for persisting , mapping port mysql to host.
+
+3)connecting to mysql for data 
+
+in terminal :- docker exec -it mysql-container mysql -u root -p 
+[pass: root123] : (exit - to out from cli)
+
+//create db - use it - create table - insert data - check it 
+
+
+4)Stop and remove contianer
+
+docker stop mysql-container - stops container
+
+docker rm mysql-container - removes container
+
+
+5) again run the contianer 
+docker run -d \                         --- contianer name : mysql-container1
+> --name mysql-container1 \
+> -e MYSQL_ROOT_PASSWORD=root123 \      --- same pass 
+> -v mydbdata:/var/lib/mysql \
+> -p 3306:3306 \
+> mysql:latest\
+
+// here we are using same volume "mydbdata" so data will be persisted
+
+
+6)again connect to mysql
+docker exec -it mysql-container1 mysql -u root -p
+
+then 
+    use data;
+    show tables;
+    select * from data;
+    exit;
+
+    //same values will be presented
