@@ -1,0 +1,32 @@
+
+.sidebar-link.active {
+  background-color: var(--gray-100);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--box-shadow);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    background-color: var(--white);
+    border-right: 1px solid var(--gray-200);
+  }
+  
+  .sidebar.show {
+    left: 0;
+  }
+}
