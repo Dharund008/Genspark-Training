@@ -1,0 +1,50 @@
+Task2 : AZ CLI , ARM and SQL Provisioning
+
+1) Download az cli in mac terminal :
+ brew update && brew install azure-cli
+
+ then run : az login 
+ 
+ and set the subscription (app-training)
+
+    -> az account show : our details
+    -> az version : az cli version 
+
+2) for provisioning - u need to have sql automate template with deploy json file and paramter json file
+(make sure to have these as json files)
+
+then initiate the deployment with the correct path of those files:
+
+az deployment group create --resource-group genspark-dharun --template-file azuredeploy.json --parameters @parameters.json
+
+
+az deployment group create  \
+  --resource-group genspark-dharun \
+  --template-file ~/Desktop/Presidio-Genspark/Genspark-Training/July9/azuredeploy.json \
+  --parameters @~/Desktop/Presidio-Genspark/Genspark-Training/July9/parameters.json
+
+    [ genspark-dharun : resourceGroup ]
+
+  az deployment group create  \
+  --resource-group genspark-dharun \
+  --template-file ~/Desktop/Presidio-Genspark/Genspark-Training/July9/azuredeploypart.json \
+  --parameters @~/Desktop/Presidio-Genspark/Genspark-Training/July9/parameterspart.json
+
+3) check the paramters for server name , pass , admin login credentials - must be unique 
+    also in deploy json file - make sure to have the location as per your region (eastus) : ur subsricption policy access.
+
+then it starts running and creates the server , db in portal via cli : u can see the contents display in terminal
+
+4) u can also check whether your deployment is active :
+  >>lisitng all deployments:
+        az deployment group list --resource-group genspark-dharun --output table
+
+5) now u can see the sqlserver and db running in your azure portal.
+
+once created go to ur db > query editor tab > enter password > asks for firewall security
+
+click allowlistIP for your macIP > then your db editor opens : you can work on it.
+
+//so u can have ur db in azure , your proj localy and connect with here .. 
+you can also copy the connection string : your-db > settings tab > conntection string
+

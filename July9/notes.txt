@@ -1,0 +1,74 @@
+1)First need to create an vm - ubuntu 20.04 lts > size > pass: ssh (download pem file - private key)
+
+2)then ports ssh 20 - http 80
+
+3) will be using tool ssh , connecting to ur linux vm 
+
+ssh azureuser<public-ip> (vm)
+
+ssh -i ~/Downloads/AzureDocker_key.pem azureuser@48.216.216.24 -- with the privatekey file location 
+
+--here the downloaded file must have right permissions
+
+chmod 400 ~/Downloads/azure_key.pem
+--The command chmod 400 ~/Downloads/azure_key.pem is used to set strict read-only permissions on a file—typically an SSH private key like azure_key.pem.
+
+once conneting, 
+
+4)install docker on vm
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version  #to confirm installation
+
+
+5)with local api project -(sample one)
+create an docker file for that:
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet publish -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "MyApiApp.dll"]
+
+6)then build it and push it into docker
+
+docker build -t my-dotnet-api .
+docker login
+docker tag my-dotnet-api <your-dockerhub-username>/my-dotnet-api:latest
+docker push <your-dockerhub-username>/my-dotnet-api:latest  [docker push dharund/twitter-azuredocker:latest]
+
+
+--check : docker images
+
+7)Deploy the API on the Azure VM
+
+here --docker login <docker-userName> dharund
+
+sudo docker pull <your-dockerhub-username>/my-dotnet-api:latest
+sudo docker run -d -p 80:80 <your-dockerhub-username>/my-dotnet-api:latest
+sudo docker ps  #confirm container is running
+
+
+8)then checkng the api :
+
+http://<your-vm-public-ip>/weatherforecast
+
+
+in browser......
+
+
+
+
+
+
+
