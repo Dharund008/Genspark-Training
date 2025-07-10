@@ -1,0 +1,42 @@
+1)go to azure portal : search azure devops > azure devops organization
+
+2)create an organization and create new project
+
+3) Now if needed , assign the user to the project ... [have the azure access level as basic - so can assign in tasks / if stakeholder or... can't assign 
+in task by administrator.]
+
+4)Then create epic - work item tab > new work item - 'epic'  : enter title and description.
+also have the state as 'new'...
+
+make sure to have the organization access with azure ... because only with that u can add user stories under epics.
+
+5) Now to create user stories : your-epic > related work > add link > new item :
+                                                                                link type - child
+                                                                                work item type - user story
+                                                                                title - 
+
+now u can view it under work item tab and backlogs tab tooo ...also u can check with links under each epic
+
+6)after creating user story under epics, create tasks for each user story .... can be any no of tasks under it
+
+backlog > hover near user story > [starting corner] '+' symbol - new task : title,description 
+
+also can view it from workitems , backlog and also from the links section under user story ... 
+
+
+7)then now create an kanban board for the project : boards > new board : select the project and the board name
+
+ToDo - Doing - Done : segregate it 
+
+now add your user stories under the board : drag and drop the user story under the board [todo / doing / done]
+
+
+
+8) assign sprint to each user story : 
+
+* administrator creates different sprints : sprint1 <ranges from - to -> , sprint2 <ranges from - to -> etc...
+* then assign the sprint to each user story
+* under each user story > iteration field > u can see the sprint name and click it > and select it to sprint .... 
+* now under sprint tab > can view different user stories under each sprint ..... 
+
+you can also mark it as new/active/closed... which dynamically updates under items..
