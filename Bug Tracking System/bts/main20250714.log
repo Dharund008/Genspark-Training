@@ -1,0 +1,1768 @@
+2025-07-14 03:17:30.491 +05:30 [DBG] Client timeout ("00:00:30"ms) elapsed without receiving a message from the client. Closing connection.
+2025-07-14 03:17:30.910 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 03:17:30.915 +05:30 [DBG] Waiting for the client to close the socket.
+2025-07-14 03:17:30.928 +05:30 [DBG] Socket closed.
+2025-07-14 03:17:30.929 +05:30 [DBG] Removing connection wAVQdaPC6SANPJ7-xqeLlw from the list of connections.
+2025-07-14 03:17:30.929 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 03:17:30.930 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 372038.2666ms
+2025-07-14 03:17:30.931 +05:30 [DBG] Connection id "0HNE1ODDK5LAH" disconnecting.
+2025-07-14 03:17:30.931 +05:30 [DBG] Connection id "0HNE1ODDK5LAH" stopped.
+2025-07-14 03:17:30.932 +05:30 [DBG] Connection id "0HNE1ODDK5LAH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 03:17:33.512 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" accepted.
+2025-07-14 03:17:33.512 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" started.
+2025-07-14 03:17:33.514 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - null null
+2025-07-14 03:17:33.515 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 03:17:33.515 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 03:17:33.515 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 03:17:33.515 +05:30 [INF] CORS policy execution successful.
+2025-07-14 03:17:33.515 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 03:17:33.517 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 03:17:33.518 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 03:17:33.519 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 03:17:33.520 +05:30 [DBG] New connection JYM2w8uy7V-oW-PimEkTYA created.
+2025-07-14 03:17:33.520 +05:30 [DBG] Establishing new connection.
+2025-07-14 03:17:33.520 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 03:17:33.521 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 03:17:33.540 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 03:17:33.540 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:27:50.136 +05:30 [DBG] Client timeout ("00:00:30"ms) elapsed without receiving a message from the client. Closing connection.
+2025-07-14 09:27:50.148 +05:30 [DBG] Client timeout ("00:00:30"ms) elapsed without receiving a message from the client. Closing connection.
+2025-07-14 09:27:50.151 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:27:50.152 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:27:50.152 +05:30 [DBG] Waiting for the client to close the socket.
+2025-07-14 09:27:50.153 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" received FIN.
+2025-07-14 09:27:50.153 +05:30 [DBG] Waiting for the client to close the socket.
+2025-07-14 09:27:50.153 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:27:50.154 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" disconnecting.
+2025-07-14 09:27:50.154 +05:30 [DBG] Socket closed.
+2025-07-14 09:27:50.155 +05:30 [DBG] Removing connection JYM2w8uy7V-oW-PimEkTYA from the list of connections.
+2025-07-14 09:27:50.155 +05:30 [DBG] Socket closed.
+2025-07-14 09:27:50.155 +05:30 [DBG] Removing connection VteGNhhjC5gFwE80exPIiw from the list of connections.
+2025-07-14 09:27:50.155 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:27:50.155 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:27:50.156 +05:30 [DBG] Connection id "0HNE1ODDK5LA8" received FIN.
+2025-07-14 09:27:50.156 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 1025578.354ms
+2025-07-14 09:27:50.156 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 252307.4351ms
+2025-07-14 09:27:50.156 +05:30 [DBG] Connection id "0HNE1ODDK5LA8" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:27:50.157 +05:30 [DBG] Connection id "0HNE1ODDK5LA8" disconnecting.
+2025-07-14 09:27:50.157 +05:30 [DBG] Connection id "0HNE1ODDK5LA8" stopped.
+2025-07-14 09:27:50.157 +05:30 [DBG] Connection id "0HNE1ODDK5LAI" stopped.
+2025-07-14 09:28:20.967 +05:30 [DBG] Connection id "0HNE1ODDK5LAJ" accepted.
+2025-07-14 09:28:20.968 +05:30 [DBG] Connection id "0HNE1ODDK5LAJ" started.
+2025-07-14 09:28:20.968 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - null null
+2025-07-14 09:28:20.969 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:28:20.969 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:28:20.969 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:20.969 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:20.970 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:20.975 +05:30 [DBG] Connection id "0HNE1ODDK5LAK" accepted.
+2025-07-14 09:28:20.975 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:20.975 +05:30 [DBG] Connection id "0HNE1ODDK5LAK" started.
+2025-07-14 09:28:20.975 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - null null
+2025-07-14 09:28:20.976 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:28:20.976 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:28:20.976 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:20.976 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:20.976 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:28:20.976 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:20.976 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:28:20.977 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:20.977 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:28:20.977 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:28:20.979 +05:30 [DBG] New connection iov4EltOx0bygozXu8_wGA created.
+2025-07-14 09:28:20.979 +05:30 [DBG] New connection C8Y5z1NjKBohMsf9cE3zVg created.
+2025-07-14 09:28:20.979 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:28:20.979 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:28:20.979 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:28:20.979 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:28:20.980 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:28:20.980 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:28:20.983 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:28:20.983 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:28:20.984 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:28:20.984 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:28:21.231 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:28:21.231 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:28:21.231 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:28:21.231 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:28:21.231 +05:30 [DBG] Socket closed.
+2025-07-14 09:28:21.231 +05:30 [DBG] Removing connection C8Y5z1NjKBohMsf9cE3zVg from the list of connections.
+2025-07-14 09:28:21.232 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:28:21.232 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 263.349ms
+2025-07-14 09:28:21.232 +05:30 [DBG] Connection id "0HNE1ODDK5LAJ" disconnecting.
+2025-07-14 09:28:21.232 +05:30 [DBG] Connection id "0HNE1ODDK5LAJ" stopped.
+2025-07-14 09:28:21.232 +05:30 [DBG] Connection id "0HNE1ODDK5LAJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:28:21.232 +05:30 [DBG] Socket closed.
+2025-07-14 09:28:21.233 +05:30 [DBG] Removing connection iov4EltOx0bygozXu8_wGA from the list of connections.
+2025-07-14 09:28:21.233 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:28:21.233 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 257.379ms
+2025-07-14 09:28:21.233 +05:30 [DBG] Connection id "0HNE1ODDK5LAK" disconnecting.
+2025-07-14 09:28:21.233 +05:30 [DBG] Connection id "0HNE1ODDK5LAK" stopped.
+2025-07-14 09:28:21.233 +05:30 [DBG] Connection id "0HNE1ODDK5LAK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:28:21.947 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" accepted.
+2025-07-14 09:28:21.947 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" started.
+2025-07-14 09:28:21.949 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - null 0
+2025-07-14 09:28:21.949 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:28:21.949 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:28:21.950 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:21.950 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:21.950 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:28:21.950 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" completed keep alive response.
+2025-07-14 09:28:21.950 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - 204 null null 1.6885ms
+2025-07-14 09:28:21.954 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - application/json null
+2025-07-14 09:28:21.954 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:28:21.955 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)' with route pattern 'api/Authentication/my-details' is valid for the request path '/api/Authentication/my-details'
+2025-07-14 09:28:21.955 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:28:21.955 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:21.956 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:21.956 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:21.971 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:28:21.976 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:28:21.976 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:28:21.977 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.034 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.035 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:28:22.035 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.035 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.036 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:22.057 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:22.058 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.059 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:28:22.059 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.059 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:22.059 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.062 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:28:22.062 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:28:22.063 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:28:22.063 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:28:22.065 +05:30 [INF] Route matched with {action = "MyDetails", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyDetails() on controller Bts.Controllers.AuthenticationController (bts).
+2025-07-14 09:28:22.065 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:28:22.065 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:28:22.065 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:28:22.066 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:28:22.066 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:28:22.066 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:28:22.066 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:28:22.068 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.068 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.068 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:28:22.069 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.069 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.069 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:28:22.072 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:28:22.073 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:28:22.074 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.074 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-07-14 09:28:22.074 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.074 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:22.074 +05:30 [INF] Retrieved user details for user ID ADMa3eca694
+2025-07-14 09:28:22.075 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:28:22.076 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:28:22.076 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:28:22.076 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:28:22.077 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:28:22.077 +05:30 [INF] Executing OkObjectResult, writing value of type 'Bts.Models.User'.
+2025-07-14 09:28:22.077 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.MyDetails (bts) in 11.4419ms
+2025-07-14 09:28:22.078 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:28:22.078 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" completed keep alive response.
+2025-07-14 09:28:22.078 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:28:22.078 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.078 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:22.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - 200 null application/json; charset=utf-8 124.3187ms
+2025-07-14 09:28:22.417 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - null null
+2025-07-14 09:28:22.418 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:28:22.418 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:28:22.418 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:22.418 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:22.418 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.419 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.419 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:28:22.419 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:28:22.420 +05:30 [DBG] New connection wKOEik12h7brejtc2WxpfQ created.
+2025-07-14 09:28:22.420 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:28:22.421 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:28:22.425 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:28:22.443 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:28:22.444 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:28:22.463 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" accepted.
+2025-07-14 09:28:22.463 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" started.
+2025-07-14 09:28:22.464 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/ADMIN - null 0
+2025-07-14 09:28:22.464 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/ADMIN'
+2025-07-14 09:28:22.464 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:28:22.464 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:22.465 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:22.465 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:28:22.465 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" completed keep alive response.
+2025-07-14 09:28:22.465 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/ADMIN - 204 null null 1.3101ms
+2025-07-14 09:28:22.468 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Statistics/ADMIN - null null
+2025-07-14 09:28:22.469 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/ADMIN'
+2025-07-14 09:28:22.469 +05:30 [DBG] Endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)' with route pattern 'api/Statistics/{role}' is valid for the request path '/api/Statistics/ADMIN'
+2025-07-14 09:28:22.470 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:28:22.470 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:22.470 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:22.470 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.471 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:28:22.472 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" accepted.
+2025-07-14 09:28:22.472 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" started.
+2025-07-14 09:28:22.472 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:28:22.472 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:28:22.472 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.473 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.473 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:28:22.473 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.473 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:22.473 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:22.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - null null
+2025-07-14 09:28:22.475 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:28:22.475 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:28:22.475 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:22.475 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:22.475 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:22.475 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.476 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.476 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:28:22.476 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.476 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:22.476 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.476 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:22.476 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:28:22.477 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:28:22.477 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:28:22.477 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:28:22.477 +05:30 [DBG] New connection DyadZ08FN7DV7Sr4KEq08Q created.
+2025-07-14 09:28:22.477 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:28:22.477 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:28:22.477 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:28:22.477 +05:30 [DBG] Rate limits exceeded, rejecting this request.
+2025-07-14 09:28:22.478 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" completed keep alive response.
+2025-07-14 09:28:22.478 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:28:22.478 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:22.478 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:22.478 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Statistics/ADMIN - 429 0 null 10.001ms
+2025-07-14 09:28:22.506 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:28:22.552 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:28:25.081 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/logout - null 0
+2025-07-14 09:28:25.082 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/logout'
+2025-07-14 09:28:25.082 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:28:25.082 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:25.082 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:25.082 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:28:25.082 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" completed keep alive response.
+2025-07-14 09:28:25.082 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/logout - 204 null null 0.852ms
+2025-07-14 09:28:25.084 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/Authentication/logout - application/json 2
+2025-07-14 09:28:25.084 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/logout'
+2025-07-14 09:28:25.084 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)' with route pattern 'api/Authentication/logout' is valid for the request path '/api/Authentication/logout'
+2025-07-14 09:28:25.084 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)'
+2025-07-14 09:28:25.084 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:28:25.084 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:28:25.084 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:25.085 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:28:25.085 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:28:25.085 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:28:25.085 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:25.085 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:25.085 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:28:25.085 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:25.085 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:28:25.086 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:25.087 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:28:25.087 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:25.087 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:28:25.087 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:25.087 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:25.087 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:28:25.088 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:28:25.088 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:28:25.088 +05:30 [DBG] Rate limits exceeded, rejecting this request.
+2025-07-14 09:28:25.088 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" completed keep alive response.
+2025-07-14 09:28:25.088 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:28:25.088 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:28:25.088 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:28:25.088 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/Authentication/logout - 429 0 null 4.4503ms
+2025-07-14 09:28:25.089 +05:30 [DBG] Connection id "0HNE1ODDK5LAM", Request id "0HNE1ODDK5LAM:00000004": started reading request body.
+2025-07-14 09:28:25.089 +05:30 [DBG] Connection id "0HNE1ODDK5LAM", Request id "0HNE1ODDK5LAM:00000004": done reading request body.
+2025-07-14 09:28:25.103 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:28:25.104 +05:30 [DBG] Socket closed.
+2025-07-14 09:28:25.104 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:28:25.104 +05:30 [DBG] Removing connection DyadZ08FN7DV7Sr4KEq08Q from the list of connections.
+2025-07-14 09:28:25.104 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:28:25.104 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 2629.9886ms
+2025-07-14 09:28:25.105 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" disconnecting.
+2025-07-14 09:28:25.105 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" stopped.
+2025-07-14 09:28:25.105 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" received FIN.
+2025-07-14 09:28:25.105 +05:30 [DBG] Connection id "0HNE1ODDK5LAN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:28:54.117 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" received FIN.
+2025-07-14 09:28:54.117 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:28:54.117 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" disconnecting.
+2025-07-14 09:28:54.117 +05:30 [DBG] Connection id "0HNE1ODDK5LAM" stopped.
+2025-07-14 09:29:06.653 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" accepted.
+2025-07-14 09:29:06.653 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" started.
+2025-07-14 09:29:06.654 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - null 0
+2025-07-14 09:29:06.654 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-07-14 09:29:06.654 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:29:06.654 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:29:06.654 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:29:06.654 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:29:06.655 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" completed keep alive response.
+2025-07-14 09:29:06.655 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - 204 null null 1.1897ms
+2025-07-14 09:29:06.657 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/Authentication/login - application/json 69
+2025-07-14 09:29:06.657 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-07-14 09:29:06.658 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)' with route pattern 'api/Authentication/login' is valid for the request path '/api/Authentication/login'
+2025-07-14 09:29:06.658 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-07-14 09:29:06.658 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:29:06.658 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:29:06.658 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:06.660 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:06.661 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:29:06.661 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-07-14 09:29:06.661 +05:30 [INF] Route matched with {action = "UserAuthenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Bts.Models.DTO.LoginResponse]] UserAuthenticate(Bts.Models.DTO.Login) on controller Bts.Controllers.AuthenticationController (bts).
+2025-07-14 09:29:06.661 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:29:06.661 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:29:06.661 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:29:06.661 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:29:06.661 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:29:06.662 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:29:06.662 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:29:06.662 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-07-14 09:29:06.664 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' using the name '' in request data ...
+2025-07-14 09:29:06.666 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-07-14 09:29:06.667 +05:30 [DBG] Connection id "0HNE1ODDK5LAO", Request id "0HNE1ODDK5LAO:00000002": started reading request body.
+2025-07-14 09:29:06.667 +05:30 [DBG] Connection id "0HNE1ODDK5LAO", Request id "0HNE1ODDK5LAO:00000002": done reading request body.
+2025-07-14 09:29:06.668 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Bts.Models.DTO.Login'
+2025-07-14 09:29:06.668 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-07-14 09:29:06.668 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-07-14 09:29:06.668 +05:30 [DBG] Attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-07-14 09:29:06.669 +05:30 [DBG] Done attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-07-14 09:29:06.671 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:29:06.673 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:29:06.673 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:29:06.673 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.673 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.673 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:29:06.673 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:06.673 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:06.673 +05:30 [DBG] Executing DbCommand [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-07-14 09:29:06.674 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-07-14 09:29:06.674 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:29:06.674 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.675 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:29:06.675 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.675 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:06.678 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.678 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.678 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:29:06.678 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:06.678 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:06.679 +05:30 [DBG] Executing DbCommand [Parameters=[@__user_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."Email", d."IsDeleted", d."Name", d."Password"
+FROM "Developers" AS d
+WHERE d."Email" = @__user_Username_0
+LIMIT 1
+2025-07-14 09:29:06.681 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."Email", d."IsDeleted", d."Name", d."Password"
+FROM "Developers" AS d
+WHERE d."Email" = @__user_Username_0
+LIMIT 1
+2025-07-14 09:29:06.686 +05:30 [DBG] The navigation 'User.Developer' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:29:06.686 +05:30 [DBG] Context 'BugContext' started tracking 'Developer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:29:06.686 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.686 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-07-14 09:29:06.687 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:06.687 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:07.012 +05:30 [INF] User authenticated successfully: developersample@gmail.com
+2025-07-14 09:29:07.013 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:29:07.013 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:29:07.013 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:29:07.013 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:29:07.013 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:29:07.013 +05:30 [INF] Executing OkObjectResult, writing value of type 'Bts.Models.DTO.LoginResponse'.
+2025-07-14 09:29:07.014 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.UserAuthenticate (bts) in 352.0501ms
+2025-07-14 09:29:07.014 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-07-14 09:29:07.014 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" completed keep alive response.
+2025-07-14 09:29:07.014 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:29:07.014 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:07.014 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:07.014 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/Authentication/login - 200 null application/json; charset=utf-8 357.4009ms
+2025-07-14 09:29:16.711 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:29:16.711 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:29:16.711 +05:30 [DBG] Socket closed.
+2025-07-14 09:29:16.711 +05:30 [DBG] Removing connection wKOEik12h7brejtc2WxpfQ from the list of connections.
+2025-07-14 09:29:16.712 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:29:16.712 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=ADMIN&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluNEBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkFETWEzZWNhNjk0IiwibmFtZWlkIjoiYWRtaW40QGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsIm5iZiI6MTc1MjQyMzMzOSwiZXhwIjoxNzUyNTA5NzM5LCJpYXQiOjE3NTI0MjMzMzl9.7zDido8MYFOyfJI_qIjq4ni25kFKkpNBWPk7oWhfhqo - 101 null null 54295.0399ms
+2025-07-14 09:29:16.712 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" disconnecting.
+2025-07-14 09:29:16.713 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" stopped.
+2025-07-14 09:29:16.713 +05:30 [DBG] Connection id "0HNE1ODDK5LAL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:29:16.991 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - null 0
+2025-07-14 09:29:16.991 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:29:16.992 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:29:16.992 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:29:16.992 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:29:16.992 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:29:16.992 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" completed keep alive response.
+2025-07-14 09:29:16.992 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - 204 null null 1.2378ms
+2025-07-14 09:29:16.995 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - application/json null
+2025-07-14 09:29:16.995 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:29:16.996 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)' with route pattern 'api/Authentication/my-details' is valid for the request path '/api/Authentication/my-details'
+2025-07-14 09:29:16.996 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:29:16.996 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:29:16.996 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:29:16.996 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:16.997 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:29:16.998 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:29:16.998 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:29:16.998 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:16.998 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:16.998 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:29:16.998 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:16.998 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:16.998 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:29:16.999 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:29:16.999 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:16.999 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:29:16.999 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:16.999 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:16.999 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:17.000 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:29:17.000 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:29:17.000 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:29:17.000 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:29:17.000 +05:30 [INF] Route matched with {action = "MyDetails", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyDetails() on controller Bts.Controllers.AuthenticationController (bts).
+2025-07-14 09:29:17.000 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:29:17.000 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:29:17.000 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:29:17.001 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:29:17.001 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:29:17.001 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:29:17.001 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:29:17.001 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:17.001 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:17.002 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:29:17.002 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:29:17.003 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-07-14 09:29:17.003 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:29:17.006 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:29:17.007 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:29:17.007 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:17.008 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-07-14 09:29:17.008 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:17.008 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:17.009 +05:30 [INF] Retrieved user details for user ID DEVfff7994e
+2025-07-14 09:29:17.009 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:29:17.010 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:29:17.010 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:29:17.010 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:29:17.010 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:29:17.010 +05:30 [INF] Executing OkObjectResult, writing value of type 'Bts.Models.User'.
+2025-07-14 09:29:17.011 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.MyDetails (bts) in 9.9814ms
+2025-07-14 09:29:17.011 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:29:17.012 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" completed keep alive response.
+2025-07-14 09:29:17.012 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:29:17.012 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:29:17.012 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:29:17.013 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - 200 null application/json; charset=utf-8 17.5247ms
+2025-07-14 09:29:17.034 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:29:17.035 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:29:17.035 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:29:17.035 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:29:17.035 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:29:17.035 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:17.035 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:29:17.036 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:29:17.036 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:29:17.036 +05:30 [DBG] New connection 1aXbnPTJGgER_id3OAFeBA created.
+2025-07-14 09:29:17.036 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:29:17.037 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:29:17.037 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:29:17.060 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:29:17.060 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:31:22.899 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:31:22.900 +05:30 [DBG] Socket closed.
+2025-07-14 09:31:22.900 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:31:22.909 +05:30 [DBG] Removing connection 1aXbnPTJGgER_id3OAFeBA from the list of connections.
+2025-07-14 09:31:22.909 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:31:22.909 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 125875.0835ms
+2025-07-14 09:31:22.909 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" disconnecting.
+2025-07-14 09:31:22.909 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" stopped.
+2025-07-14 09:31:22.910 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" received FIN.
+2025-07-14 09:31:22.910 +05:30 [DBG] Connection id "0HNE1ODDK5LAO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:31:23.355 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" accepted.
+2025-07-14 09:31:23.355 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" started.
+2025-07-14 09:31:23.356 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - null 0
+2025-07-14 09:31:23.357 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:31:23.357 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:31:23.357 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.357 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.357 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:31:23.357 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" completed keep alive response.
+2025-07-14 09:31:23.357 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/my-details - 204 null null 0.7434ms
+2025-07-14 09:31:23.360 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - application/json null
+2025-07-14 09:31:23.360 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/my-details'
+2025-07-14 09:31:23.360 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)' with route pattern 'api/Authentication/my-details' is valid for the request path '/api/Authentication/my-details'
+2025-07-14 09:31:23.360 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:31:23.361 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.361 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.361 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.362 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:31:23.362 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:31:23.362 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:31:23.362 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.363 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.363 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.363 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.363 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.364 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:31:23.365 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:31:23.366 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.366 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.366 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.366 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.367 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.367 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:31:23.367 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:31:23.367 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:31:23.367 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:31:23.367 +05:30 [INF] Route matched with {action = "MyDetails", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyDetails() on controller Bts.Controllers.AuthenticationController (bts).
+2025-07-14 09:31:23.367 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:31:23.368 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:31:23.368 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:31:23.368 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:31:23.368 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:31:23.368 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:31:23.368 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:31:23.369 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.369 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.369 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.369 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.369 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.369 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:31:23.370 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 2
+2025-07-14 09:31:23.370 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:31:23.370 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.370 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.370 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.370 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.371 +05:30 [INF] Retrieved user details for user ID DEVfff7994e
+2025-07-14 09:31:23.371 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:31:23.371 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:31:23.371 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:31:23.371 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:31:23.371 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:31:23.371 +05:30 [INF] Executing OkObjectResult, writing value of type 'Bts.Models.User'.
+2025-07-14 09:31:23.372 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.MyDetails (bts) in 3.2942ms
+2025-07-14 09:31:23.372 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.MyDetails (bts)'
+2025-07-14 09:31:23.372 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" completed keep alive response.
+2025-07-14 09:31:23.372 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:31:23.372 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.372 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.372 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Authentication/my-details - 200 null application/json; charset=utf-8 12.605ms
+2025-07-14 09:31:23.562 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:31:23.562 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:31:23.563 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:31:23.563 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.563 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.563 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.563 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.563 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:31:23.563 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:31:23.563 +05:30 [DBG] New connection nYHghLoZgecae2Odr11XCA created.
+2025-07-14 09:31:23.563 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:31:23.564 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:31:23.564 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:31:23.572 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:31:23.572 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:31:23.587 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" accepted.
+2025-07-14 09:31:23.587 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" started.
+2025-07-14 09:31:23.588 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - null 0
+2025-07-14 09:31:23.589 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:31:23.589 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:31:23.589 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.589 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.590 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:31:23.591 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" completed keep alive response.
+2025-07-14 09:31:23.591 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - 204 null null 3.2192ms
+2025-07-14 09:31:23.597 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - null null
+2025-07-14 09:31:23.601 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" accepted.
+2025-07-14 09:31:23.611 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:31:23.611 +05:30 [DBG] Endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)' with route pattern 'api/Statistics/{role}' is valid for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:31:23.611 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:31:23.611 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" started.
+2025-07-14 09:31:23.612 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.612 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.612 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:31:23.612 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.612 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:31:23.612 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:31:23.613 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:31:23.613 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:31:23.613 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.613 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.613 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:31:23.613 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:31:23.613 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:31:23.614 +05:30 [DBG] New connection 8ZuMIl0yv-B94_IoO4IxFw created.
+2025-07-14 09:31:23.614 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:31:23.614 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:31:23.614 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:31:23.614 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:31:23.614 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:31:23.614 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.614 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.615 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.615 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.615 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.615 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:31:23.616 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:31:23.616 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.617 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.617 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.618 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.618 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:31:23.620 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:31:23.620 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:31:23.621 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:31:23.621 +05:30 [INF] Executing endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:31:23.622 +05:30 [INF] Route matched with {action = "GetStats", controller = "Statistics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStats(System.String) on controller Bts.Controllers.StatisticsController (bts).
+2025-07-14 09:31:23.622 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:31:23.623 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:31:23.623 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:31:23.623 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:31:23.623 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:31:23.623 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:31:23.624 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:31:23.624 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' ...
+2025-07-14 09:31:23.624 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' using the name 'role' in request data ...
+2025-07-14 09:31:23.624 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:31:23.625 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:31:23.625 +05:30 [DBG] Attempting to validate the bound parameter 'role' of type 'System.String' ...
+2025-07-14 09:31:23.625 +05:30 [DBG] Done attempting to validate the bound parameter 'role' of type 'System.String'.
+2025-07-14 09:31:23.627 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.627 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.628 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.628 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.628 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.629 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:31:23.633 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:31:23.634 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.634 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.634 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.634 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.636 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.636 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.637 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.637 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.637 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.637 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:31:23.642 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:31:23.642 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.643 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.643 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.643 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.644 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.644 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.645 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.645 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.645 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.646 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:31:23.647 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:31:23.648 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:31:23.656 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:31:23.656 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.657 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.657 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.657 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.659 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.659 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.659 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:31:23.660 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.660 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:31:23.660 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:31:23.663 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:31:23.663 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.663 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:31:23.663 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.664 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.664 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:31:23.664 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:31:23.664 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:31:23.664 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:31:23.664 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:31:23.664 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType19`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 09:31:23.665 +05:30 [INF] Executed action Bts.Controllers.StatisticsController.GetStats (bts) in 41.7388ms
+2025-07-14 09:31:23.665 +05:30 [INF] Executed endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:31:23.666 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" completed keep alive response.
+2025-07-14 09:31:23.666 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:31:23.666 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:31:23.666 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:31:23.667 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - 200 null application/json; charset=utf-8 69.7351ms
+2025-07-14 09:31:52.693 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" received FIN.
+2025-07-14 09:31:52.693 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" disconnecting.
+2025-07-14 09:31:52.693 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:31:52.695 +05:30 [DBG] Connection id "0HNE1ODDK5LAQ" stopped.
+2025-07-14 09:32:18.980 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:32:18.980 +05:30 [DBG] Socket closed.
+2025-07-14 09:32:18.980 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:32:18.980 +05:30 [DBG] Removing connection 8ZuMIl0yv-B94_IoO4IxFw from the list of connections.
+2025-07-14 09:32:18.980 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:32:18.981 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 55368.8439ms
+2025-07-14 09:32:18.981 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" disconnecting.
+2025-07-14 09:32:18.981 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" stopped.
+2025-07-14 09:32:18.981 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" received FIN.
+2025-07-14 09:32:18.981 +05:30 [DBG] Connection id "0HNE1ODDK5LAR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:32:18.984 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" accepted.
+2025-07-14 09:32:18.984 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" started.
+2025-07-14 09:32:18.984 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - null 0
+2025-07-14 09:32:18.984 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:18.985 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:32:18.985 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:18.985 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:18.985 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:32:18.985 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" completed keep alive response.
+2025-07-14 09:32:18.985 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - 204 null null 1.1382ms
+2025-07-14 09:32:18.988 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - application/json null
+2025-07-14 09:32:18.988 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:18.988 +05:30 [DBG] Endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)' with route pattern 'api/Developer/assigned-bugs' is valid for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:18.988 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:18.988 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:18.988 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:18.988 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:18.989 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:32:18.989 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:32:18.989 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:32:18.990 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.990 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.990 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:18.990 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:18.990 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:18.990 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:18.992 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:18.992 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.992 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:18.992 +05:30 [DBG] Connection id "0HNE1ODDK5LAT" accepted.
+2025-07-14 09:32:18.992 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.992 +05:30 [DBG] Connection id "0HNE1ODDK5LAT" started.
+2025-07-14 09:32:18.992 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:18.992 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:18.993 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:32:18.993 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:32:18.993 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:32:18.993 +05:30 [INF] Executing endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:18.993 +05:30 [INF] Route matched with {action = "GetAssignedBugs", controller = "Developer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedBugs() on controller Bts.Controllers.DeveloperController (bts).
+2025-07-14 09:32:18.994 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:32:18.994 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:32:18.994 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:32:18.994 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:18.994 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:32:18.994 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:18.994 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:32:18.994 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:18.994 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:18.995 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:18.995 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:18.995 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:18.995 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:18.996 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:18.996 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:18.996 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:32:18.996 +05:30 [DBG] New connection sI4d48z-StneL7Cr07kQRA created.
+2025-07-14 09:32:18.996 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:32:18.996 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:32:18.996 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.996 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:32:18.996 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.997 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:18.997 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:18.997 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:18.997 +05:30 [DBG] Executing DbCommand [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:18.998 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:18.998 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.998 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:18.998 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:18.998 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:18.998 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:18.998 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:18.999 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:32:18.999 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:32:18.999 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:32:18.999 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:32:18.999 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:32:18.999 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Bts.Models.Bug, bts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 09:32:18.999 +05:30 [INF] Executed action Bts.Controllers.DeveloperController.GetAssignedBugs (bts) in 4.7528ms
+2025-07-14 09:32:18.999 +05:30 [INF] Executed endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:18.999 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" completed keep alive response.
+2025-07-14 09:32:19.000 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:32:19.000 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:19.000 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:19.001 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - 200 null application/json; charset=utf-8 13.0596ms
+2025-07-14 09:32:19.021 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:32:19.022 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:32:25.174 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:32:25.174 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:32:25.175 +05:30 [DBG] Socket closed.
+2025-07-14 09:32:25.175 +05:30 [DBG] Removing connection sI4d48z-StneL7Cr07kQRA from the list of connections.
+2025-07-14 09:32:25.175 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:32:25.175 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 6181.3464ms
+2025-07-14 09:32:25.176 +05:30 [DBG] Connection id "0HNE1ODDK5LAT" disconnecting.
+2025-07-14 09:32:25.176 +05:30 [DBG] Connection id "0HNE1ODDK5LAT" stopped.
+2025-07-14 09:32:25.176 +05:30 [DBG] Connection id "0HNE1ODDK5LAT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:32:27.179 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:27.180 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:27.180 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:27.180 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:27.180 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:27.181 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:27.181 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:27.181 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:27.181 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:32:27.181 +05:30 [DBG] New connection E3_5lzTIeZ2e50xnn1knJg created.
+2025-07-14 09:32:27.181 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:32:27.181 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:32:27.181 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:32:27.184 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:32:27.184 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:32:30.358 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" accepted.
+2025-07-14 09:32:30.358 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" started.
+2025-07-14 09:32:30.359 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - null 0
+2025-07-14 09:32:30.359 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:30.359 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:32:30.359 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:30.359 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:30.359 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:32:30.359 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:30.360 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - 204 null null 1.0264ms
+2025-07-14 09:32:30.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - application/json null
+2025-07-14 09:32:30.362 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:30.362 +05:30 [DBG] Endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)' with route pattern 'api/Developer/assigned-bugs' is valid for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:30.362 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:30.362 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:30.362 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:30.362 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:30.363 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:32:30.363 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:32:30.363 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:32:30.363 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.363 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.364 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:30.364 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:30.364 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:30.364 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:30.365 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:30.365 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.365 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:30.365 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.365 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:30.365 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:30.366 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:32:30.366 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:32:30.366 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:32:30.366 +05:30 [INF] Executing endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:30.366 +05:30 [INF] Route matched with {action = "GetAssignedBugs", controller = "Developer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedBugs() on controller Bts.Controllers.DeveloperController (bts).
+2025-07-14 09:32:30.366 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:32:30.366 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:32:30.366 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:32:30.366 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:32:30.367 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:32:30.367 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:30.367 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:30.367 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.367 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.367 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:30.367 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:30.367 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:30.367 +05:30 [DBG] Executing DbCommand [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:30.368 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:30.369 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.369 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:30.369 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.369 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:30.369 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:30.369 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:30.369 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:32:30.369 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:32:30.370 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:32:30.370 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:32:30.370 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:32:30.370 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Bts.Models.Bug, bts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 09:32:30.370 +05:30 [INF] Executed action Bts.Controllers.DeveloperController.GetAssignedBugs (bts) in 3.3334ms
+2025-07-14 09:32:30.370 +05:30 [INF] Executed endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:30.370 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:30.370 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:32:30.370 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:30.370 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:30.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - 200 null application/json; charset=utf-8 9.1516ms
+2025-07-14 09:32:32.608 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:32:32.608 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:32:32.608 +05:30 [DBG] Socket closed.
+2025-07-14 09:32:32.608 +05:30 [DBG] Removing connection E3_5lzTIeZ2e50xnn1knJg from the list of connections.
+2025-07-14 09:32:32.608 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:32:32.608 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 5429.4824ms
+2025-07-14 09:32:32.609 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" received FIN.
+2025-07-14 09:32:32.609 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" disconnecting.
+2025-07-14 09:32:32.609 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:32:32.610 +05:30 [DBG] Connection id "0HNE1ODDK5LAS" stopped.
+2025-07-14 09:32:32.624 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - null 0
+2025-07-14 09:32:32.625 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:32.625 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:32:32.625 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:32.626 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:32.626 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:32:32.626 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:32.626 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - 204 null null 1.6349ms
+2025-07-14 09:32:32.629 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - null null
+2025-07-14 09:32:32.629 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:32.629 +05:30 [DBG] Endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)' with route pattern 'api/Statistics/{role}' is valid for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:32.629 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:32:32.629 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:32.630 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:32.631 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:32.632 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:32:32.633 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:32:32.633 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" accepted.
+2025-07-14 09:32:32.633 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:32:32.633 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" started.
+2025-07-14 09:32:32.633 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.634 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.634 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:32.634 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.634 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:32.634 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.635 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:32.635 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:32.635 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:32.635 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:32.636 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:32.636 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:32.636 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:32.636 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:32.636 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:32.636 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.636 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:32:32.637 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:32.637 +05:30 [DBG] New connection -2oYWKILE2_gxPzF3tg_Ow created.
+2025-07-14 09:32:32.637 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.637 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:32:32.637 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.637 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:32:32.637 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:32:32.637 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:32.637 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:32:32.638 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:32:32.638 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:32:32.638 +05:30 [INF] Executing endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:32:32.638 +05:30 [INF] Route matched with {action = "GetStats", controller = "Statistics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStats(System.String) on controller Bts.Controllers.StatisticsController (bts).
+2025-07-14 09:32:32.638 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:32:32.638 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:32:32.639 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:32:32.639 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:32:32.639 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:32:32.639 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:32:32.639 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:32:32.639 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:32:32.639 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:32:32.640 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' ...
+2025-07-14 09:32:32.640 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' using the name 'role' in request data ...
+2025-07-14 09:32:32.640 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:32:32.641 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:32:32.641 +05:30 [DBG] Attempting to validate the bound parameter 'role' of type 'System.String' ...
+2025-07-14 09:32:32.641 +05:30 [DBG] Done attempting to validate the bound parameter 'role' of type 'System.String'.
+2025-07-14 09:32:32.642 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.642 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.642 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:32.642 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.643 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.643 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:32:32.644 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:32:32.644 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.644 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:32.644 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.644 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.646 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.646 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.647 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:32.647 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.647 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.647 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:32:32.648 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:32:32.648 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.648 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:32.648 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.649 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.649 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.649 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.649 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:32.649 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.649 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.649 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:32:32.650 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:32:32.650 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.650 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:32.650 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.650 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.651 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.651 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.651 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:32.651 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.651 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:32.651 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:32:32.652 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:32:32.652 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.652 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:32.652 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.652 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.652 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:32:32.652 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:32:32.652 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:32:32.652 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:32:32.652 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:32:32.653 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType19`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 09:32:32.653 +05:30 [INF] Executed action Bts.Controllers.StatisticsController.GetStats (bts) in 13.4352ms
+2025-07-14 09:32:32.653 +05:30 [INF] Executed endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:32:32.653 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:32.653 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:32:32.653 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:32.653 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:32.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - 200 null application/json; charset=utf-8 24.6903ms
+2025-07-14 09:32:36.384 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:32:36.384 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:32:36.384 +05:30 [DBG] Socket closed.
+2025-07-14 09:32:36.384 +05:30 [DBG] Removing connection -2oYWKILE2_gxPzF3tg_Ow from the list of connections.
+2025-07-14 09:32:36.384 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:32:36.384 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 3750.028ms
+2025-07-14 09:32:36.385 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" disconnecting.
+2025-07-14 09:32:36.385 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" received FIN.
+2025-07-14 09:32:36.385 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" stopped.
+2025-07-14 09:32:36.385 +05:30 [DBG] Connection id "0HNE1ODDK5LAV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:32:36.389 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - null 0
+2025-07-14 09:32:36.389 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:36.389 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:32:36.389 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:36.389 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:36.390 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:32:36.390 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:36.390 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - 204 null null 1.0127ms
+2025-07-14 09:32:36.392 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - application/json null
+2025-07-14 09:32:36.392 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:36.393 +05:30 [DBG] Endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)' with route pattern 'api/Developer/assigned-bugs' is valid for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:32:36.393 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:36.393 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:36.393 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:36.393 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:36.394 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" accepted.
+2025-07-14 09:32:36.394 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" started.
+2025-07-14 09:32:36.394 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:32:36.395 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:32:36.395 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:32:36.395 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.396 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.397 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:36.397 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:36.397 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2025-07-14 09:32:36.397 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:36.397 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-07-14 09:32:36.397 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:36.398 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:36.398 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:36.398 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:36.398 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:36.399 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:36.399 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:36.400 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:32:36.400 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:36.401 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.401 +05:30 [DBG] New connection TQYLOLjHT98UUOhPJm3ItQ created.
+2025-07-14 09:32:36.401 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-07-14 09:32:36.401 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:32:36.402 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.402 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:32:36.402 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:36.403 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:32:36.403 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:36.404 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:32:36.404 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:32:36.404 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:32:36.404 +05:30 [INF] Executing endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:36.404 +05:30 [INF] Route matched with {action = "GetAssignedBugs", controller = "Developer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedBugs() on controller Bts.Controllers.DeveloperController (bts).
+2025-07-14 09:32:36.404 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:32:36.405 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:32:36.405 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:32:36.405 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:32:36.405 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:32:36.405 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:36.405 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:32:36.405 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.406 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.406 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:36.406 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:36.406 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:36.406 +05:30 [DBG] Executing DbCommand [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:36.407 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:32:36.408 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.408 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:36.408 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.408 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:36.409 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:36.409 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:32:36.409 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:32:36.409 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:32:36.409 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:32:36.409 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:32:36.410 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:32:36.410 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:32:36.410 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:32:36.410 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Bts.Models.Bug, bts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 09:32:36.410 +05:30 [INF] Executed action Bts.Controllers.DeveloperController.GetAssignedBugs (bts) in 5.2702ms
+2025-07-14 09:32:36.411 +05:30 [INF] Executed endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:32:36.411 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:36.411 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:32:36.411 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:36.412 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:36.412 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - 200 null application/json; charset=utf-8 20.1735ms
+2025-07-14 09:32:38.330 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:32:38.330 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:32:38.330 +05:30 [DBG] Socket closed.
+2025-07-14 09:32:38.330 +05:30 [DBG] Removing connection TQYLOLjHT98UUOhPJm3ItQ from the list of connections.
+2025-07-14 09:32:38.331 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:32:38.331 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 1934.2054ms
+2025-07-14 09:32:38.331 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" disconnecting.
+2025-07-14 09:32:38.331 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" stopped.
+2025-07-14 09:32:38.331 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" received FIN.
+2025-07-14 09:32:38.332 +05:30 [DBG] Connection id "0HNE1ODDK5LB0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:32:38.334 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - null 0
+2025-07-14 09:32:38.334 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:38.334 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:32:38.334 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:38.334 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:38.335 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:32:38.335 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:38.335 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - 204 null null 1.0609ms
+2025-07-14 09:32:38.338 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - null null
+2025-07-14 09:32:38.338 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:38.339 +05:30 [DBG] Endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)' with route pattern 'api/Statistics/{role}' is valid for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:32:38.339 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:32:38.339 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" accepted.
+2025-07-14 09:32:38.339 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:38.339 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" started.
+2025-07-14 09:32:38.339 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:38.340 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:38.341 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:32:38.342 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:38.342 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:32:38.343 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:38.343 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:32:38.343 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:38.343 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:38.343 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:38.343 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:38.343 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:38.344 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:32:38.344 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:38.344 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:38.344 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:32:38.344 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:38.344 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:38.345 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:38.346 +05:30 [DBG] Rate limits exceeded, rejecting this request.
+2025-07-14 09:32:38.346 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" completed keep alive response.
+2025-07-14 09:32:38.346 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 429 0 null 3.9078ms
+2025-07-14 09:32:38.346 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:32:38.347 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:38.347 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:32:38.347 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:38.347 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:38.347 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:38.348 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:32:38.348 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:32:38.348 +05:30 [DBG] Rate limits exceeded, rejecting this request.
+2025-07-14 09:32:38.348 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:32:38.348 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:32:38.348 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:32:38.348 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:32:38.349 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - 429 0 null 10.5604ms
+2025-07-14 09:32:40.335 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:32:40.335 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:32:40.335 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:32:40.335 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:32:40.335 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:32:40.335 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:40.336 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:32:40.336 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:32:40.336 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:32:40.336 +05:30 [DBG] New connection pck8y2c2T6bEFo9OEgyoVQ created.
+2025-07-14 09:32:40.336 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:32:40.336 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:32:40.336 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:32:40.338 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:32:40.338 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:33:05.302 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:33:05.302 +05:30 [DBG] Socket closed.
+2025-07-14 09:33:05.303 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" received FIN.
+2025-07-14 09:33:05.303 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:33:05.303 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:33:05.303 +05:30 [DBG] Removing connection pck8y2c2T6bEFo9OEgyoVQ from the list of connections.
+2025-07-14 09:33:05.303 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" disconnecting.
+2025-07-14 09:33:05.303 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:33:05.303 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 24968.6595ms
+2025-07-14 09:33:05.304 +05:30 [DBG] Connection id "0HNE1ODDK5LB1" stopped.
+2025-07-14 09:33:05.307 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - null 0
+2025-07-14 09:33:05.308 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:33:05.308 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:33:05.309 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:05.309 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:05.309 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:33:05.309 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:05.309 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Developer/assigned-bugs - 204 null null 2.2411ms
+2025-07-14 09:33:05.313 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - application/json null
+2025-07-14 09:33:05.315 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:33:05.316 +05:30 [DBG] Endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)' with route pattern 'api/Developer/assigned-bugs' is valid for the request path '/api/Developer/assigned-bugs'
+2025-07-14 09:33:05.316 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:33:05.317 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:05.318 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:05.318 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" accepted.
+2025-07-14 09:33:05.318 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:05.318 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" started.
+2025-07-14 09:33:05.319 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:33:05.319 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:33:05.320 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:33:05.320 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:33:05.320 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:05.320 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:05.320 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:05.321 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:33:05.321 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:33:05.321 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:05.321 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.321 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:33:05.321 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.321 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:33:05.321 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:05.321 +05:30 [DBG] New connection FcCt4nz4WgHgtGiiJHTXEw created.
+2025-07-14 09:33:05.321 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:05.321 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:33:05.321 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:05.322 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:33:05.322 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:33:05.322 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:05.322 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:05.323 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.323 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:05.323 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.323 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:05.323 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:05.323 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:33:05.323 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:33:05.324 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:33:05.324 +05:30 [INF] Executing endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:33:05.324 +05:30 [INF] Route matched with {action = "GetAssignedBugs", controller = "Developer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssignedBugs() on controller Bts.Controllers.DeveloperController (bts).
+2025-07-14 09:33:05.324 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:33:05.324 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:33:05.324 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:33:05.324 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:33:05.325 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:33:05.326 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:33:05.326 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.DeveloperController (bts)
+2025-07-14 09:33:05.327 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.327 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.327 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:05.327 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:05.327 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:05.328 +05:30 [DBG] Executing DbCommand [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:33:05.329 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__developerId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."AssignedTo", b."CreatedAt", b."CreatedBy", b."Description", b."IsDeleted", b."Priority", b."ScreenshotUrl", b."Status", b."Title", b."UpdatedAt"
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__developerId_0 AND NOT (b."IsDeleted")
+2025-07-14 09:33:05.329 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.329 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:05.329 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:33:05.329 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.329 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:33:05.330 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:05.331 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:33:05.331 +05:30 [INF] Retrieved assigned bugs for developer DEVfff7994e
+2025-07-14 09:33:05.331 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:33:05.332 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:33:05.332 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:33:05.332 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:33:05.332 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:33:05.333 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Bts.Models.Bug, bts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-14 09:33:05.333 +05:30 [INF] Executed action Bts.Controllers.DeveloperController.GetAssignedBugs (bts) in 7.5956ms
+2025-07-14 09:33:05.334 +05:30 [INF] Executed endpoint 'Bts.Controllers.DeveloperController.GetAssignedBugs (bts)'
+2025-07-14 09:33:05.334 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:05.334 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:33:05.334 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:05.334 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:05.334 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Developer/assigned-bugs - 200 null application/json; charset=utf-8 21.3459ms
+2025-07-14 09:33:06.366 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:33:06.366 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:33:06.367 +05:30 [DBG] Socket closed.
+2025-07-14 09:33:06.367 +05:30 [DBG] Removing connection FcCt4nz4WgHgtGiiJHTXEw from the list of connections.
+2025-07-14 09:33:06.367 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:33:06.367 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 1048.2722ms
+2025-07-14 09:33:06.368 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" received FIN.
+2025-07-14 09:33:06.368 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" disconnecting.
+2025-07-14 09:33:06.368 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:33:06.369 +05:30 [DBG] Connection id "0HNE1ODDK5LB2" stopped.
+2025-07-14 09:33:06.371 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - null 0
+2025-07-14 09:33:06.371 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:33:06.371 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:33:06.371 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:06.371 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:06.373 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:33:06.373 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:06.373 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Statistics/DEVELOPER - 204 null null 2.6757ms
+2025-07-14 09:33:06.376 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" accepted.
+2025-07-14 09:33:06.376 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - null null
+2025-07-14 09:33:06.376 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" started.
+2025-07-14 09:33:06.377 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:33:06.377 +05:30 [DBG] Endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)' with route pattern 'api/Statistics/{role}' is valid for the request path '/api/Statistics/DEVELOPER'
+2025-07-14 09:33:06.377 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:33:06.377 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:06.377 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:06.378 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:06.378 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - null null
+2025-07-14 09:33:06.378 +05:30 [DBG] 1 candidate(s) found for the request path '/notificationHub'
+2025-07-14 09:33:06.378 +05:30 [DBG] Request matched endpoint '/notificationHub'
+2025-07-14 09:33:06.378 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:06.378 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:06.378 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:06.379 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:33:06.379 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:06.379 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-14 09:33:06.379 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:33:06.379 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-14 09:33:06.379 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:33:06.379 +05:30 [DBG] New connection Gd017lNjAK_J4ysQj8mc4Q created.
+2025-07-14 09:33:06.379 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.380 +05:30 [DBG] Establishing new connection.
+2025-07-14 09:33:06.380 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.380 +05:30 [DBG] OnConnectedAsync started.
+2025-07-14 09:33:06.380 +05:30 [DBG] Socket opened using Sub-Protocol: 'null'.
+2025-07-14 09:33:06.380 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:06.380 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.381 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.381 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:06.385 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:06.385 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.386 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:06.386 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.386 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.386 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:06.387 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:33:06.387 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:33:06.387 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:33:06.387 +05:30 [INF] Executing endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:33:06.388 +05:30 [INF] Route matched with {action = "GetStats", controller = "Statistics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStats(System.String) on controller Bts.Controllers.StatisticsController (bts).
+2025-07-14 09:33:06.388 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:33:06.388 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:33:06.388 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:33:06.388 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:33:06.388 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:33:06.389 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:33:06.389 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.StatisticsController (bts)
+2025-07-14 09:33:06.389 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' ...
+2025-07-14 09:33:06.389 +05:30 [DBG] Attempting to bind parameter 'role' of type 'System.String' using the name 'role' in request data ...
+2025-07-14 09:33:06.389 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:33:06.389 +05:30 [DBG] Done attempting to bind parameter 'role' of type 'System.String'.
+2025-07-14 09:33:06.389 +05:30 [DBG] Attempting to validate the bound parameter 'role' of type 'System.String' ...
+2025-07-14 09:33:06.389 +05:30 [DBG] Done attempting to validate the bound parameter 'role' of type 'System.String'.
+2025-07-14 09:33:06.390 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.390 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.391 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:06.391 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.391 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.391 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:33:06.392 +05:30 [DBG] Found protocol implementation for requested protocol: json.
+2025-07-14 09:33:06.392 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0
+2025-07-14 09:33:06.392 +05:30 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2025-07-14 09:33:06.393 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.393 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:06.393 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.393 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.394 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.394 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.394 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:06.394 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.394 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.394 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:33:06.396 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Bugs" AS b
+WHERE b."AssignedTo" = @__userId_0 AND b."Status" IN ('Fixed', 'Closed')
+2025-07-14 09:33:06.396 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.396 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:06.396 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.397 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.397 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.397 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.397 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:06.397 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.398 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.398 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:33:06.399 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "UploadedFileLogs" AS u
+WHERE u."DeveloperId" = @__userId_0
+2025-07-14 09:33:06.399 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.399 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:06.399 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.399 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.400 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.401 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.401 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:06.401 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.402 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:06.402 +05:30 [DBG] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:33:06.402 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Comments" AS c
+WHERE c."UserId" = @__userId_0
+2025-07-14 09:33:06.403 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.403 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:06.403 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.403 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.403 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:33:06.403 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:33:06.403 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:33:06.403 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:33:06.403 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-07-14 09:33:06.403 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType19`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-14 09:33:06.404 +05:30 [INF] Executed action Bts.Controllers.StatisticsController.GetStats (bts) in 15.1706ms
+2025-07-14 09:33:06.404 +05:30 [INF] Executed endpoint 'Bts.Controllers.StatisticsController.GetStats (bts)'
+2025-07-14 09:33:06.404 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:06.404 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:33:06.404 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:06.404 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:06.404 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/api/Statistics/DEVELOPER - 200 null application/json; charset=utf-8 28.2332ms
+2025-07-14 09:33:09.588 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/logout - null 0
+2025-07-14 09:33:09.588 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/logout'
+2025-07-14 09:33:09.588 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-07-14 09:33:09.588 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:09.588 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:09.588 +05:30 [DBG] The request is a preflight request.
+2025-07-14 09:33:09.588 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:09.588 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/logout - 204 null null 0.7679ms
+2025-07-14 09:33:09.590 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/Authentication/logout - application/json 2
+2025-07-14 09:33:09.590 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/logout'
+2025-07-14 09:33:09.591 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)' with route pattern 'api/Authentication/logout' is valid for the request path '/api/Authentication/logout'
+2025-07-14 09:33:09.591 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)'
+2025-07-14 09:33:09.591 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-07-14 09:33:09.591 +05:30 [INF] CORS policy execution successful.
+2025-07-14 09:33:09.591 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:09.592 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-07-14 09:33:09.592 +05:30 [DBG] Creating DbConnection.
+2025-07-14 09:33:09.592 +05:30 [DBG] Created DbConnection. (0ms).
+2025-07-14 09:33:09.592 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.592 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.592 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:09.593 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:09.593 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:09.593 +05:30 [DBG] Executing DbCommand [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:09.594 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlacklistedTokens" AS b
+    WHERE b."Token" = @__token_0 AND b."ExpiryDate" > now())
+2025-07-14 09:33:09.594 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.594 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-07-14 09:33:09.594 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.594 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:09.595 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-14 09:33:09.595 +05:30 [DBG] Successfully validated the token.
+2025-07-14 09:33:09.595 +05:30 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2025-07-14 09:33:09.595 +05:30 [DBG] Authorization was successful.
+2025-07-14 09:33:09.595 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)'
+2025-07-14 09:33:09.595 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller Bts.Controllers.AuthenticationController (bts).
+2025-07-14 09:33:09.595 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-07-14 09:33:09.595 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-07-14 09:33:09.595 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-07-14 09:33:09.596 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-07-14 09:33:09.596 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-07-14 09:33:09.596 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:33:09.596 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-07-14 09:33:09.599 +05:30 [DBG] 'BugContext' generated a temporary value for the property 'BlacklistedToken.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:33:09.600 +05:30 [DBG] Context 'BugContext' started tracking 'BlacklistedToken' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:33:09.600 +05:30 [DBG] SaveChanges starting for 'BugContext'.
+2025-07-14 09:33:09.600 +05:30 [DBG] DetectChanges starting for 'BugContext'.
+2025-07-14 09:33:09.600 +05:30 [DBG] DetectChanges completed for 'BugContext'.
+2025-07-14 09:33:09.604 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.604 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.604 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-14 09:33:09.604 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:09.604 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-07-14 09:33:09.604 +05:30 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlacklistedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-07-14 09:33:09.615 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlacklistedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-07-14 09:33:09.616 +05:30 [DBG] The foreign key property 'BlacklistedToken.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-07-14 09:33:09.617 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.617 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-07-14 09:33:09.617 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.617 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:09.617 +05:30 [DBG] An entity of type 'BlacklistedToken' tracked by 'BugContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-14 09:33:09.617 +05:30 [DBG] SaveChanges completed for 'BugContext' with 1 entities written to the database.
+2025-07-14 09:33:09.618 +05:30 [INF] Token blacklisted: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o
+2025-07-14 09:33:09.618 +05:30 [INF] Logout successful
+2025-07-14 09:33:09.618 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-07-14 09:33:09.618 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-07-14 09:33:09.618 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-07-14 09:33:09.618 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-07-14 09:33:09.618 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-07-14 09:33:09.618 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-07-14 09:33:09.619 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.Logout (bts) in 23.4788ms
+2025-07-14 09:33:09.619 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.Logout (bts)'
+2025-07-14 09:33:09.619 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" completed keep alive response.
+2025-07-14 09:33:09.619 +05:30 [DBG] 'BugContext' disposed.
+2025-07-14 09:33:09.620 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-07-14 09:33:09.620 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-07-14 09:33:09.620 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/Authentication/logout - 200 null text/plain; charset=utf-8 29.6293ms
+2025-07-14 09:33:09.620 +05:30 [DBG] Connection id "0HNE1ODDK5LAU", Request id "0HNE1ODDK5LAU:0000000E": started reading request body.
+2025-07-14 09:33:09.620 +05:30 [DBG] Connection id "0HNE1ODDK5LAU", Request id "0HNE1ODDK5LAU:0000000E": done reading request body.
+2025-07-14 09:33:09.651 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:33:09.651 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:33:09.652 +05:30 [DBG] Socket closed.
+2025-07-14 09:33:09.652 +05:30 [DBG] Removing connection Gd017lNjAK_J4ysQj8mc4Q from the list of connections.
+2025-07-14 09:33:09.652 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:33:09.652 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 3274.5863ms
+2025-07-14 09:33:09.653 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" disconnecting.
+2025-07-14 09:33:09.653 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" received FIN.
+2025-07-14 09:33:09.653 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" stopped.
+2025-07-14 09:33:09.653 +05:30 [DBG] Connection id "0HNE1ODDK5LB3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:33:30.965 +05:30 [DBG] Waiting for the application to finish sending data.
+2025-07-14 09:33:30.965 +05:30 [DBG] OnConnectedAsync ending.
+2025-07-14 09:33:30.966 +05:30 [DBG] Socket closed.
+2025-07-14 09:33:30.966 +05:30 [DBG] Removing connection nYHghLoZgecae2Odr11XCA from the list of connections.
+2025-07-14 09:33:30.966 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-14 09:33:30.966 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/notificationHub?role=DEVELOPER&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmVsb3BlcnNhbXBsZUBnbWFpbC5jb20iLCJNeUFwcF9JZCI6IkRFVmZmZjc5OTRlIiwibmFtZWlkIjoiZGV2ZWxvcGVyc2FtcGxlQGdtYWlsLmNvbSIsInJvbGUiOiJERVZFTE9QRVIiLCJuYmYiOjE3NTI0NjU1NDcsImV4cCI6MTc1MjU1MTk0NywiaWF0IjoxNzUyNDY1NTQ3fQ.xBz87VlprKfz0u2pggGFWaeR_57ntNnMTQWz4keDL4o - 101 null null 127404.6586ms
+2025-07-14 09:33:30.967 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" disconnecting.
+2025-07-14 09:33:30.967 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" stopped.
+2025-07-14 09:33:30.967 +05:30 [DBG] Connection id "0HNE1ODDK5LAP" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:33:38.632 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" received FIN.
+2025-07-14 09:33:38.633 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-14 09:33:38.633 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" disconnecting.
+2025-07-14 09:33:38.633 +05:30 [DBG] Connection id "0HNE1ODDK5LAU" stopped.

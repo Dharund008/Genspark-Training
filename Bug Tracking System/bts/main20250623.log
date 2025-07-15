@@ -1,0 +1,942 @@
+2025-06-23 15:11:40.617 +05:30 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2025-06-23 15:11:40.821 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-23 15:11:40.892 +05:30 [DBG] Hosting starting
+2025-06-23 15:11:41.021 +05:30 [INF] User profile is available. Using '/Users/dharund/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-23 15:11:41.032 +05:30 [DBG] Reading data from file '/Users/dharund/.aspnet/DataProtection-Keys/key-cadc1df3-d71f-417d-9f83-8e79d9f10dbd.xml'.
+2025-06-23 15:11:41.043 +05:30 [DBG] Found key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd}.
+2025-06-23 15:11:41.054 +05:30 [DBG] Considering key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} with expiration date 2025-09-01 05:11:22Z as default key.
+2025-06-23 15:11:41.057 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-06-23 15:11:41.099 +05:30 [DBG] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2025-06-23 15:11:41.099 +05:30 [DBG] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2025-06-23 15:11:41.470 +05:30 [DBG] Using key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} as the default key.
+2025-06-23 15:11:41.471 +05:30 [DBG] Key ring with default key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} was loaded during application startup.
+2025-06-23 15:11:41.558 +05:30 [INF] Now listening on: http://localhost:5088
+2025-06-23 15:11:41.559 +05:30 [DBG] Loaded hosting startup assembly bts
+2025-06-23 15:11:41.559 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 15:11:41.559 +05:30 [INF] Hosting environment: Development
+2025-06-23 15:11:41.559 +05:30 [INF] Content root path: /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts
+2025-06-23 15:11:41.562 +05:30 [DBG] Hosting started
+2025-06-23 15:11:46.275 +05:30 [DBG] Connection id "0HNDI78LMLSVF" accepted.
+2025-06-23 15:11:46.277 +05:30 [DBG] Connection id "0HNDI78LMLSVF" started.
+2025-06-23 15:11:46.813 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/ - null null
+2025-06-23 15:11:46.823 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-23 15:11:46.874 +05:30 [DBG] No candidates found for the request path '/'
+2025-06-23 15:11:46.875 +05:30 [DBG] Request did not match any endpoints
+2025-06-23 15:11:46.896 +05:30 [DBG] The request path  does not match the path filter
+2025-06-23 15:11:46.897 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-23 15:11:47.119 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-06-23 15:11:47.148 +05:30 [DBG] The request path / does not match a supported file type
+2025-06-23 15:11:47.213 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:11:47.239 +05:30 [DBG] Connection id "0HNDI78LMLSVF" completed keep alive response.
+2025-06-23 15:11:47.242 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/ - 404 0 null 432.9781ms
+2025-06-23 15:11:47.248 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5088/, Response status code: 404
+2025-06-23 15:11:47.273 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/favicon.ico - null null
+2025-06-23 15:11:47.275 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2025-06-23 15:11:47.275 +05:30 [DBG] Request did not match any endpoints
+2025-06-23 15:11:47.277 +05:30 [DBG] The request path  does not match the path filter
+2025-06-23 15:11:47.293 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2025-06-23 15:11:47.294 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:11:47.295 +05:30 [DBG] Connection id "0HNDI78LMLSVF" completed keep alive response.
+2025-06-23 15:11:47.295 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/favicon.ico - 404 0 null 22.3037ms
+2025-06-23 15:11:47.296 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5088/favicon.ico, Response status code: 404
+2025-06-23 15:11:55.971 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/ - null null
+2025-06-23 15:11:55.972 +05:30 [DBG] No candidates found for the request path '/'
+2025-06-23 15:11:55.973 +05:30 [DBG] Request did not match any endpoints
+2025-06-23 15:11:55.974 +05:30 [DBG] The request path  does not match the path filter
+2025-06-23 15:11:55.980 +05:30 [DBG] The request path / does not match a supported file type
+2025-06-23 15:11:55.983 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:11:55.984 +05:30 [DBG] Connection id "0HNDI78LMLSVF" completed keep alive response.
+2025-06-23 15:11:55.984 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/ - 404 0 null 12.834ms
+2025-06-23 15:11:55.985 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5088/, Response status code: 404
+2025-06-23 15:11:59.145 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/swagger/index.html - null null
+2025-06-23 15:11:59.146 +05:30 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-06-23 15:11:59.146 +05:30 [DBG] Request did not match any endpoints
+2025-06-23 15:11:59.234 +05:30 [DBG] Connection id "0HNDI78LMLSVF" completed keep alive response.
+2025-06-23 15:11:59.234 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/swagger/index.html - 200 null text/html;charset=utf-8 88.7873ms
+2025-06-23 15:11:59.506 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5088/swagger/v1/swagger.json - null null
+2025-06-23 15:11:59.507 +05:30 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-06-23 15:11:59.508 +05:30 [DBG] Request did not match any endpoints
+2025-06-23 15:11:59.768 +05:30 [DBG] Connection id "0HNDI78LMLSVF" completed keep alive response.
+2025-06-23 15:11:59.769 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5088/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 262.272ms
+2025-06-23 15:12:46.246 +05:30 [DBG] Connection id "0HNDI78LMLSVF" received FIN.
+2025-06-23 15:12:46.249 +05:30 [DBG] Connection id "0HNDI78LMLSVF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-06-23 15:12:46.255 +05:30 [DBG] Connection id "0HNDI78LMLSVF" disconnecting.
+2025-06-23 15:12:46.257 +05:30 [DBG] Connection id "0HNDI78LMLSVF" stopped.
+2025-06-23 15:27:58.881 +05:30 [DBG] Connection id "0HNDI78LMLSVG" accepted.
+2025-06-23 15:27:58.884 +05:30 [DBG] Connection id "0HNDI78LMLSVG" started.
+2025-06-23 15:27:58.888 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - null 0
+2025-06-23 15:27:58.895 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-06-23 15:27:58.896 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-06-23 15:27:58.899 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-06-23 15:27:58.900 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:27:58.902 +05:30 [DBG] The request is a preflight request.
+2025-06-23 15:27:58.904 +05:30 [DBG] Connection id "0HNDI78LMLSVG" completed keep alive response.
+2025-06-23 15:27:58.905 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - 204 null null 16.9855ms
+2025-06-23 15:27:58.907 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/Authentication/login - application/json 55
+2025-06-23 15:27:58.909 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-06-23 15:27:58.914 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)' with route pattern 'api/Authentication/login' is valid for the request path '/api/Authentication/login'
+2025-06-23 15:27:58.914 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:27:58.915 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-06-23 15:27:58.915 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:27:58.916 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:27:58.919 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:27:58.920 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:27:58.922 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:27:58.953 +05:30 [INF] Route matched with {action = "UserAuthenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Bts.Models.DTO.LoginResponse]] UserAuthenticate(Bts.Models.DTO.Login) on controller Bts.Controllers.AuthenticationController (bts).
+2025-06-23 15:27:58.955 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-23 15:27:58.955 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-23 15:27:58.955 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-23 15:27:58.956 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-06-23 15:27:58.956 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-23 15:27:58.957 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-06-23 15:27:58.959 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-06-23 15:27:58.963 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-06-23 15:27:58.965 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' using the name '' in request data ...
+2025-06-23 15:27:58.965 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-06-23 15:27:58.986 +05:30 [DBG] Connection id "0HNDI78LMLSVG", Request id "0HNDI78LMLSVG:00000002": started reading request body.
+2025-06-23 15:27:58.987 +05:30 [DBG] Connection id "0HNDI78LMLSVG", Request id "0HNDI78LMLSVG:00000002": done reading request body.
+2025-06-23 15:27:58.992 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Bts.Models.DTO.Login'
+2025-06-23 15:27:58.993 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:27:58.993 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:27:58.993 +05:30 [DBG] Attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-06-23 15:27:58.999 +05:30 [DBG] Done attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:27:59.758 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-06-23 15:27:59.794 +05:30 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .SingleOrDefault(u => u.Username == __name_0)'
+2025-06-23 15:28:00.062 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(2) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Username == @__name_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(2) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Username == @__name_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Bts.Models.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Bts.Models.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Bts.Models.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<Password>k__BackingField = dataReader.GetString(1);
+                                    instance.<Role>k__BackingField = dataReader.GetString(2);
+                                    instance.<Username>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Bts.Models.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Bts.Contexts.BugContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-06-23 15:28:00.096 +05:30 [DBG] Creating DbConnection.
+2025-06-23 15:28:00.135 +05:30 [DBG] Created DbConnection. (37ms).
+2025-06-23 15:28:00.138 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:00.259 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:00.262 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:28:00.267 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2025-06-23 15:28:00.271 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (9ms).
+2025-06-23 15:28:00.277 +05:30 [DBG] Executing DbCommand [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-06-23 15:28:00.345 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-06-23 15:28:00.382 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:28:00.401 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:00.411 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 60ms reading results.
+2025-06-23 15:28:00.414 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:00.419 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (4ms).
+2025-06-23 15:28:01.038 +05:30 [ERR] Error during user login
+System.Exception: Invalid password
+   at Bts.Services.AuthenticationService.UserLogin(Login user) in /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts/Services/AuthenticationService.cs:line 78
+2025-06-23 15:28:01.074 +05:30 [ERR] Error during authentication
+System.Exception: User is deactived or Failed to retrieve token
+ ---> System.Exception: Invalid password
+   at Bts.Services.AuthenticationService.UserLogin(Login user) in /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts/Services/AuthenticationService.cs:line 78
+   --- End of inner exception stack trace ---
+   at Bts.Services.AuthenticationService.UserLogin(Login user) in /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts/Services/AuthenticationService.cs:line 90
+   at Bts.Controllers.AuthenticationController.UserAuthenticate(Login loginRequest) in /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts/Controllers/AuthenticationController.cs:line 34
+2025-06-23 15:28:01.078 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-23 15:28:01.080 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-06-23 15:28:01.080 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-23 15:28:01.080 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-23 15:28:01.080 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-06-23 15:28:01.081 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-23 15:28:01.085 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.UserAuthenticate (bts) in 2125.8171ms
+2025-06-23 15:28:01.086 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:28:01.088 +05:30 [DBG] Connection id "0HNDI78LMLSVG" completed keep alive response.
+2025-06-23 15:28:01.089 +05:30 [DBG] 'BugContext' disposed.
+2025-06-23 15:28:01.093 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:01.095 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (1ms).
+2025-06-23 15:28:01.095 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/Authentication/login - 401 null text/plain; charset=utf-8 2188.6749ms
+2025-06-23 15:28:51.604 +05:30 [DBG] Connection id "0HNDI78LMLSVG" received FIN.
+2025-06-23 15:28:51.605 +05:30 [DBG] Connection id "0HNDI78LMLSVG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-06-23 15:28:51.605 +05:30 [DBG] Connection id "0HNDI78LMLSVG" disconnecting.
+2025-06-23 15:28:51.605 +05:30 [DBG] Connection id "0HNDI78LMLSVG" stopped.
+2025-06-23 15:28:51.606 +05:30 [DBG] Connection id "0HNDI78LMLSVH" accepted.
+2025-06-23 15:28:51.606 +05:30 [DBG] Connection id "0HNDI78LMLSVH" started.
+2025-06-23 15:28:51.606 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/User/forgot-password - application/json 33
+2025-06-23 15:28:51.607 +05:30 [DBG] 1 candidate(s) found for the request path '/api/User/forgot-password'
+2025-06-23 15:28:51.607 +05:30 [DBG] Endpoint 'Bts.Controllers.UserController.ForgotPassword (bts)' with route pattern 'api/User/forgot-password' is valid for the request path '/api/User/forgot-password'
+2025-06-23 15:28:51.608 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.UserController.ForgotPassword (bts)'
+2025-06-23 15:28:51.608 +05:30 [DBG] The request has an origin header: 'http://localhost:5088'.
+2025-06-23 15:28:51.608 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:28:51.610 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:28:51.612 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:28:51.613 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:28:51.613 +05:30 [INF] Executing endpoint 'Bts.Controllers.UserController.ForgotPassword (bts)'
+2025-06-23 15:28:51.623 +05:30 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(Bts.Models.DTO.ForgotPasswordDTO) on controller Bts.Controllers.UserController (bts).
+2025-06-23 15:28:51.623 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-23 15:28:51.623 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-23 15:28:51.624 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-23 15:28:51.624 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-06-23 15:28:51.624 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-23 15:28:51.624 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.UserController (bts)
+2025-06-23 15:28:51.627 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.UserController (bts)
+2025-06-23 15:28:51.627 +05:30 [DBG] Attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO' ...
+2025-06-23 15:28:51.628 +05:30 [DBG] Attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO' using the name '' in request data ...
+2025-06-23 15:28:51.628 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-06-23 15:28:51.629 +05:30 [DBG] Connection id "0HNDI78LMLSVH", Request id "0HNDI78LMLSVH:00000001": started reading request body.
+2025-06-23 15:28:51.629 +05:30 [DBG] Connection id "0HNDI78LMLSVH", Request id "0HNDI78LMLSVH:00000001": done reading request body.
+2025-06-23 15:28:51.631 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Bts.Models.DTO.ForgotPasswordDTO'
+2025-06-23 15:28:51.631 +05:30 [DBG] Done attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO'.
+2025-06-23 15:28:51.631 +05:30 [DBG] Done attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO'.
+2025-06-23 15:28:51.631 +05:30 [DBG] Attempting to validate the bound parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO' ...
+2025-06-23 15:28:51.633 +05:30 [DBG] Done attempting to validate the bound parameter 'dto' of type 'Bts.Models.DTO.ForgotPasswordDTO'.
+2025-06-23 15:28:51.654 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-06-23 15:28:51.656 +05:30 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .SingleOrDefault(u => u.Username == __email_0)'
+2025-06-23 15:28:51.662 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(2) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Username == @__email_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(2) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Username == @__email_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Bts.Models.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Bts.Models.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Bts.Models.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<Password>k__BackingField = dataReader.GetString(1);
+                                    instance.<Role>k__BackingField = dataReader.GetString(2);
+                                    instance.<Username>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Bts.Models.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Bts.Contexts.BugContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-06-23 15:28:51.665 +05:30 [DBG] Creating DbConnection.
+2025-06-23 15:28:51.665 +05:30 [DBG] Created DbConnection. (0ms).
+2025-06-23 15:28:51.665 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.666 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.666 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:28:51.666 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:28:51.666 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:28:51.667 +05:30 [DBG] Executing DbCommand [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__email_0
+LIMIT 2
+2025-06-23 15:28:51.671 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__email_0
+LIMIT 2
+2025-06-23 15:28:51.672 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:28:51.672 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.672 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-06-23 15:28:51.673 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.673 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:28:51.693 +05:30 [DBG] 'BugContext' generated a temporary value for the property 'PasswordReset.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:28:51.718 +05:30 [DBG] Context 'BugContext' started tracking 'PasswordReset' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:28:51.722 +05:30 [DBG] SaveChanges starting for 'BugContext'.
+2025-06-23 15:28:51.725 +05:30 [DBG] DetectChanges starting for 'BugContext'.
+2025-06-23 15:28:51.743 +05:30 [DBG] DetectChanges completed for 'BugContext'.
+2025-06-23 15:28:51.801 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.801 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.802 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:28:51.802 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:28:51.803 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:28:51.803 +05:30 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PasswordResets" ("Expiry", "Token", "UserId")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-23 15:28:51.825 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "PasswordResets" ("Expiry", "Token", "UserId")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-23 15:28:51.836 +05:30 [DBG] The foreign key property 'PasswordReset.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-06-23 15:28:51.840 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.840 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 14ms reading results.
+2025-06-23 15:28:51.841 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.841 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:28:51.851 +05:30 [DBG] An entity of type 'PasswordReset' tracked by 'BugContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:28:51.853 +05:30 [DBG] SaveChanges completed for 'BugContext' with 1 entities written to the database.
+2025-06-23 15:28:51.853 +05:30 [INF] Password reset token saved for user ADMa3eca694 with token 305ac379-a2d7-4233-973d-888d55e4ba4f
+2025-06-23 15:28:51.853 +05:30 [INF] Password reset token generated for email admin4@gmail.com
+2025-06-23 15:28:51.854 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-23 15:28:51.855 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-06-23 15:28:51.855 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-23 15:28:51.855 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-23 15:28:51.855 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-06-23 15:28:51.855 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-23 15:28:51.872 +05:30 [INF] Executed action Bts.Controllers.UserController.ForgotPassword (bts) in 247.496ms
+2025-06-23 15:28:51.872 +05:30 [INF] Executed endpoint 'Bts.Controllers.UserController.ForgotPassword (bts)'
+2025-06-23 15:28:51.872 +05:30 [DBG] Connection id "0HNDI78LMLSVH" completed keep alive response.
+2025-06-23 15:28:51.872 +05:30 [DBG] 'BugContext' disposed.
+2025-06-23 15:28:51.872 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:28:51.873 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:28:51.873 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/User/forgot-password - 200 null application/json; charset=utf-8 266.361ms
+2025-06-23 15:29:09.396 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/User/reset-password - application/json 84
+2025-06-23 15:29:09.398 +05:30 [DBG] 1 candidate(s) found for the request path '/api/User/reset-password'
+2025-06-23 15:29:09.398 +05:30 [DBG] Endpoint 'Bts.Controllers.UserController.ResetPassword (bts)' with route pattern 'api/User/reset-password' is valid for the request path '/api/User/reset-password'
+2025-06-23 15:29:09.398 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.UserController.ResetPassword (bts)'
+2025-06-23 15:29:09.399 +05:30 [DBG] The request has an origin header: 'http://localhost:5088'.
+2025-06-23 15:29:09.399 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:29:09.399 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:29:09.400 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:29:09.400 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:29:09.400 +05:30 [INF] Executing endpoint 'Bts.Controllers.UserController.ResetPassword (bts)'
+2025-06-23 15:29:09.406 +05:30 [INF] Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(Bts.Models.DTO.ResetPasswordDTO) on controller Bts.Controllers.UserController (bts).
+2025-06-23 15:29:09.406 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-23 15:29:09.407 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-23 15:29:09.407 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-23 15:29:09.407 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-06-23 15:29:09.407 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-23 15:29:09.407 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.UserController (bts)
+2025-06-23 15:29:09.408 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.UserController (bts)
+2025-06-23 15:29:09.408 +05:30 [DBG] Attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO' ...
+2025-06-23 15:29:09.408 +05:30 [DBG] Attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO' using the name '' in request data ...
+2025-06-23 15:29:09.408 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-06-23 15:29:09.409 +05:30 [DBG] Connection id "0HNDI78LMLSVH", Request id "0HNDI78LMLSVH:00000002": started reading request body.
+2025-06-23 15:29:09.409 +05:30 [DBG] Connection id "0HNDI78LMLSVH", Request id "0HNDI78LMLSVH:00000002": done reading request body.
+2025-06-23 15:29:09.410 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Bts.Models.DTO.ResetPasswordDTO'
+2025-06-23 15:29:09.410 +05:30 [DBG] Done attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO'.
+2025-06-23 15:29:09.410 +05:30 [DBG] Done attempting to bind parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO'.
+2025-06-23 15:29:09.410 +05:30 [DBG] Attempting to validate the bound parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO' ...
+2025-06-23 15:29:09.411 +05:30 [DBG] Done attempting to validate the bound parameter 'dto' of type 'Bts.Models.DTO.ResetPasswordDTO'.
+2025-06-23 15:29:09.486 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-06-23 15:29:09.488 +05:30 [DBG] Compiling query expression: 
+'DbSet<PasswordReset>()
+    .FirstOrDefault(r => r.Token == __dto_Token_0 && r.Expiry > DateTime.UtcNow)'
+2025-06-23 15:29:09.502 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<PasswordReset>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<PasswordReset>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: PasswordReset.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: PasswordReset.Expiry (DateTime) Required, 1], [Property: PasswordReset.Token (string) Required, 2], [Property: PasswordReset.UserId (string) Required, 3] }
+            SELECT TOP(1) p.Id, p.Expiry, p.Token, p.UserId
+            FROM PasswordResets AS p
+            WHERE (p.Token == @__dto_Token_0) && (p.Expiry > now())) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: PasswordReset.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: PasswordReset.Expiry (DateTime) Required, 1], [Property: PasswordReset.Token (string) Required, 2], [Property: PasswordReset.UserId (string) Required, 3] }
+            SELECT TOP(1) p.Id, p.Expiry, p.Token, p.UserId
+            FROM PasswordResets AS p
+            WHERE (p.Token == @__dto_Token_0) && (p.Expiry > now()), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            PasswordReset entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                PasswordReset instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(PasswordReset);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: PasswordReset.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Bts.Models.PasswordReset").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (PasswordReset)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: PasswordReset | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Bts.Models.PasswordReset")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: PasswordReset | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Bts.Models.PasswordReset")]: 
+                            {
+                                return 
+                                {
+                                    PasswordReset instance;
+                                    instance = new PasswordReset();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<Expiry>k__BackingField = dataReader.GetDateTime(1);
+                                    instance.<Token>k__BackingField = dataReader.GetString(2);
+                                    instance.<UserId>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: PasswordReset | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Bts.Models.PasswordReset")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(PasswordReset)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Bts.Contexts.BugContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-06-23 15:29:09.507 +05:30 [DBG] Creating DbConnection.
+2025-06-23 15:29:09.507 +05:30 [DBG] Created DbConnection. (0ms).
+2025-06-23 15:29:09.507 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.508 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.508 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:29:09.508 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.508 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.508 +05:30 [DBG] Executing DbCommand [Parameters=[@__dto_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Expiry", p."Token", p."UserId"
+FROM "PasswordResets" AS p
+WHERE p."Token" = @__dto_Token_0 AND p."Expiry" > now()
+LIMIT 1
+2025-06-23 15:29:09.511 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__dto_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."Expiry", p."Token", p."UserId"
+FROM "PasswordResets" AS p
+WHERE p."Token" = @__dto_Token_0 AND p."Expiry" > now()
+LIMIT 1
+2025-06-23 15:29:09.514 +05:30 [DBG] Context 'BugContext' started tracking 'PasswordReset' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.514 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.515 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 4ms reading results.
+2025-06-23 15:29:09.515 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.516 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:29:09.527 +05:30 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(e => EF.Property<string>(e, "Id") == __p_0)'
+2025-06-23 15:29:09.539 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(1) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Id == @__p_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.Password (string) Required, 1], [Property: User.Role (string) Required, 2], [Property: User.Username (string) Required, 3] }
+            SELECT TOP(1) u.Id, u.Password, u.Role, u.Username
+            FROM Users AS u
+            WHERE u.Id == @__p_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Bts.Models.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Bts.Models.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Bts.Models.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<Password>k__BackingField = dataReader.GetString(1);
+                                    instance.<Role>k__BackingField = dataReader.GetString(2);
+                                    instance.<Username>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Bts.Models.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Bts.Contexts.BugContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-06-23 15:29:09.541 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.541 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.541 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:29:09.541 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.541 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.541 +05:30 [DBG] Executing DbCommand [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__p_0
+LIMIT 1
+2025-06-23 15:29:09.543 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Id" = @__p_0
+LIMIT 1
+2025-06-23 15:29:09.543 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.543 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.543 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-06-23 15:29:09.543 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.543 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:29:09.866 +05:30 [DBG] An entity of type 'User' tracked by 'BugContext' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.868 +05:30 [DBG] Compiling query expression: 
+'DbSet<Admin>()
+    .FirstOrDefault(e => EF.Property<string>(e, "Id") == __p_0)'
+2025-06-23 15:29:09.871 +05:30 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Admin>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<Admin>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Admin.Id (string) Required PK FK AfterSave:Throw, 0], [Property: Admin.Email (string) Required, 1], [Property: Admin.Name (string) Required MaxLength(100), 2], [Property: Admin.Password (string) Required, 3] }
+            SELECT TOP(1) a.Id, a.Email, a.Name, a.Password
+            FROM Admins AS a
+            WHERE a.Id == @__p_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Admin.Id (string) Required PK FK AfterSave:Throw, 0], [Property: Admin.Email (string) Required, 1], [Property: Admin.Name (string) Required MaxLength(100), 2], [Property: Admin.Password (string) Required, 3] }
+            SELECT TOP(1) a.Id, a.Email, a.Name, a.Password
+            FROM Admins AS a
+            WHERE a.Id == @__p_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            Admin entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                Admin instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(Admin);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: Admin.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("Bts.Models.Admin").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (Admin)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: Admin | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Bts.Models.Admin")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: Admin | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Bts.Models.Admin")]: 
+                            {
+                                return 
+                                {
+                                    Admin instance;
+                                    instance = new Admin();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<Email>k__BackingField = dataReader.GetString(1);
+                                    instance.<Name>k__BackingField = dataReader.GetString(2);
+                                    instance.<Password>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: Admin | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Bts.Models.Admin")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(Admin)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Bts.Contexts.BugContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-06-23 15:29:09.874 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.874 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.874 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:29:09.874 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.874 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.874 +05:30 [DBG] Executing DbCommand [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."Email", a."Name", a."Password"
+FROM "Admins" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-23 15:29:09.878 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."Email", a."Name", a."Password"
+FROM "Admins" AS a
+WHERE a."Id" = @__p_0
+LIMIT 1
+2025-06-23 15:29:09.889 +05:30 [DBG] The navigation 'User.Admin' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.891 +05:30 [DBG] Context 'BugContext' started tracking 'Admin' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.897 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.897 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 18ms reading results.
+2025-06-23 15:29:09.897 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.897 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:29:09.897 +05:30 [DBG] An entity of type 'Admin' tracked by 'BugContext' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.898 +05:30 [DBG] SaveChanges starting for 'BugContext'.
+2025-06-23 15:29:09.898 +05:30 [DBG] DetectChanges starting for 'BugContext'.
+2025-06-23 15:29:09.899 +05:30 [DBG] DetectChanges completed for 'BugContext'.
+2025-06-23 15:29:09.909 +05:30 [DBG] Executing 2 update commands as a batch.
+2025-06-23 15:29:09.911 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.911 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.912 +05:30 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2025-06-23 15:29:09.916 +05:30 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2025-06-23 15:29:09.917 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:29:09.917 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.918 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:29:09.918 +05:30 [DBG] Executing DbCommand [Parameters=[@p3='?', @p0='?', @p1='?', @p2='?', @p7='?', @p4='?', @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Admins" SET "Email" = @p0, "Name" = @p1, "Password" = @p2
+WHERE "Id" = @p3;
+UPDATE "Users" SET "Password" = @p4, "Role" = @p5, "Username" = @p6
+WHERE "Id" = @p7;
+2025-06-23 15:29:09.925 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p3='?', @p0='?', @p1='?', @p2='?', @p7='?', @p4='?', @p5='?', @p6='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Admins" SET "Email" = @p0, "Name" = @p1, "Password" = @p2
+WHERE "Id" = @p3;
+UPDATE "Users" SET "Password" = @p4, "Role" = @p5, "Username" = @p6
+WHERE "Id" = @p7;
+2025-06-23 15:29:09.925 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.925 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-06-23 15:29:09.928 +05:30 [DBG] Committing transaction.
+2025-06-23 15:29:09.932 +05:30 [DBG] Committed transaction.
+2025-06-23 15:29:09.934 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.935 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:29:09.937 +05:30 [DBG] Disposing transaction.
+2025-06-23 15:29:09.937 +05:30 [DBG] An entity of type 'User' tracked by 'BugContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.937 +05:30 [DBG] An entity of type 'Admin' tracked by 'BugContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:29:09.938 +05:30 [DBG] SaveChanges completed for 'BugContext' with 2 entities written to the database.
+2025-06-23 15:29:09.939 +05:30 [INF] Password reset successful for user 
+2025-06-23 15:29:09.939 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-23 15:29:09.939 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-06-23 15:29:09.939 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-23 15:29:09.939 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-23 15:29:09.939 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2025-06-23 15:29:09.939 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-23 15:29:09.939 +05:30 [INF] Executed action Bts.Controllers.UserController.ResetPassword (bts) in 532.4427ms
+2025-06-23 15:29:09.940 +05:30 [INF] Executed endpoint 'Bts.Controllers.UserController.ResetPassword (bts)'
+2025-06-23 15:29:09.940 +05:30 [DBG] Connection id "0HNDI78LMLSVH" completed keep alive response.
+2025-06-23 15:29:09.940 +05:30 [DBG] 'BugContext' disposed.
+2025-06-23 15:29:09.940 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:29:09.940 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:29:09.940 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/User/reset-password - 200 null text/plain; charset=utf-8 543.6221ms
+2025-06-23 15:30:00.400 +05:30 [DBG] Connection id "0HNDI78LMLSVH" received FIN.
+2025-06-23 15:30:00.401 +05:30 [DBG] Connection id "0HNDI78LMLSVH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-06-23 15:30:00.401 +05:30 [DBG] Connection id "0HNDI78LMLSVH" disconnecting.
+2025-06-23 15:30:00.403 +05:30 [DBG] Connection id "0HNDI78LMLSVH" stopped.
+2025-06-23 15:30:11.813 +05:30 [DBG] Connection id "0HNDI78LMLSVI" accepted.
+2025-06-23 15:30:11.813 +05:30 [DBG] Connection id "0HNDI78LMLSVI" started.
+2025-06-23 15:30:11.813 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - null 0
+2025-06-23 15:30:11.814 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-06-23 15:30:11.814 +05:30 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2025-06-23 15:30:11.814 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-06-23 15:30:11.814 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:30:11.815 +05:30 [DBG] The request is a preflight request.
+2025-06-23 15:30:11.815 +05:30 [DBG] Connection id "0HNDI78LMLSVI" completed keep alive response.
+2025-06-23 15:30:11.815 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5088/api/Authentication/login - 204 null null 1.3023ms
+2025-06-23 15:30:11.816 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5088/api/Authentication/login - application/json 55
+2025-06-23 15:30:11.817 +05:30 [DBG] 1 candidate(s) found for the request path '/api/Authentication/login'
+2025-06-23 15:30:11.817 +05:30 [DBG] Endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)' with route pattern 'api/Authentication/login' is valid for the request path '/api/Authentication/login'
+2025-06-23 15:30:11.817 +05:30 [DBG] Request matched endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:30:11.817 +05:30 [DBG] The request has an origin header: 'http://localhost:4200'.
+2025-06-23 15:30:11.818 +05:30 [INF] CORS policy execution successful.
+2025-06-23 15:30:11.818 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:30:11.818 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-23 15:30:11.818 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-06-23 15:30:11.818 +05:30 [INF] Executing endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:30:11.819 +05:30 [INF] Route matched with {action = "UserAuthenticate", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Bts.Models.DTO.LoginResponse]] UserAuthenticate(Bts.Models.DTO.Login) on controller Bts.Controllers.AuthenticationController (bts).
+2025-06-23 15:30:11.819 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2025-06-23 15:30:11.819 +05:30 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2025-06-23 15:30:11.819 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-23 15:30:11.820 +05:30 [DBG] Execution plan of exception filters (in the following order): ["CustomExceptionFilter (Order: 0)"]
+2025-06-23 15:30:11.820 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-23 15:30:11.820 +05:30 [DBG] Executing controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-06-23 15:30:11.821 +05:30 [DBG] Executed controller factory for controller Bts.Controllers.AuthenticationController (bts)
+2025-06-23 15:30:11.821 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-06-23 15:30:11.821 +05:30 [DBG] Attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login' using the name '' in request data ...
+2025-06-23 15:30:11.821 +05:30 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2025-06-23 15:30:11.821 +05:30 [DBG] Connection id "0HNDI78LMLSVI", Request id "0HNDI78LMLSVI:00000002": started reading request body.
+2025-06-23 15:30:11.821 +05:30 [DBG] Connection id "0HNDI78LMLSVI", Request id "0HNDI78LMLSVI:00000002": done reading request body.
+2025-06-23 15:30:11.822 +05:30 [DBG] JSON input formatter succeeded, deserializing to type 'Bts.Models.DTO.Login'
+2025-06-23 15:30:11.822 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:30:11.822 +05:30 [DBG] Done attempting to bind parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:30:11.822 +05:30 [DBG] Attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login' ...
+2025-06-23 15:30:11.822 +05:30 [DBG] Done attempting to validate the bound parameter 'loginRequest' of type 'Bts.Models.DTO.Login'.
+2025-06-23 15:30:11.823 +05:30 [DBG] Entity Framework Core 9.0.5 initialized 'BugContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:9.0.4+fd2380957bee5cd86f336466af36b08c0163f1a5' with options: None
+2025-06-23 15:30:11.827 +05:30 [DBG] Creating DbConnection.
+2025-06-23 15:30:11.828 +05:30 [DBG] Created DbConnection. (0ms).
+2025-06-23 15:30:11.828 +05:30 [DBG] Opening connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:30:11.828 +05:30 [DBG] Opened connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:30:11.828 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-06-23 15:30:11.828 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:30:11.828 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-06-23 15:30:11.828 +05:30 [DBG] Executing DbCommand [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-06-23 15:30:11.829 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Password", u."Role", u."Username"
+FROM "Users" AS u
+WHERE u."Username" = @__name_0
+LIMIT 2
+2025-06-23 15:30:11.830 +05:30 [DBG] Context 'BugContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-06-23 15:30:11.830 +05:30 [DBG] Closing data reader to 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:30:11.830 +05:30 [DBG] A data reader for 'BugTrackingSystem' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-06-23 15:30:11.830 +05:30 [DBG] Closing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:30:11.830 +05:30 [DBG] Closed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:30:12.137 +05:30 [INF] User authenticated successfully: admin4@gmail.com
+2025-06-23 15:30:12.137 +05:30 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-23 15:30:12.137 +05:30 [DBG] No information found on request to perform content negotiation.
+2025-06-23 15:30:12.137 +05:30 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-23 15:30:12.137 +05:30 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-23 15:30:12.137 +05:30 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-06-23 15:30:12.137 +05:30 [INF] Executing OkObjectResult, writing value of type 'Bts.Models.DTO.LoginResponse'.
+2025-06-23 15:30:12.138 +05:30 [INF] Executed action Bts.Controllers.AuthenticationController.UserAuthenticate (bts) in 318.3685ms
+2025-06-23 15:30:12.138 +05:30 [INF] Executed endpoint 'Bts.Controllers.AuthenticationController.UserAuthenticate (bts)'
+2025-06-23 15:30:12.139 +05:30 [DBG] Connection id "0HNDI78LMLSVI" completed keep alive response.
+2025-06-23 15:30:12.139 +05:30 [DBG] 'BugContext' disposed.
+2025-06-23 15:30:12.139 +05:30 [DBG] Disposing connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432'.
+2025-06-23 15:30:12.139 +05:30 [DBG] Disposed connection to database 'BugTrackingSystem' on server 'tcp://localhost:5432' (0ms).
+2025-06-23 15:30:12.139 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5088/api/Authentication/login - 200 null application/json; charset=utf-8 322.5334ms
+2025-06-23 15:31:11.813 +05:30 [DBG] Connection id "0HNDI78LMLSVI" received FIN.
+2025-06-23 15:31:11.813 +05:30 [DBG] Connection id "0HNDI78LMLSVI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-06-23 15:31:11.813 +05:30 [DBG] Connection id "0HNDI78LMLSVI" disconnecting.
+2025-06-23 15:31:11.814 +05:30 [DBG] Connection id "0HNDI78LMLSVI" stopped.

@@ -97,6 +97,7 @@ builder.Services.AddTransient<ICommentService, CommentService>();
 builder.Services.AddTransient<IBugService, BugService>();
 builder.Services.AddTransient<IBugLogService, BugLogService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IStatisticsService, StatisticsService>();
 
 #endregion
 

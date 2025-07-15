@@ -1,0 +1,18 @@
+2025-07-11 15:58:56.584 +05:30 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2025-07-11 15:58:56.773 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-11 15:58:56.844 +05:30 [DBG] Hosting starting
+2025-07-11 15:58:56.878 +05:30 [INF] User profile is available. Using '/Users/dharund/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-07-11 15:58:56.895 +05:30 [DBG] Reading data from file '/Users/dharund/.aspnet/DataProtection-Keys/key-cadc1df3-d71f-417d-9f83-8e79d9f10dbd.xml'.
+2025-07-11 15:58:56.912 +05:30 [DBG] Found key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd}.
+2025-07-11 15:58:56.926 +05:30 [DBG] Considering key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} with expiration date 2025-09-01 05:11:22Z as default key.
+2025-07-11 15:58:56.930 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-11 15:58:56.943 +05:30 [DBG] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2025-07-11 15:58:56.943 +05:30 [DBG] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2025-07-11 15:58:56.955 +05:30 [DBG] Using key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} as the default key.
+2025-07-11 15:58:56.958 +05:30 [DBG] Key ring with default key {cadc1df3-d71f-417d-9f83-8e79d9f10dbd} was loaded during application startup.
+2025-07-11 15:58:57.037 +05:30 [INF] Now listening on: http://localhost:5088
+2025-07-11 15:58:57.037 +05:30 [DBG] Loaded hosting startup assembly bts
+2025-07-11 15:58:57.037 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-11 15:58:57.038 +05:30 [INF] Hosting environment: Development
+2025-07-11 15:58:57.038 +05:30 [INF] Content root path: /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/Bug Tracking System/bts
+2025-07-11 15:58:57.040 +05:30 [DBG] Hosting started
