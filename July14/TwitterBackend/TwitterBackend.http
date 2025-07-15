@@ -1,0 +1,6 @@
+@TwitterBackend_HostAddress = http://localhost:5108
+
+GET {{TwitterBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
