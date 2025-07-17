@@ -1,0 +1,96 @@
+dharund@DharunDs-MacBook-Pro July17 % az acr credential show --name dharuncontainerregistry
+{
+  "passwords": [
+    {
+      "name": "password",
+      "value": "2qdaVeSXR9ck8Lf3Qm8uT2kv3EPoWv03QoIGaJdPZs+ACRAq/g4M"
+    },
+    {
+      "name": "password2",
+      "value": "t269W4dDG1BEH+DcvUJw0y6bShREhG/ADDtCa61gKP+ACRD4ZArF"
+    }
+  ],
+  "username": "dharuncontainerregistry"
+}
+
+
+az container create --resource-group genspark-dharun --name acr-tasks --image dharuncontainerregistry.azurecr.io/helloacrtasks:v1 --registry-login-server dharuncontainerregistry.azurecr.io --ip-address Public --location eastus --registry-username dharuncontainerregistry --registry-password 2qdaVeSXR9ck8Lf3Qm8uT2kv3EPoWv03QoIGaJdPZs+ACRAq/g4M --os-type Linux --cpu 1 --memory 1
+
+
+az container show --resource-group genspark-dharun --name acr-tasks --query ipAddress.ip --output table
+
+
+
+az acr replication create --registry dharuncontainerregistry --location eastus2
+
+az acr replication list --registry dharuncontainerregistry --output table
+
+
+
+private container registry:
+az acr create --resource-group genspark-dharun --name dharuncr2 --sku Standard --role-assignment-mode 'rbac-abac' --dnl-scope TenantReuse 
+
+az acr login --name dharuncr2
+
+az acr repository list --name dharuncr2 --output table
+
+
+docker tag mcr.microsoft.com/hello-world dharuncr2-fxdfb7enb6brgehx.azurecr.io/hello-world:v1
+
+docker push dharuncr2-fxdfb7enb6brgehx.azurecr.io/hello-world:v1
+
+
+
+dharund@DharunDs-MacBook-Pro July17 % az acr credential show --name dharunacr2
+
+{
+  "passwords": [
+    {
+      "name": "password",
+      "value": "55bKo3K3WaCs8T6zna908wGnZinHRAFJ683BQpgel7+ACRC4arxZ"
+    },
+    {
+      "name": "password2",
+      "value": "0A585EHXt5pcDNTR/CIfLKpbK36cEvsVAvUwzcoVAg+ACRCvAJuF"
+    }
+  ],
+  "username": "dharuncr2"
+}
+
+docker login dharuncr2-fxdfb7enb6brgehx.azurecr.io -u dharuncr2 -p 55bKo3K3WaCs8T6zna908wGnZinHRAFJ683BQpgel7+ACRC4arxZ
+
+
+
+az acr repository list --name dharuncr2 --output table
+
+
+
+dharund@DharunDs-MacBook-Pro July17 % az acr credential show --name dharunacr2
+{
+  "passwords": [
+    {
+      "name": "password",
+      "value": "DyUxdKbGs5oziHAZJdV9Gv2Iuc01xai7bltrKpWx+i+ACRBqWKI3"
+    },
+    {
+      "name": "password2",
+      "value": "3J7agDI0wuvjra6LKA1L+YADe2EPVHTSRt8MJoG2Vd+ACRDfz+qj"
+    }
+  ],
+  "username": "dharunacr2"
+}
+
+non dnl:
+docker tag mcr.microsoft.com/hello-world dharunacr2.azurecr.io/hello-world:v1
+
+docker push dharunacr2.azurecr.io/hello-world:v1
+
+az acr repository list --name dharunacr2 --output table
+
+
+docker run dharunacr2/hello-world:v1
+
+docker rmi dharunacr2/hello-world:v1
+
+
+az acr repository list --name dharunacr2 --output table
