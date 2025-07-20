@@ -2,38 +2,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AdminStatistics, DeveloperStatistics, TesterStatistics } from '../models/Staticstics.model';
+import { DashboardStats } from '../models//Staticstics.model';
+import { AuthService } from './AuthService';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatisticsService {
-  private readonly API_URL = 'http://localhost:5088/api/Statistics';
+  private apiUrl = 'http://localhost:5088/api/Statistics';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('token');
+    const token = this.authService.getToken();
     return new HttpHeaders({
-      'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
   }
 
-  getAdminStatistics(): Observable<AdminStatistics> {
-    return this.http.get<AdminStatistics>(`${this.API_URL}/ADMIN`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-
-  getDeveloperStatistics(): Observable<DeveloperStatistics> {
-    return this.http.get<DeveloperStatistics>(`${this.API_URL}/DEVELOPER`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-
-  getTesterStatistics(): Observable<TesterStatistics> {
-    return this.http.get<TesterStatistics>(`${this.API_URL}/TESTER`, {
+  getDashboardStats(role: string): Observable<DashboardStats> {
+    return this.http.get<DashboardStats>(`${this.apiUrl}/${role}`, {
       headers: this.getAuthHeaders()
     });
   }

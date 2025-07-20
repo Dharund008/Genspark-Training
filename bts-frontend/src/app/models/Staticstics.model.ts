@@ -1,36 +1,28 @@
-export interface AdminStatistics {
-  totalUsers: number;
-  totalDevelopers: number;
-  totalTesters: number;
-  totalAdmins: number;
-  totalBugsCreated: number;
+export interface DashboardStats {
+  //admin
+  totalUsers?: number;
+  totalBugs: number;
+  openBugs: number;
   totalBugsDeleted: number;
-  totalBugsFixed: number;
-  totalBugsInProgress: number;
-  totalCommentsByAdmin: number;
-  activeDevelopers: number;
-  activeTesters: number;
-}
+  totalBugsClosed: number;
+  totalBugsInPorgress?: number;
+  resolvedBugs?: number;
+  totalDevelopers?: number;
+  totalTesters?: number;
+  totalComments?: number;
+  
+  
+  //tester
+  testerComments?: number; //same for every roles.
+  bugsCreated?: number;
+  bugsDeleted?: number;
+  bugsVerified?: number;
+  myBugs?: number;
+  //developer
+  bugsAssigned?: number;
+  bugsFixedByUser?: number;
+  codeFiles?: number;
+  developerComments?: number;
 
-export interface DeveloperStatistics {
-  totalBugsAssigned: number;
-  totalCodeFilesUploaded: number;
-  totalCommentsMade: number;
-  totalBugsFixed: number;
-}
 
-export interface TesterStatistics {
-  totalBugsCreated: number;
-  totalBugsRetested: number;
-  totalBugsVerified: number;
-  totalCommentsMade: number;
-}
-
-export interface CodeFileLog {
-  id: number;
-  developerId: string;
-  fileName: string;
-  filePath: string;
-  bugId?: number;
-  uploadedAt: string;
 }

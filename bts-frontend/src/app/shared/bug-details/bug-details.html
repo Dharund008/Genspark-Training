@@ -1,0 +1,135 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+  <div class="header-actions">
+    <button (click)="goBack()" class="back-btn">
+      <i class="icon">←</i> Back
+    </button>
+  </div>
+
+<!-- <div *ngIf="bug && !bug.title">Bug loaded but title is missing</div> -->
+  <div *ngIf="isLoading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading bug details...</p>
+  </div>
+
+
+  <div *ngIf="!isLoading && bug" class="bug-details-card">
+    <div class="bug-header">
+      <div class="bug-title-section">
+        <h1>{{ bug.title }}</h1>
+        <div class="bug-id">Bug #{{ bug.id }}</div>
+        <!-- <pre *ngIf="bug">{{ bug | json }}</pre> -->
+      </div>
+      
+      <div class="bug-meta">
+        <span class="priority-badge" [class]="'priority-' + getPriorityClass(bug.priority)">
+          {{ getPriorityText(bug.priority) }}
+        </span>
+        <span class="status-badge" [class]="'status-' + getStatusClass(bug.status)" *ngIf="!bug.isDeleted">
+          {{ getStatusText(bug.status) }}
+        </span>
+        <span class="deleted-badge" *ngIf="bug.isDeleted">
+          DELETED
+        </span>
+      </div>
+    </div>
+
+    <div class="bug-content">
+      <div class="bug-info-grid">
+        <div class="info-item">
+          <label>Created By:</label>
+          <span>{{ bug.createdBy }}</span>
+        </div>
+        <div class="info-item">
+          <label>Created At:</label>
+          <span>{{ bug.createdAt | date:'medium' }}</span>
+        </div>
+        <div class="info-item" *ngIf="bug.assignedTo">
+          <label>Assigned To:</label>
+          <span>{{ bug.assignedTo }}</span>
+        </div>
+        <div class="info-item" *ngIf="bug.updatedAt">
+          <label>Last Updated:</label>
+          <span>{{ bug.updatedAt | date:'medium' }}</span>
+        </div>
+      </div>
+
+      <div class="description-section">
+        <h3>Description</h3>
+        <div class="description">{{ bug.description }}</div>
+      </div>
+
+      <div class="screenshot-section" *ngIf="bug.screenshotUrl">
+        <h3>Screenshot</h3>
+        <button (click)="viewScreenshot(bug.screenshotUrl!)" class="screenshot-btn">
+          <i class="icon">🖼️</i> View Screenshot
+        </button>
+      </div>
+
+      <div class="status-update-section" *ngIf="canUpdateStatus()">
+        <h3>Update Status</h3>
+        <div class="status-controls">
+          <select [(ngModel)]="selectedStatus" class="status-select">
+            <option *ngFor="let status of getAvailableStatuses()" [value]="status">
+              {{ getStatusText(status) }}
+            </option>
+          </select>
+          <button (click)="updateStatus()" 
+                  [disabled]="isUpdating || selectedStatus === bug.status" 
+                  class="update-btn">
+            {{ isUpdating ? 'Updating...' : 'Update Status' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <div *ngIf="!isLoading && bug" class="comments-section">
+    <h3>Comments ({{ comments.length }})</h3>
+    
+    <!-- Add Comment -->
+    <div *ngIf="canComment()" class="add-comment">
+      <textarea [(ngModel)]="newComment" 
+                placeholder="Add a comment..." 
+                class="comment-input"
+                rows="3"></textarea>
+      <button (click)="addComment()" 
+              [disabled]="!newComment.trim() || isAddingComment" 
+              class="add-comment-btn">
+        {{ isAddingComment ? 'Adding...' : 'Add Comment' }}
+      </button>
+    </div>
+
+    <!-- Comments List -->
+    <div class="comments-list">
+      <div *ngFor="let comment of comments" class="comment-item">
+        <div class="comment-header">
+          <strong>{{ comment.userId }}</strong>
+          <span class="comment-date">{{ comment.createdAt | date:'medium' }}</span>
+        </div>
+        <div class="comment-message">{{ comment.message }}</div>
+      </div>
+      
+      <div *ngIf="comments.length === 0" class="no-comments">
+        <p>No comments yet. Be the first to add one!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error/Success Messages -->
+  <div *ngIf="errorMessage" class="alert alert-error">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && !bug" class="not-found">
+    <h2>Bug not found</h2>
+    <p>The requested bug could not be found.</p>
+    <button (click)="goBack()" class="back-btn">Go Back</button>
+  </div>
+</div>

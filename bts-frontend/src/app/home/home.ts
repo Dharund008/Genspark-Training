@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
     if (this.feedbackForm.valid) {
       this.isSubmittingFeedback = true;
       
-      // Simulate API call
       setTimeout(() => {
         this.isSubmittingFeedback = false;
         this.feedbackSubmitted = true;
@@ -51,7 +50,6 @@ export class HomeComponent implements OnInit {
 
   onContactSubmit(): void {
     if (this.contactForm.valid) {
-      // Handle contact form submission
       console.log('Contact form submitted:', this.contactForm.value);
       this.contactForm.reset();
     }

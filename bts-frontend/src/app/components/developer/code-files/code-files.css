@@ -1,0 +1,188 @@
+.code-files-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #f9faff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 80px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #344e86;
+}
+
+.header p {
+  margin: 0.25rem 0 1.5rem 0;
+  font-size: 1.1rem;
+  color: #667eea;
+}
+
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #344e86;
+}
+
+.upload-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-form input[type="file"] {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 2px solid #667eea;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.upload-form input[type="file"]:hover {
+  border-color: #4c63d2;
+}
+
+.upload-btn {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:disabled {
+  background-color: #a0a8f7;
+  cursor: not-allowed;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background-color: #5a6fd8;
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.files-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #344e86;
+}
+
+.loading, .no-files {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.file-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.file-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.file-info p {
+  margin: 0.2rem 0;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.file-actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.download-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #2980b9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.page-btn {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-btn:disabled {
+  background-color: #a0a8f7;
+  cursor: not-allowed;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #5a6fd8;
+}
+
+.page-info {
+  font-weight: 600;
+  color: #344e86;
+}

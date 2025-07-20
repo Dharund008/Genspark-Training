@@ -1,0 +1,67 @@
+<app-navigation></app-navigation>
+
+<div class="code-files-container">
+  <div class="header">
+    <h1>Code Files</h1>
+    <p>Upload and manage your code files</p>
+  </div>
+
+  <!-- Upload Section -->
+  <div class="upload-section">
+    <h2>Upload New File</h2>
+    <div class="upload-form">
+      <input type="file" (change)="onFileSelected($event)" accept=".cs,.js,.html,.css,.json,.txt,.py,.java,.cpp,.ts">
+      <button 
+        (click)="onUpload()" 
+        [disabled]="!selectedFile || isUploading"
+        class="upload-btn">
+        {{isUploading ? 'Uploading...' : 'Upload File'}}
+      </button>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+  <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+
+  <!-- Files List -->
+  <div class="files-section">
+    <h2>Uploaded Files</h2>
+    
+    <div *ngIf="isLoading" class="loading">Loading files...</div>
+    
+    <div *ngIf="!isLoading && files.length === 0" class="no-files">
+      No files uploaded yet.
+    </div>
+
+    <div *ngIf="!isLoading && files.length > 0" class="files-grid">
+      <div *ngFor="let file of files" class="file-card">
+        <div class="file-info">
+          <h3>{{file.fileName}}</h3>
+          <p>Developer: {{file.developerId}}</p>
+          <p>Uploaded: {{file.uploadedAt | date:'medium'}}</p>
+        </div>
+        <!-- <div class="file-actions">
+          <a [href]="file.filePath" target="_blank" class="download-btn">Download</a>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div *ngIf="!isLoading && files.length > 0" class="pagination">
+      <button 
+        (click)="previousPage()" 
+        [disabled]="!hasPreviousPage"
+        class="page-btn">
+        Previous
+      </button>
+      <span class="page-info">Page {{currentPage}} of {{Math.ceil(totalFiles / pageSize)}}</span>
+      <button 
+        (click)="nextPage()" 
+        [disabled]="!hasNextPage"
+        class="page-btn">
+        Next
+      </button>
+    </div>
+  </div>
+</div>

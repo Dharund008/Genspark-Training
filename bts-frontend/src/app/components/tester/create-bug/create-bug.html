@@ -1,0 +1,88 @@
+<app-navigation></app-navigation>
+    <div class="container">
+      <h2>Create New Bug</h2>
+      
+      <form (ngSubmit)="onSubmit()" #bugForm="ngForm" class="bug-form">
+        <div class="form-group">
+          <label for="title">Title *</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            [(ngModel)]="bug.title"
+            required
+            #title="ngModel"
+            class="form-control"
+            placeholder="Enter bug title"
+          />
+          <div *ngIf="title.invalid && title.touched" class="error">
+            Title is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea
+            id="description"
+            name="description"
+            [(ngModel)]="bug.description"
+            required
+            #description="ngModel"
+            class="form-control"
+            rows="5"
+            placeholder="Describe the bug in detail"
+          ></textarea>
+          <div *ngIf="description.invalid && description.touched" class="error">
+            Description is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="priority">Priority *</label>
+          <select
+            id="priority"
+            name="priority"
+            [(ngModel)]="bug.priority"
+            required
+            class="form-control"
+          >
+            <option [ngValue]="0">Low</option>
+            <option [ngValue]="1">Medium</option>
+            <option [ngValue]="2">High</option>
+            <option [ngValue]="3">Critical</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="screenshot">Screenshot (Optional)</label>
+          <input
+            type="file"
+            id="screenshot"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+            class="form-control"
+          />
+          <small class="help-text">Upload a screenshot to help illustrate the bug</small>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="submit"
+            [disabled]="bugForm.invalid || isSubmitting"
+            class="btn btn-primary"
+          >
+            {{ isSubmitting ? 'Creating...' : 'Create Bug' }}
+          </button>
+          <button
+            type="button"
+            (click)="goBack()"
+            class="btn btn-secondary"
+          >
+            Cancel
+          </button>
+        </div>
+
+        <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+      </form>
+    </div>

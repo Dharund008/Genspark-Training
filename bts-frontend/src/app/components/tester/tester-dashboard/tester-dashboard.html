@@ -1,0 +1,70 @@
+<app-navigation></app-navigation>
+    <div class="dashboard-container">
+      <h2>Tester Dashboard</h2>
+      
+      <div class="stats-grid" *ngIf="stats">
+        <div class="stat-card">
+          <h3>My Bugs</h3>
+          <p class="stat-number">{{ stats.bugsCreated || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Resolved Bugs</h3>
+          <p class="stat-number resolved">{{ stats.bugsVerified || 0 }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Bugs Deleted</h3>
+          <p class="stat-number open">{{ stats.bugsDeleted || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Total Comments</h3>
+          <p class="stat-number closed">{{ stats.testerComments || 0 }}</p>
+        </div>
+      </div>
+
+      <div class="loading" *ngIf="isLoading">
+        Loading dashboard statistics...
+      </div>
+
+      <div class="error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+          <a routerLink="/tester/create-bug" class="btn btn-primary">
+            Create New Bug
+          </a>
+          <a routerLink="/tester/bugs" class="btn btn-secondary">
+            View My Bugs
+          </a>
+          <button class="btn btn-tertiary" (click)="toggleDownloadUI()">
+            Get Code Files
+          </button>
+        </div>
+        <div *ngIf="showDownloadUI" class="download-ui">
+          <input
+            type="text"
+            placeholder="Enter filename"
+            [(ngModel)]="filename"
+            [disabled]="isDownloading"
+            class="filename-input"
+          />
+          <button
+            class="btn btn-primary"
+            (click)="downloadCodeFile()"
+            [disabled]="isDownloading || !filename.trim()"
+          >
+            {{ isDownloading ? 'Downloading...' : 'Download' }}
+          </button>
+          <button class="btn btn-cancel" (click)="toggleDownloadUI()" [disabled]="isDownloading">
+            Cancel
+          </button>
+          <div class="error-message" *ngIf="downloadError">{{ downloadError }}</div>
+          <div class="success-message" *ngIf="successMessage">{{ successMessage }}</div>
+        </div>
+      </div>
+    </div>

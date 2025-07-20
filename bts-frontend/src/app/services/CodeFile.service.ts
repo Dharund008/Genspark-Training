@@ -1,59 +1,57 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CodeFileLog } from '../models/Staticstics.model';
+import { UploadResponse, UploadedFile } from '../models/FileModel';
+import { AuthService } from './AuthService';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CodeFileService {
-  private readonly API_URL = 'http://localhost:5088/api';
+  private apiUrl = 'http://localhost:5088/api/CodeFile';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('token');
+    const token = this.authService.getToken();
     return new HttpHeaders({
-      'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
   }
 
-  uploadCodeFile(file: File, bugId?: number): Observable<CodeFileLog> {
+  uploadCodeFile(file: File): Observable<{message: string}> {
     const formData = new FormData();
     formData.append('file', file);
-    if (bugId) {
-      formData.append('bugId', bugId.toString());
-    }
-    
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
 
-    return this.http.post<CodeFileLog>(`${this.API_URL}/api/code-files/upload`, formData, {
-      headers: headers
+    return this.http.post<{message: string}>(`${this.apiUrl}/upload`, formData, {
+      headers: this.getAuthHeaders(),
+      responseType: 'text' as 'json'
     });
   }
 
-  getCodeFilesByDeveloper(developerId: number): Observable<CodeFileLog[]> {
-    return this.http.get<CodeFileLog[]>(`${this.API_URL}/api/code-files/developer/${developerId}`, {
+  getAllCodeFiles(page: number = 1, pageSize: number = 5): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('pageSize', pageSize.toString());
+
+    return this.http.get(`${this.apiUrl}/get-all-code-files`, { params,  headers: this.getAuthHeaders() });
+  }
+
+  getFileLogsByDeveloper(developerId: string): Observable<UploadedFile[]> {
+    return this.http.get<UploadedFile[]>(`${this.apiUrl}/filter-developers-filelogs?developerId=${developerId}`, {
       headers: this.getAuthHeaders()
-    });
+    }).pipe(
+      map(response => Array.isArray(response) ? response : [])
+    );
   }
 
-  getAllCodeFiles(): Observable<CodeFileLog[]> {
-    return this.http.get<CodeFileLog[]>(`${this.API_URL}/api/code-files`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-
-  downloadCodeFile(filePath: string): Observable<Blob> {
-    return this.http.get(`${this.API_URL}/api/code-files/download`, {
-      params: { filePath },
+  downloadFile(filename: string): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/downloadfile?filename=${filename}`, {
       headers: this.getAuthHeaders(),
       responseType: 'blob'
     });
   }
 }
+

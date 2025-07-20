@@ -1,76 +1,49 @@
-// export class UserModel{
-// //     {
-// //   "id": 1,
-// //   "username": "emilys",
-// //   "email": "emily.johnson@x.dummyjson.com",
-// //   "firstName": "Emily",
-// //   "lastName": "Johnson",
-// //   "gender": "female",
-// //   "image": "https://dummyjson.com/icon/emilys/128"
-
-// // }
-//     constructor(  public id:number= 0,
-//   public username:string="",
-//   public email:string= "",
-//   public firstName:string= "",
-//   public lastName:string= "",
-//   public gender:string= "",
-//   public image:string= "")
-//   {
-
-//   }
-//   static fromForm(data:{id:number,
-//   username:string,
-//   email:string,
-//     firstName:string,
-//     lastName:string,
-//   gender:string,
-//   image: string}){
-//         return new UserModel(data.id,data.username,data.email,data.firstName,data.lastName,data.gender,data.image);
-//   }
-// }
-
 export interface User {
   id: string;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  role: UserRole;
-  isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export enum UserRole {
-  Admin = 'ADMIN',
-  Developer = 'DEVELOPER',
-  Tester = 'TESTER'
-}
-
-export interface LoginRequest {
-  username: string;
+  username: string; //email field in backend
   password: string;
+  role: string;
+  //isDeleted: boolean;
 }
 
-export interface LoginResponse {
-  token: string;
-  user: User;
-  expiresAt: Date;
+export interface Admin {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  isDeleted: boolean;
 }
 
-export interface Register
-{
+export interface Developer {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  isDeleted: boolean;
+}
+
+export interface Tester {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  isDeleted: boolean;
+}
+
+export interface AdminRequestDTO {
   name: string;
   email: string;
   password: string;
 }
 
-export interface ForgotPasswordRequest {
+export interface DeveloperRequestDTO {
+  name: string;
   email: string;
+  password: string;
 }
 
-export interface ResetPasswordRequest {
-  token: string;
-  newPassword: string;
+export interface TesterRequestDTO {
+  name: string;
+  email: string;
+  password: string;
 }

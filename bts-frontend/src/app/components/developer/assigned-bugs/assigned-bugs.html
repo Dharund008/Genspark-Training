@@ -1,0 +1,64 @@
+ <app-navigation></app-navigation>
+<div class="container">
+  <h2>My Assigned Bugs</h2>
+
+  <div class="filters">
+    <select [(ngModel)]="selectedStatus" (change)="filterBugs()">
+      <option value="">All Status</option>
+      <option *ngFor="let s of [1,2,3,4,5,6,7]" [value]="s">
+        {{ getStatusText(s) }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="selectedPriority" (change)="filterBugs()">
+      <option value="">All Priorities</option>
+      <option *ngFor="let p of [0,1,2,3]" [value]="p">
+        {{ getPriorityText(p) }}
+      </option>
+    </select>
+  </div>
+
+  <div class="bugs-list">
+    <div *ngFor="let bug of filteredBugs" class="bug-card">
+      <div class="bug-header">
+        <h3><a [routerLink]="['/bug', bug.id]">{{ bug.title }}</a></h3>
+        <div class="bug-meta">
+          <span class="priority" [class]="getPriorityClass(bug.priority)">
+            {{ getPriorityText(bug.priority) }}
+          </span>
+          <span class="status" [class]="getStatusClass(bug.status)">
+            {{ getStatusText(bug.status) }}
+          </span>
+        </div>
+      </div>
+
+      <p class="bug-description">{{ bug.description }}</p>
+
+      <div class="bug-info">
+        <small>Created by: {{ bug.createdBy }} on {{ bug.createdAt | date }}</small>
+        <small *ngIf="bug.updatedAt">Last updated: {{ bug.updatedAt | date }}</small>
+      </div>
+
+      <div class="bug-actions" *ngIf="canUpdateStatus(bug)">
+        <select [(ngModel)]="selectedStatuses[bug.id]" class="status-select">
+          <option *ngFor="let status of getAvailableStatuses(bug.status)" [value]="status">
+            {{ getStatusText(status) }}
+          </option>
+        </select>
+
+        <button 
+          class="btn" 
+          (click)="updateBugStatus(bug.id, selectedStatuses[bug.id])"
+          [disabled]="selectedStatuses[bug.id] === bug.status || !selectedStatuses[bug.id]"
+        >
+          Update Status
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="isLoading">Loading assigned bugs...</div>
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+  <div class="empty" *ngIf="!isLoading && filteredBugs.length === 0">No bugs assigned to you.</div>
+</div>

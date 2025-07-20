@@ -3,12 +3,12 @@ export interface Comment {
   id: number;
   bugId: number;
   userId: string;
-  content: string;
+  message: string;
   createdAt: string;
-  username?: string;
+  userRole?: string;
 }
 
-export interface CreateCommentRequest {
+export interface CommentRequestDTO {
   bugId: number;
-  content: string;
+  message: string;
 }

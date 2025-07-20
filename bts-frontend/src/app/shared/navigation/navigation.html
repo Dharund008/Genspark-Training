@@ -1,0 +1,91 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a class="navbar-brand fw-bold fs-3" [routerLink]="['/home']">
+      <i class="fas fa-bug me-2"></i>BugSportz
+    </a>
+    </div>
+
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <div class="nav-links" *ngIf="currentUser">
+        <!-- Admin Links -->
+        <div *ngIf="currentUser.role === 'ADMIN'" class="nav-section">
+          <a [routerLink]="['/admin/dashboard']" class="nav-link">
+            <i class="icon">🏠</i> Dashboard
+          </a>
+          <a [routerLink]="['/admin/users']" class="nav-link">
+            <i class="icon">👥</i> Users
+          </a>
+          <a [routerLink]="['/admin/bugs']" class="nav-link">
+            <i class="icon">🐛</i> Bugs
+          </a>
+        </div>
+
+        <!-- Developer Links -->
+        <div *ngIf="currentUser.role === 'DEVELOPER'" class="nav-section">
+          <a [routerLink]="['/developer/dashboard']" class="nav-link">
+            <i class="icon">🏠</i> Dashboard
+          </a>
+          <a [routerLink]="['/developer/bugs']" class="nav-link">
+            <i class="icon">🐛</i> My Bugs
+          </a>
+          <a [routerLink]="['/developer/files']" class="nav-link">
+            <i class="icon">📁</i> Code Files
+          </a>
+        </div>
+
+        <!-- Tester Links -->
+        <div *ngIf="currentUser.role === 'TESTER'" class="nav-section">
+          <a [routerLink]="['/tester/dashboard']" class="nav-link">
+            <i class="icon">🏠</i> Dashboard
+          </a>
+          <a [routerLink]="['/tester/bugs']" class="nav-link">
+            <i class="icon">🐛</i> My Bugs
+          </a>
+          <a [routerLink]="['/tester/create-bug']" class="nav-link">
+            <i class="icon">➕</i> Create Bug
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="notification-container" *ngIf="currentUser">
+          <button (click)="toggleNotifications()" class="notification-btn" aria-label="Toggle Notifications">
+            <i class="icon">🔔</i>
+            <span *ngIf="unreadCount > 0" class="notification-badge">{{ unreadCount }}</span>
+          </button>
+          
+          <div *ngIf="showNotifications" class="notification-dropdown">
+            <div class="notification-header">
+              <h4>Notifications</h4>
+              <button (click)="clearNotifications()" class="clear-btn" aria-label="Clear All Notifications">Clear All</button>
+            </div>
+            <div class="notification-list">
+              <div *ngFor="let notification of notifications" 
+                   class="notification-item" 
+                   [class.unread]="!notification.read">
+                <p>{{ notification.message }}</p>
+                <small>{{ notification.timestamp | date:'short' }}</small>
+              </div>
+              <div *ngIf="notifications.length === 0" class="no-notifications">
+                No notifications
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-menu" *ngIf="currentUser">
+          <span class="username">{{ currentUser.username }}</span>
+          <span class="user-role">{{ currentUser.role }}</span>
+          <button (click)="logout()" class="logout-btn" >Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

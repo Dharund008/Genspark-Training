@@ -1,0 +1,97 @@
+<app-navigation></app-navigation>
+    <div class="dashboard-container">
+      <h2>Developer Dashboard</h2>
+      
+      <div class="stats-grid" *ngIf="stats">
+        <div class="stat-card">
+          <h3>Assigned Bugs</h3>
+          <p class="stat-number">{{ stats.bugsAssigned }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Bugs Fixed</h3>
+          <p class="stat-number fixed">{{ stats.bugsFixedByUser || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>CodeFiles Uploaded</h3>
+          <p class="stat-number resolved">{{ stats.codeFiles || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Comments</h3>
+          <p class="stat-number closed">{{ stats.developerComments || 0 }}</p>
+        </div>
+      </div>
+
+      <div class="loading" *ngIf="isLoading">
+        Loading dashboard statistics...
+      </div>
+
+      <div class="error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+          <a routerLink="/developer/bugs" class="btn btn-primary">
+            View Assigned Bugs
+          </a>
+          <a routerLink="/developer/files" class="btn btn-secondary">
+            Manage Code Files
+          </a>
+          <button (click)="openUploadModal()" class="nav-button">
+            <i class="icon">⬆️</i> Upload File
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- Upload Modal -->
+  <div *ngIf="showUploadModal" class="modal-overlay" (click)="closeUploadModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Upload Code File</h3>
+        <button (click)="closeUploadModal()" class="close-btn">&times;</button>
+      </div>
+      
+      <div class="upload-area" 
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onFileDrop($event)">
+        <div *ngIf="!selectedFile" class="upload-placeholder">
+          <i class="upload-icon">📁</i>
+          <p>Drag and drop a file here or click to select</p>
+          <input type="file" (change)="onFileSelect($event)" class="file-input">
+        </div>
+        
+        <div *ngIf="selectedFile" class="file-selected">
+          <i class="file-icon">📄</i>
+          <span>{{ selectedFile.name }}</span>
+          <button (click)="selectedFile = null" class="remove-file">Remove</button>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <button (click)="uploadFile()" 
+                [disabled]="!selectedFile || uploading" 
+                class="upload-btn">
+          {{ uploading ? 'Uploading...' : 'Upload' }}
+        </button>
+        <button (click)="closeUploadModal()" class="cancel-btn">Cancel</button>
+      </div>
+      
+      <div 
+        *ngIf="uploadMessage" 
+        class="upload-message" 
+        [ngClass]="{ success: uploadStatus === 'success', error: uploadStatus === 'error' }">
+        {{ uploadMessage }}
+      </div>
+    </div>
+  </div>
+
+
+    

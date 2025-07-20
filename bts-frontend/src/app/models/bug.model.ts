@@ -1,63 +1,52 @@
-export interface Bug {
-  id: string;
-  title: string;
-  description: string;
-  status: BugStatus;
-  severity: BugSeverity;
-  priority: BugPriority;
-  screenshotPath?: string;
-  createdAt: string;
-  updatedAt: string;
-  createdByUser?: string;
-  assignedToUser?: string;
+
+export enum BugPriority {
+  Low = 0,
+  Medium = 1,
+  High = 2,
+  Critical = 3
 }
 
 export enum BugStatus {
-  New = 'New',
-  Assigned = 'Assigned',
-  InProgress = 'InProgress',
-  Verfied = 'Verified',
-  Fixed = 'Fixed',
-  Retesting = 'Retesting',
-  Reopened = 'Reopened',
-  Closed = 'Closed'
+  New = 0,
+  Assigned = 1,
+  InProgress = 2,
+  Fixed = 3,
+  Retesting = 4,
+  Verified = 5,
+  Reopened = 6,
+  Closed = 7
 }
-
-export enum BugSeverity {
-  Low = 'Low',
-  Medium = 'Medium',
-  High = 'High',
-  Critical = 'Critical'
-}
-
-export enum BugPriority {
-  Low = 'Low',
-  Medium = 'Medium',
-  High = 'High',
-  Urgent = 'Urgent'
-}
-
-export interface CreateBugRequest {
+export interface Bug {
+  id: number;
   title: string;
   description: string;
-  priority: 'Low' | 'Medium' | 'High' | 'Critical';
-  screenshotPath?: string;
+  priority: BugPriority;
+  status: BugStatus;
+  assignedTo?: string;
+  createdBy: string;
+  isDeleted: boolean;
+  createdAt: string;
+  updatedAt?: string;
+  screenshotUrl?: string;
 }
 
-export interface UpdateBugRequest {
-  title?: string;
+export interface BugSubmissionDTO {
+  title: string;
+  description: string;
+  priority: BugPriority;
+  screenshotUrl?: string;
+}
+
+export interface UpdateBugPatchDTO {
   description?: string;
-  screenshotPath?: string;
+  priority: BugPriority;
+  screenshotUrl?: string;
 }
 
-export interface UpdateBugStatusRequest {
-  bugId: number;
-  status: 'InProgress' | 'Fixed' | 'Verified' | 'Retesting' | 'Reopened' | 'Closed';
+export interface BugStats {
+  totalBugs: number;
+  openBugs: number;
+  closedBugs: number;
+  inProgressBugs: number;
+  resolvedBugs: number;
 }
-
-
-export interface AssignBugRequest {
-  bugId: number;
-  developerId: number;
-}
-

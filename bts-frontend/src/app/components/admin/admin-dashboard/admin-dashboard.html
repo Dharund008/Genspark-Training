@@ -1,0 +1,61 @@
+<app-navigation></app-navigation>
+    <div class="dashboard-container">
+      <h2>Admin Dashboard</h2>
+      
+      <div class="stats-grid" *ngIf="stats">
+        <div class="stat-card">
+          <h3>Total Users</h3>
+          <p class="stat-number">{{ stats.totalUsers || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Total Bugs</h3>
+          <p class="stat-number">{{ stats.totalBugs }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Open Bugs</h3>
+          <p class="stat-number open">{{ stats.totalBugsInPorgress || 0}}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Closed Bugs</h3>
+          <p class="stat-number closed">{{ stats.totalBugsClosed || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Active Developers</h3>
+          <p class="stat-number">{{ stats.totalDevelopers || 0 }}</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Active Testers</h3>
+          <p class="stat-number">{{ stats.totalTesters || 0 }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Comments</h3>
+          <p class="stat-number">{{ stats.totalComments }}</p>
+        </div>
+      </div>
+
+      <div class="loading" *ngIf="isLoading">
+        Loading dashboard statistics...
+      </div>
+
+      <div class="error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+          <button class="btn btn-primary" routerLink="/admin/users">
+            Manage Users
+          </button>
+          <button class="btn btn-secondary" routerLink="/admin/bugs">
+            View All Bugs
+          </button>
+        </div>
+      </div>
+    </div>

@@ -3,6 +3,7 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  margin-top: 80px;
 }
 
 .animated-bg {

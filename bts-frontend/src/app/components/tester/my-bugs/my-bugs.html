@@ -1,0 +1,70 @@
+<app-navigation></app-navigation>
+    <div class="container">
+      <h2>My Reported Bugs</h2>
+      
+      <div class="action-bar">
+        <a routerLink="/tester/create-bug" class="btn btn-creation">
+          Create New Bug
+        </a>
+        
+        <div class="filters">
+          <select [(ngModel)]="selectedStatus" (change)="filterBugs()">
+           <option value="">All Status</option>
+          <option *ngFor="let s of [0,1,2,3,4,5,6,7]" [value]="s">
+            {{ getStatusText(s) }}
+          </option>
+          </select>
+          
+          <select [(ngModel)]="selectedPriority" (change)="filterBugs()">
+             <option value="">All Priorities</option>
+            <option *ngFor="let p of [0,1,2,3]" [value]="p">
+              {{ getPriorityText(p) }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bugs-list">
+        <div *ngFor="let bug of filteredBugs" class="bug-card">
+          <div class="bug-header">
+            <h3>
+              <a [routerLink]="['/bug', bug.id]">{{ bug.title }}</a>
+            </h3>
+            <div class="bug-meta">
+              <span class="priority-badge" [class]="'priority-' + getPriorityClass(bug.priority)">
+                {{ getPriorityText(bug.priority) }}
+              </span>
+              <span class="status-badge" [class]="'status-' + getStatusClass(bug.status)" *ngIf="!bug.isDeleted">
+                {{ getStatusText(bug.status) }}
+              </span>
+              <span class="deleted-badge" *ngIf="bug.isDeleted">
+                DELETED
+              </span>
+            </div>
+          </div>
+          
+          <p class="bug-description">{{ bug.description }}</p>
+          
+          <div class="bug-info">
+            <small>Created: {{ bug.createdAt | date }}</small>
+            <small *ngIf="bug.updatedAt">Last updated: {{ bug.updatedAt | date }}</small>
+            <small *ngIf="bug.assignedTo">
+              Assigned to: {{ bug.assignedTo }}
+            </small>
+          </div>
+          
+          <!-- <div class="bug-screenshot" *ngIf="bug.screenshotUrl">
+            <img [src]="screenshot(bug.screenshotUrl)" alt="Bug screenshot" class="screenshot" />
+          </div> -->
+        </div>
+      </div>
+
+      <div class="loading" *ngIf="isLoading">Loading your bugs...</div>
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+      <div class="empty" *ngIf="!isLoading && filteredBugs.length === 0">
+        <p>No bugs reported yet.</p>
+        <a routerLink="/tester/create-bug" class="btn btn-primary">
+          Create Your First Bug Report
+        </a>
+      </div>
+    </div>

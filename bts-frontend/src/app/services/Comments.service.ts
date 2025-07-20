@@ -1,39 +1,49 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Comment, CreateCommentRequest } from '../models/Comments.model';
+import { Comment, CommentRequestDTO } from '../models/Comments.model';
+import { AuthService } from './AuthService';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
-  private readonly API_URL = 'http://localhost:5088/api';
-  constructor(private http: HttpClient) {}
+  private apiUrl = 'http://localhost:5088/api/Comment';
+
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getAuthHeaders(): HttpHeaders {
-    const token = localStorage.getItem('token');
+    const token = this.authService.getToken();
     return new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
   }
 
-  getCommentsByBug(bugId: number): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${this.API_URL}/comments/bug/${bugId}`, {
+  addComment(comment: CommentRequestDTO): Observable<Comment> {
+    return this.http.post<Comment>(`${this.apiUrl}/add-comment`, comment, {
       headers: this.getAuthHeaders()
     });
   }
 
-  createComment(commentData: CreateCommentRequest): Observable<Comment> {
-    return this.http.post<Comment>(`${this.API_URL}/comments`, commentData, {
+  getBugComments(bugId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.apiUrl}/bug/${bugId}`, {
       headers: this.getAuthHeaders()
     });
   }
 
-  getCommentsByUser(userId: number): Observable<Comment[]> {
-    return this.http.get<Comment[]>(`${this.API_URL}/comments/user/${userId}`, {
+  getAllComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.apiUrl}/comments-all`, {
       headers: this.getAuthHeaders()
+    });
+  }
+
+  getCommentsByRole(userRole: string): Observable<Comment[]> {
+    const params = new HttpParams().set('userRole', userRole);
+    return this.http.get<Comment[]>(`${this.apiUrl}/user-role`, {
+      headers: this.getAuthHeaders(),
+      params: params
     });
   }
 }

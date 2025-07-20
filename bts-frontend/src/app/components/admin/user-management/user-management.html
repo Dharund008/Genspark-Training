@@ -1,0 +1,115 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+  <h2>User Management</h2>
+
+  <!-- Tabs to switch between views -->
+  <div class="tabs">
+    <button class="tab-btn" [class.active]="activeTab === 'users'" (click)="activeTab = 'users'">
+      Users
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'developers'" (click)="activeTab = 'developers'">
+      Developers
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'testers'" (click)="activeTab = 'testers'">
+      Testers
+    </button>
+  </div>
+
+  <!-- Users Tab -->
+  <div *ngIf="activeTab === 'users'" class="user-section">
+    <h3>All Users</h3>
+    <div class="users-list">
+      <div *ngFor="let user of users" class="user-card">
+        <div class="user-info">
+          <h4>{{ user.username }}</h4>
+          <p>{{ user.id }}</p>
+          <span class="role-badge" [class]="user.role.toLowerCase()">{{ user.role }}</span>
+          <!-- <span *ngIf="user.isDeleted" class="deleted-badge">Deleted</span> -->
+        </div>
+      </div>
+      <div *ngIf="users.length === 0 && !isLoading" class="empty-state">
+        No users found
+      </div>
+    </div>
+  </div>
+
+  <!-- Developers Tab -->
+  <div *ngIf="activeTab === 'developers'" class="user-section">
+    <h3>Developers</h3>
+    <button class="btn btn-primary" (click)="showCreateDeveloper = true" *ngIf="!showCreateDeveloper">
+      Add Developer
+    </button>
+
+    <div *ngIf="showCreateDeveloper" class="form-section">
+      <form (ngSubmit)="createDeveloper()">
+        <input type="text" placeholder="Name" [(ngModel)]="newUser.name" name="devName" required />
+        <input type="email" placeholder="Email" [(ngModel)]="newUser.email" name="devEmail" required />
+        <input type="password" placeholder="Password" [(ngModel)]="newUser.password" name="devPassword" required />
+        <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="devConfirmPassword" required />
+        <div class="form-actions">
+          <button class="btn btn-success" type="submit">Create Developer</button>
+          <button class="btn btn-secondary" type="button" (click)="cancelCreateDeveloper()">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="user-list">
+      <div *ngFor="let developer of developers" class="user-card">
+        <div class="user-info">
+          <h4>{{ developer.name }}</h4>
+          <p>{{ developer.email }}</p>
+          <span *ngIf="developer.isDeleted" class="deleted-badge">Deleted</span>
+        </div>
+        <div class="user-actions" *ngIf="!developer.isDeleted">
+          <button class="btn btn-danger btn-sm" (click)="deleteDeveloper(developer.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+      <div *ngIf="developers.length === 0" class="empty-state">No developers found</div>
+    </div>
+  </div>
+
+  <!-- Testers Tab -->
+  <div *ngIf="activeTab === 'testers'" class="user-section">
+    <h3>Testers</h3>
+    <button class="btn btn-primary" (click)="showCreateTester = true" *ngIf="!showCreateTester">
+      Add Tester
+    </button>
+
+    <div *ngIf="showCreateTester" class="form-section">
+      <form (ngSubmit)="createTester()">
+        <input type="text" placeholder="Name" [(ngModel)]="newUser.name" name="testerName" required />
+        <input type="email" placeholder="Email" [(ngModel)]="newUser.email" name="testerEmail" required />
+        <input type="password" placeholder="Password" [(ngModel)]="newUser.password" name="testerPassword" required />
+        <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="testerConfirmPassword" required />
+        <div class="form-actions">
+          <button class="btn btn-success" type="submit">Create Tester</button>
+          <button class="btn btn-secondary" type="button" (click)="cancelCreateTester()">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="user-list">
+      <div *ngFor="let tester of testers" class="user-card">
+        <div class="user-info">
+          <h4>{{ tester.name }}</h4>
+          <p>{{ tester.email }}</p>
+          <span *ngIf="tester.isDeleted" class="deleted-badge">Deleted</span>
+        </div>
+        <div class="user-actions" *ngIf="!tester.isDeleted">
+          <button class="btn btn-danger btn-sm" (click)="deleteTester(tester.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+      <div *ngIf="testers.length === 0" class="empty-state">No testers found</div>
+    </div>
+  </div>
+
+  <!-- Feedback -->
+  <div class="loading" *ngIf="isLoading">Loading...</div>
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+</div>

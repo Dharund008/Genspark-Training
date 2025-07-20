@@ -1,57 +1,7 @@
-
-<div class="dashboard-container">
-  <!-- Header Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold text-primary" routerLink="/home">
-        <i class="fas fa-bug me-2"></i>BugSportz
-      </a>
-      
-      <div class="d-flex align-items-center">
-        <!-- Notifications -->
-        <div class="dropdown me-3">
-          <button class="btn btn-outline-primary position-relative" type="button" data-bs-toggle="dropdown">
-            <i class="fas fa-bell"></i>
-            <span *ngIf="unreadNotifications > 0" class="notification-badge">
-              {{ unreadNotifications > 99 ? '99+' : unreadNotifications }}
-            </span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" style="width: 300px;">
-            <li>
-              <h6 class="dropdown-header d-flex justify-content-between">
-                Notifications
-                <button *ngIf="unreadNotifications > 0" class="btn btn-sm btn-link p-0" 
-                        (click)="markAllNotificationsRead()">
-                  Mark all read
-                </button>
-              </h6>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li *ngIf="unreadNotifications === 0">
-              <span class="dropdown-item-text text-muted">No new notifications</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- User Info -->
-        <div class="dropdown">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            <i class="fas fa-user-circle me-2"></i>{{ currentUser?.username }}
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><span class="dropdown-item-text">Role: {{ currentUser?.role }}</span></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="/dashboard/profile">
-              <i class="fas fa-user me-2"></i>Profile
-            </a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><button class="dropdown-item text-danger" (click)="logout()">
-              <i class="fas fa-sign-out-alt me-2"></i>Logout
-            </button></li>
-          </ul>
-        </div>
+ <app-navigation></app-navigation>
+    <div class="dashboard-container">
+      <div class="welcome-message">
+        <h2>Welcome to Bug Tracking System</h2>
+        <p>Redirecting to your role-specific dashboard...</p>
       </div>
     </div>
-  </nav>
-
-  <div class="row g-0">
