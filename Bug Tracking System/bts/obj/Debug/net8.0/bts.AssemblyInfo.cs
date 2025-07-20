@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8389d7ff36ca22486bc87c865240a478bb37f3a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+973f4f8a6443ec6d87fe1e352116ca678978f925")]
 [assembly: System.Reflection.AssemblyProductAttribute("bts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
