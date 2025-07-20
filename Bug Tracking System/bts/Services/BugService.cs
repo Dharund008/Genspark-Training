@@ -15,6 +15,9 @@ namespace Bts.Services
     public class BugService : IBugService
     {
         private readonly BugContext _context;
+        private readonly ICurrentUserService _currentUserService;
+         private readonly IBugLogService _bugLogService;
+
         private readonly IMapper _mapper;
         private readonly IRepository<int, Bug> _bugrepository;
         private readonly IRepository<string, Tester> _testerRepository;
@@ -28,7 +31,9 @@ namespace Bts.Services
             IRepository<int, Bug> bugrepository,
             IRepository<string, Tester> testerRepository,
             IRepository<string, Developer> developerRepository,
-            ILogger<BugService> logger
+            ILogger<BugService> logger,
+            ICurrentUserService currentUserService,
+            IBugLogService bugLogService
            )
         {
             _context = context;
@@ -37,6 +42,8 @@ namespace Bts.Services
             _testerRepository = testerRepository;
             _developerRepository = developerRepository;
             _logger = logger;
+            _currentUserService = currentUserService;
+            _bugLogService = bugLogService;
         }
 
 
@@ -63,6 +70,27 @@ namespace Bts.Services
                 .ToListAsync();
             _logger.LogInformation("Retrieved bugs by status {Status}", status);
             return bugs;
+        }
+
+         public async Task<bool> UpdateBugStatusAsync(int bugId, BugStatus newStatus)
+        {
+            var bug = await _context.Bugs.FindAsync(bugId);
+            if (bug == null)
+            {
+                _logger.LogWarning("Bug {BugId} not found in UpdateBugStatusAsync", bugId);
+                return false;
+            }
+
+                bug.Status = newStatus;
+                bug.UpdatedAt = DateTime.UtcNow;
+
+                _context.Bugs.Update(bug);
+                await _context.SaveChangesAsync();
+                //buglog
+                await _bugLogService.LogEventAsync(bugId, $"Bug Status changed {newStatus}", _currentUserService.Id);
+                _logger.LogInformation("Updated bug status {NewStatus} for bug {BugId}", newStatus, bugId);
+                return true;
+
         }
 
         public async Task<Bug?> GetBugByIdAsync(int id)
@@ -100,7 +128,7 @@ namespace Bts.Services
             }
 
             var bugs = await _context.Bugs
-                .Where(b => !b.IsDeleted)
+                // .Where(b => !b.IsDeleted)
                 .OrderByDescending(b => b.CreatedAt) // Sort bugs by newest first
                 .Skip((page - 1) * pageSize) // Skip previous pages
                 .Take(pageSize) // Limit results to the requested page

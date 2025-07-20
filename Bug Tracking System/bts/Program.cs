@@ -98,6 +98,7 @@ builder.Services.AddTransient<IBugService, BugService>();
 builder.Services.AddTransient<IBugLogService, BugLogService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IStatisticsService, StatisticsService>();
+builder.Services.AddTransient<ICodeFileService, CodeFileService>();
 
 #endregion
 
@@ -109,7 +110,7 @@ builder.Services.AddRateLimiter(options =>
             partitionKey: httpContext.Connection.RemoteIpAddress?.ToString() ?? "global", // Limit by IP
             factory: _ => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 5,//[Max 100 requests]
+                PermitLimit = 100,//[Max 100 requests]
                 Window = TimeSpan.FromSeconds(10), // Per seconds
                 QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
                 QueueLimit = 0 //Requests over the limit are rejected immediately

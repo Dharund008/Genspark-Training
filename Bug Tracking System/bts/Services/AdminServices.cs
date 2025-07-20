@@ -268,7 +268,7 @@ namespace Bts.Services
 
         public async Task<IEnumerable<Developer>> GetAvailableDevelopersAsync()
         {
-            var activeBugStatuses = new[] { BugStatus.New, BugStatus.Assigned, BugStatus.InProgress, BugStatus.Retesting, BugStatus.Reopened };
+            var activeBugStatuses = new[] { BugStatus.New, BugStatus.Assigned, BugStatus.InProgress,BugStatus.Fixed, BugStatus.Retesting,BugStatus.Verified, BugStatus.Reopened };
 
             var busyDeveloperIds = await _context.Bugs
                 .Where(b => !b.IsDeleted && b.AssignedTo != null && activeBugStatuses.Contains(b.Status))

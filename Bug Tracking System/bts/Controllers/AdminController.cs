@@ -16,17 +16,19 @@ namespace Bts.Controllers
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
+        private readonly IBugService _bugService;
          private readonly IHubContext<NotificationHub> _hubContext;
          private readonly BugContext _context;
          private readonly ILogger<TesterController> _logger;
 
-        public AdminController(IAdminService adminService, IHubContext<NotificationHub> hub, BugContext context, ILogger<TesterController> logger)
+        public AdminController(IAdminService adminService, IHubContext<NotificationHub> hub, BugContext context, ILogger<TesterController> logger,
+            IBugService bugService)
         {
             _adminService = adminService;
             _hubContext = hub;
             _context = context;
             _logger = logger;
-            
+            _bugService = bugService;
         }
 
         [HttpPost("Add-Admin")]
@@ -69,6 +71,9 @@ namespace Bts.Controllers
                     _logger.LogInformation("Developer added successfully: {Email}", developer.Email);
                     return Ok(new { message = "Developer added successfully", developer });
                 }
+                var UserId = User.FindFirst("MyApp_Id")?.Value;
+                await _hubContext.Clients.Group("ADMIN")
+                    .SendAsync("ReceiveMessage", $"{UserId} has added the Developer ({developer.Id} : {developer.Name}).");
 
                 _logger.LogWarning("Developer addition failed.");
                 return BadRequest(new { error = "Failed to add developer" });
@@ -93,7 +98,9 @@ namespace Bts.Controllers
                     _logger.LogInformation("Tester added successfully: {Email}", dto.Email);
                     return Ok(new { message = "Tester added successfully", tester });
                 }
-
+                var UserId = User.FindFirst("MyApp_Id")?.Value;
+                await _hubContext.Clients.Group("ADMIN")
+                    .SendAsync("ReceiveMessage", $"{UserId} has added the Tester ({tester.Id} : {tester.Name}).");
                 _logger.LogWarning("Tester addition failed.");
                 return BadRequest(new { error = "Failed to add tester" });
             }
@@ -118,9 +125,16 @@ namespace Bts.Controllers
                     _logger.LogWarning("Bug not found for assignment: {BugId}", bugId);
                     return NotFound("Bug not found");
                 }
-                await _hubContext.Clients.Group("DEVELOPER")
-                    .SendAsync("ReceiveMessage", $"Admin has assigned a New bug to {developerId}, Bug ID: {bugId}");
-                
+                var bugDetails = await _bugService.GetBugByIdAsync(bugId);
+                await _hubContext.Clients.Group(developerId)
+                    .SendAsync("ReceiveMessage", $"Admin has assigned a new bug to you. Bug ID: {bugId}");
+
+                if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
+                {
+                    await _hubContext.Clients.Group(bugDetails.CreatedBy)
+                        .SendAsync("ReceiveMessage", 
+                            $"Admin has assigned a New bug to {developerId}, Bug ID: {bugId} : {bugDetails.Title}");
+                }
                 _logger.LogInformation("Bug {BugId} assigned to developer {DeveloperId}", bugId, developerId);
 
                 return Ok(new { message = "Bug assigned successfully.", result });
@@ -159,7 +173,7 @@ namespace Bts.Controllers
             var ok = await _adminService.DeleteDeveloperAsync(developerId);
             if (ok)
             {
-                await _hubContext.Clients.Group("DEVELOPER")
+                await _hubContext.Clients.Group("ADMIN")
                     .SendAsync("ReceiveMessage", $"Admin has deleted a developer {developerId}");
                 return Ok();
             }
@@ -175,7 +189,7 @@ namespace Bts.Controllers
             var ok = await _adminService.DeleteTesterAsync(testerId);
             if (ok)
             {
-                await _hubContext.Clients.Group("TESTER")
+                await _hubContext.Clients.Group("ADMIN")
                     .SendAsync("ReceiveMessage", $"Admin has deleted a tester {testerId}");
                 return Ok();
             }

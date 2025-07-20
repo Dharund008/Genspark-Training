@@ -2,9 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Bts.Services;
 using Bts.Models;
 using Bts.Interfaces;
+using Bts.Hubs;
+using Bts.Contexts;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.Authorization;
 
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 namespace Bts.Controllers
 {
     [ApiController]
@@ -13,12 +17,53 @@ namespace Bts.Controllers
     public class BugController : ControllerBase
     {
         private readonly IBugService _bugService;
+        private readonly BugContext _context;
         private readonly ILogger<BugController> _logger;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public BugController(IBugService bugService, ILogger<BugController> logger)
+        public BugController(IBugService bugService, ILogger<BugController> logger,
+                IHubContext<NotificationHub> hubContext, BugContext context)
         {
             _bugService = bugService;
             _logger = logger;
+            _hubContext = hubContext;
+            _context = context;
+        }
+
+
+        [HttpPut("update-bug-status/{bugId}")]
+        public async Task<IActionResult> UpdateBugStatus(int bugId, [FromQuery] BugStatus newStatus)
+        {
+            var result = await _bugService.UpdateBugStatusAsync(bugId, newStatus);
+            if (!result)
+            {
+                _logger.LogWarning("Failed to update bug status {NewStatus} for bug {BugId}", newStatus, bugId);
+                return BadRequest("Invalid bug or status");
+            }
+            var UserId = User.FindFirst("MyApp_Id")?.Value;
+            var bugDetails = await _bugService.GetBugByIdAsync(bugId);
+
+            if (!string.IsNullOrEmpty(bugDetails.AssignedTo))
+            {
+                await _hubContext.Clients.Group(bugDetails.AssignedTo)
+                    .SendAsync("ReceiveMessage", 
+                        $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by {UserId}");
+            }
+
+            if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
+            {
+                await _hubContext.Clients.Group(bugDetails.CreatedBy)
+                    .SendAsync("ReceiveMessage", 
+                        $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by {UserId}");
+            }
+            await _hubContext.Clients.Group("ADMIN")
+                    .SendAsync("ReceiveMessage", $"{UserId} has updated the bug ({bugId}) status to {newStatus}");
+
+            
+
+            _logger.LogInformation("Updated bug status {NewStatus} for bug {BugId} by tester {TesterId}", newStatus, bugId, UserId);
+            //return Ok("Bug status updated");
+            return Ok(new { message = "Bug status updated" });
         }
 
         [HttpGet("bug-id/{id}")]
@@ -46,11 +91,18 @@ namespace Bts.Controllers
         [HttpGet("paginated-bugsall")]
         public async Task<ActionResult<IEnumerable<Bug>>> GetAllBugs(
             [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 7) //in paginated, u need to assign page again for next page
+            [FromQuery] int pageSize = 4) //in paginated, u need to assign page again for next page
         {
+            var total = await _context.Bugs.CountAsync();
             var bugs = await _bugService.GetAllBugsAsync(page, pageSize);
             _logger.LogInformation("Retrieved paginated bugs page {Page} with page size {PageSize}", page, pageSize);
-            return Ok(bugs);
+            return Ok(new
+            {
+                page,
+                pageSize,
+                total,
+                bugs
+            });
         }
 
         // [HttpGet("all")] public async Task<ActionResult<IEnumerable<Bug>>> GetAllBugs() 

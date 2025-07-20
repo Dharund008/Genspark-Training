@@ -5,6 +5,7 @@ namespace Bts.Interfaces
 {
     public interface IBugService
     {
+        Task<bool> UpdateBugStatusAsync(int bugId, BugStatus newStatus);
         public Task<bool> IsBugExists(int id); //search 
         public Task<List<Bug>> GetBugsByStatus(string status); //filter: can check with status
 

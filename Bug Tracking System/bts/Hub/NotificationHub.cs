@@ -9,11 +9,11 @@ namespace Bts.Hubs
         {
             var httpContext = Context.GetHttpContext();
 
-            //var userId = httpContext?.Request.Query["userId"].ToString();
+            var userId = httpContext?.Request.Query["userId"].ToString();
             var role = httpContext?.Request.Query["role"].ToString();
 
-            // if (!string.IsNullOrEmpty(userId))
-            //     await Groups.AddToGroupAsync(Context.ConnectionId, userId);
+            if (!string.IsNullOrEmpty(userId))
+                await Groups.AddToGroupAsync(Context.ConnectionId, userId);
 
             if (!string.IsNullOrEmpty(role))
                 await Groups.AddToGroupAsync(Context.ConnectionId, role.ToUpper());
@@ -21,10 +21,10 @@ namespace Bts.Hubs
             await base.OnConnectedAsync();
         }
 
-        // public async Task SendToUser(string userId, string message)
-        // {
-        //     await Clients.Group(userId).SendAsync("ReceiveMessage", message);
-        // }
+        public async Task SendToUser(string userId, string message)
+        {
+            await Clients.Group(userId).SendAsync("ReceiveMessage", message);
+        }
 
         public async Task SendToRole(string role, string message)
         {

@@ -15,15 +15,17 @@ namespace Bts.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;
+        private readonly IBugService _bugService;
         private readonly IHubContext<NotificationHub> _hubContext;
         private readonly ILogger<CommentController> _logger;
 
         public CommentController(ICommentService commentService, IHubContext<NotificationHub> hub,
-            ILogger<CommentController> logger)
+            ILogger<CommentController> logger, IBugService bugService)
         {
             _commentService = commentService;
             _hubContext = hub;
             _logger = logger;
+            _bugService = bugService;
         }
 
         //[Authorize(Roles = "Tester,Developer,Admin")]
@@ -40,8 +42,9 @@ namespace Bts.Controllers
                 }
 
                 var comment = await _commentService.AddCommentAsync(dto, userId);
+                var bugDetails = await _bugService.GetBugByIdAsync(comment.BugId);
                 await _hubContext.Clients.All
-                    .SendAsync("ReceiveMessage", $"{userId} has commented for bug {comment.BugId} : {comment.Message}");
+                    .SendAsync("ReceiveMessage", $"{userId} has commented for bug {comment.BugId} : {bugDetails.Title}");
                 _logger.LogInformation("User {UserId} added comment for bug {BugId}", userId, comment.BugId);
                 return Ok(comment);
             }

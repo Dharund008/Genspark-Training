@@ -18,13 +18,15 @@ namespace Bts.Controllers
         private readonly ITesterService _testerService;
         private readonly IHubContext<NotificationHub> _hubContext;
         private readonly ILogger<TesterController> _logger;
+        private readonly IBugService _bugService;
 
         public TesterController(ITesterService testerService, IHubContext<NotificationHub> hub,
-            ILogger<TesterController> logger)
+            ILogger<TesterController> logger, IBugService bugService)
         {
             _testerService = testerService;
             _hubContext = hub;
             _logger = logger;
+            _bugService = bugService;
         }
 
         [HttpPost("create-bug")]
@@ -40,7 +42,7 @@ namespace Bts.Controllers
             var testerId = User.FindFirst("MyApp_Id")?.Value;
             //notify
             await _hubContext.Clients.Group("ADMIN")
-                    .SendAsync("ReceiveMessage", $"Tester {testerId} has reported a new bug {CreatedBug.Id} .(View in Bugs)");
+                    .SendAsync("ReceiveMessage", $"Tester {testerId} has reported a new bug {CreatedBug.Id} : {dto.Title} .(View in Bugs)");
 
             _logger.LogInformation("Tester {TesterId} created bug {BugId}", testerId, CreatedBug.Id);
             return Ok(CreatedBug);
@@ -78,10 +80,10 @@ namespace Bts.Controllers
 
             var updatedBug = await _testerService.UpdateBugAsync(bugId, dto);
             var testerId = User.FindFirst("MyApp_Id")?.Value;
+           
             await _hubContext.Clients.Group("ADMIN")
                     .SendAsync("ReceiveMessage", $"Tester {testerId} has updated a bug ({bugId})");
-            await _hubContext.Clients.Group("DEVELOPER")
-                    .SendAsync("ReceiveMessage", $"Tester {testerId} has updated a bug ({bugId})");
+            
             _logger.LogInformation("Tester {TesterId} updated bug {BugId}", testerId, bugId);
             return Ok(updatedBug);
         }
@@ -97,15 +99,23 @@ namespace Bts.Controllers
                 return BadRequest("Invalid bug or status");
             }
             var testerId = User.FindFirst("MyApp_Id")?.Value;
+            var bugDetails = await _bugService.GetBugByIdAsync(bugId);
             await _hubContext.Clients.Group("ADMIN")
-                    .SendAsync("ReceiveMessage", $"Tester {testerId} has updated the bug ({bugId}) status to {newStatus}");
+                    .SendAsync("ReceiveMessage", $"Tester {testerId} has updated the bug ({bugId}:{bugDetails.Title}) status to {newStatus}");
 
-            await _hubContext.Clients.Group("DEVELOPER")
-                    .SendAsync("ReceiveMessage", $"Tester {testerId} has updated the bug ({bugId}) status to {newStatus}");
+           if (!string.IsNullOrEmpty(bugDetails.AssignedTo))
+            {
+                await _hubContext.Clients.Group(bugDetails.AssignedTo)
+                    .SendAsync("ReceiveMessage", 
+                        $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by Tester {testerId}");
+            }
 
-
-            await _hubContext.Clients.Group("TESTER")
-                    .SendAsync("ReceiveMessage", $"Tester {testerId} has updated the bug ({bugId}) status to {newStatus}");
+            if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
+            {
+                await _hubContext.Clients.Group(bugDetails.CreatedBy)
+                    .SendAsync("ReceiveMessage", 
+                        $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by Tester {testerId}");
+            }
 
             _logger.LogInformation("Updated bug status {NewStatus} for bug {BugId} by tester {TesterId}", newStatus, bugId, testerId);
             return Ok("Bug status updated");
