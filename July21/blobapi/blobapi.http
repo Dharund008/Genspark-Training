@@ -1,0 +1,6 @@
+@blobapi_HostAddress = http://localhost:5297
+
+GET {{blobapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
