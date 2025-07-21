@@ -1,0 +1,15 @@
+2025-07-11 14:16:38.805 +05:30 [INF] Serilog is configured properly
+2025-07-11 14:18:19.859 +05:30 [INF] Serilog is configured properly
+2025-07-11 14:18:26.722 +05:30 [INF] Logs Working
+2025-07-11 14:18:26.732 +05:30 [INF] HTTP GET /api/Sample | RequestBody:  | Status: 200
+2025-07-11 14:18:44.817 +05:30 [INF] HTTP POST /api/v1/auth/login | RequestBody: {"email":"kavitha@example.com","password":"***"} | Status: 200
+2025-07-11 14:30:28.027 +05:30 [INF] Serilog is configured properly
+2025-07-11 14:30:51.597 +05:30 [INF] HTTP GET /api/v1/events | RequestBody:  | Status: 200
+2025-07-11 15:53:08.021 +05:30 [INF] Serilog is configured properly
+2025-07-11 15:53:53.030 +05:30 [INF] HTTP POST /api/v1/auth/login | RequestBody: {"email":"sakthi@example.com","password":"***"} | Status: 200
+2025-07-11 15:56:39.857 +05:30 [INF] Serilog is configured properly
+2025-07-11 15:57:00.303 +05:30 [INF] HTTP GET /api/v1/EventImage/download/5b1651b2-1247-461a-b0ba-65fabea5d797 | RequestBody:  | Status: 204
+2025-07-11 15:58:45.461 +05:30 [INF] Serilog is configured properly
+2025-07-11 15:58:51.367 +05:30 [INF] HTTP GET /api/v1/EventImage/download/5b1651b2-1247-461a-b0ba-65fabea5d797 | RequestBody:  | Status: 404
+2025-07-11 16:00:11.895 +05:30 [INF] HTTP POST /api/v1/EventImage/upload/17656f91-ddd4-4725-bcbb-f0abb1fec249 | RequestBody:  | Status: 200
+2025-07-11 16:00:55.054 +05:30 [INF] HTTP GET /api/v1/EventImage/download/5b1651b2-1247-461a-b0ba-65fabea5d797 | RequestBody:  | Status: 200
