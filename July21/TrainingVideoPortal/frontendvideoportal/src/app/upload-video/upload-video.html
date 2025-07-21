@@ -1,0 +1,19 @@
+<div class="upload-container">
+  <h1>Upload Video</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>Title</label>
+    <input formControlName="title" />
+
+    <label>Description</label>
+    <textarea formControlName="description" rows="3"></textarea>
+
+    <label>File</label>
+    <input type="file" (change)="onFileChange($event)" accept="video/mp4" />
+
+    <button type="submit" [disabled]="uploading || form.invalid">
+      {{ uploading ? 'Uploading…' : 'Upload' }}
+    </button>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </form>
+</div>

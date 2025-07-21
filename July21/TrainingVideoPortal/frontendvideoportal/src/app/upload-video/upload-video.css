@@ -1,0 +1,48 @@
+.upload-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.upload-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-container label {
+  font-weight: bold;
+}
+
+.upload-container input,
+.upload-container textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.upload-container button {
+  padding: 0.75rem;
+  background: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-container button:disabled {
+  background: #aaa;
+}
+
+.upload-container .error {
+  color: #c00;
+  text-align: center;
+}
