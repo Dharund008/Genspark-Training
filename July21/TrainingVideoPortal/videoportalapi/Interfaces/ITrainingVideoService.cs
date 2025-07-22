@@ -7,7 +7,7 @@ namespace Video.Interfaces
 {
     public interface ITrainingVideoService
     {
-        Task<TrainingVideo> UploadAsync(IFormFile file, string title, string description);
+        Task<TrainingVideo> UploadAsync(UploadRequest request);
         Task<IEnumerable<TrainingVideo>> GetAllAsync();
     }
 }

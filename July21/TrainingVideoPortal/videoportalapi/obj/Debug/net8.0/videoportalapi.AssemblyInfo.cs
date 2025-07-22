@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("videoportalapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6e7c80a093e66a15de64fcbc317a2c6022a95ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a0ccc536817eba70def11283ec6e65c31c24f33")]
 [assembly: System.Reflection.AssemblyProductAttribute("videoportalapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("videoportalapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
