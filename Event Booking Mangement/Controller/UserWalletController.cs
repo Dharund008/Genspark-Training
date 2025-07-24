@@ -36,7 +36,7 @@ namespace EventBookingApi.Controller
         var response = new
         {
             Balance = wallet.WalletBalance,
-            Expiry = wallet.WalletBalanceExpiry?.ToString("yyyy-MM-dd") ?? "No Expiry",
+            Expiry = wallet.WalletBalanceExpiry?.ToString()  ?? "No Expiry",
             IsExpired = _walletService.IsWalletExpired(wallet)
         };
 
