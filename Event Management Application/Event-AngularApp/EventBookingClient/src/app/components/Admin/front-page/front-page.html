@@ -1,0 +1,59 @@
+
+
+<app-slider></app-slider>
+
+<app-top-event [topEvent]="topEvent"></app-top-event>
+
+<section class="p-6 mt-4">
+  <div class=" mb-4 flex justify-around items-center">
+    <h2 class="text-2xl font-semibold orange_gradient mr-16">All Users</h2>
+    <button [routerLink]="['./add-admin']" class=" black_btn">Add Admin</button>
+  </div>
+
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 text-sm text-left">
+      <thead class="bg-gray-100 text-gray-600 uppercase text-xs tracking-wider">
+        <tr>
+          <th class="px-4 py-3 rounded-tl-xl">Username</th>
+          <th class="px-4 py-3">Email</th>
+          <th class="px-4 py-3">Role</th>
+          <th class="px-4 py-3 text-center">Deleted</th>
+          <th class="px-4 py-3 text-center rounded-tr-xl">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        @for (user of users(); track user.email) {
+        <tr [ngClass]="{
+              'bg-red-50 text-gray-400': user.isDeleted,
+              'hover:bg-gray-50 transition': !user.isDeleted
+            }">
+          <td class="px-4 py-4 font-medium text-gray-800">{{ user.username }}</td>
+          <td class="px-4 py-4 text-gray-700">{{ user.email }}</td>
+          <td class="px-4 py-4">{{ user.role }}</td>
+          <td class="px-4 py-4 text-center">
+            <span [ngClass]="{
+                  'text-red-500 font-semibold': user.isDeleted,
+                  'text-green-600 font-medium': !user.isDeleted
+                }">
+              {{ user.isDeleted ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td class="px-4 py-4 text-center flex-center">
+            @if(user.role == 'Admin'){
+            <span class="orange_gradient text-sm">No Action for Admin</span>
+            }@else {
+            @if (!user.isDeleted) {
+            <button class="outline_btn px-3 py-1" (click)="deleteUser(user)">
+              Delete
+            </button>
+            } @else {
+            <span class="text-red-500 text-sm">Already Deleted</span>
+            }
+            }
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

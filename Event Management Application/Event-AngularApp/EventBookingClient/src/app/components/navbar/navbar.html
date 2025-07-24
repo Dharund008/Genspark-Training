@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="gradient"></div>
+</div>
+
+@if(user()) {
+  <nav class="w-full px-4 py-4 z-10 relative custom-shadow bg-white">
+    <div class="flex justify-between items-center">
+      <a class="logo_text text-3xl orange_gradient" routerLink="/user">Eventify</a>
+
+      <div class="flex items-center gap-3 sm:hidden">
+        <p class="logo_text text-xl orange_gradient">Hi {{ user()?.username }}!</p>
+        <button (click)="menuOpen()" class="focus:outline-none">
+          <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="hidden sm:flex gap-4 items-center">
+        <p class="logo_text text-xl orange_gradient">Hi {{ user()?.username }}!</p>
+        <a [routerLink]="['profile']" class="black_btn">Profile</a>
+        <a (click)="logout()" class="outline_btn">Logout</a>
+      </div>
+    </div>
+    @if(menuopen()){
+        <div @fadeSlide class="flex flex-col sm:hidden gap-3 mt-4 items-start transition-all duration-300 ease-in-out transform opacity-100 translate-y-0">
+            <a [routerLink]="['profile']" class="black_btn w-full">Profile</a>
+            <a (click)="logout()" class="outline_btn w-full">Logout</a>
+        </div>
+    }
+  </nav>
+}

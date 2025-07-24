@@ -1,0 +1,78 @@
+@if (topEvent() != null) {
+  <section class="mt-12 max-w-6xl mx-auto px-4">
+    <div class="flex-between font-bold items-center my-2 flex-wrap gap-4">
+      <h2 class="text-2xl font-semibold text-gray-800">Upcoming Event</h2>
+      <div class="flex-center gap-2 flex-wrap">
+        <button class="black_btn" [routerLink]="[this.router.url, 'events']">View All Events</button>
+        @if(role == 'Manager') {
+          <button class="outline_btn" [routerLink]="[this.router.url, 'events', 'add']">Add Event</button>
+        }
+      </div>
+    </div>
+
+    @if (topEvent(); as event) {
+      <div class="prompt-card bg-white rounded-xl drop-shadow-lg p-4 sm:p-6 mb-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1 flex flex-col gap-2 justify-evenly">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+              <h3 class="text-3xl sm:text-4xl font-bold orange_gradient">{{ event.title }}</h3>
+              @if (isCancelled(event)) {
+                <h3 class="text-lg sm:text-xl text-red-500">(Cancelled)</h3>
+              } @else {
+                <h3 class="text-lg sm:text-xl logo_text capitalize text-red-800 mt-1 sm:mt-2">
+                  (Trending Event)
+                </h3>
+              }
+            </div>
+
+            <p class="text-gray-600 mt-1 text-sm sm:text-base">{{ event.description }}</p>
+
+            <p class="text-sm text-gray-400 mt-1">
+              📅 Date: {{ event.eventDate | date: 'medium' }}
+            </p>
+            <p class="text-sm text-gray-400">
+              Location: {{ event.location }} | Category: {{ event.category }}
+            </p>
+
+            <div class="mt-2 sm:mt-4">
+              <h4 class="font-semibold mb-2 text-orange-600">Ticket Types:</h4>
+              <ul class="text-sm flex flex-col gap-1.5">
+                @for (ticket of event.ticketTypes; track ticket.id) {
+                  <li class="text-gray-700">
+                    <span class="font-medium">{{ ticketTypeToString(ticket.typeName) }}</span> |
+                    ₹{{ ticket.price }} |
+                    Available: {{ ticket.totalQuantity - ticket.bookedQuantity }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex-shrink-0 w-full h-52 sm:h-64 md:w-96 md:h-64 rounded-lg overflow-hidden">
+            @if (event.images.length) {
+              <img
+                [src]="'http://localhost:5279/api/v1/eventimage/download/' + event.images[0]"
+                alt="event image"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            } @else {
+              <div class="w-full h-full bg-gray-300 rounded-lg flex items-center justify-center text-gray-500 text-sm">
+                No image
+              </div>
+            }
+          </div>
+
+        </div>
+
+        <button
+          class="mt-6 black_btn w-full sm:w-auto"
+          [routerLink]="[this.router.url, 'events', event.id]"
+        >
+          View Details
+        </button>
+      </div>
+    } @else {
+      <p class="text-gray-400">No upcoming events found.</p>
+    }
+  </section>
+}
