@@ -52,11 +52,11 @@ export enum TicketTypeEnum
 
 export enum PaymentTypeEnum
 {
-    Cash = 0,
-    CreditCard = 1,
-    DebitCard = 2,
-    UPI = 3,
-    PayWallet = 4
+    Cash = 1,
+    CreditCard = 2,
+    DebitCard = 3,
+    UPI = 4,
+    PayWallet = 5
 }
 
 export enum PaymentStatusEnum

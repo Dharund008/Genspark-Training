@@ -4,6 +4,7 @@ import { UserService } from '../../services/User/user-service';
 import { NotificationService } from '../../services/Notification/notification-service';
 import { ApiResponse } from '../../models/api-response.model';
 import { User } from '../../models/user.model';
+import { UserWallet } from '../../models/userwallet.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,6 +16,8 @@ import { CommonModule } from '@angular/common';
 })
 export class UserDetails implements OnInit {
   user: User = { email: '', role: '', username: '' };
+  userWallet?: UserWallet;
+  isWalletExpired: boolean = false;
   isEditingUsername = false;
   isChangingPassword = false;
   usernameForm!: FormGroup;
@@ -30,6 +33,7 @@ export class UserDetails implements OnInit {
   ngOnInit(): void {
     this.initializeForms();
     this.loadUserDetails();
+    this.loadUserWallet();
   }
 
   private initializeForms(): void {
@@ -52,6 +56,22 @@ export class UserDetails implements OnInit {
       },
       error: () => console.error('Failed to load user details')
     });
+  }
+
+  loadUserWallet(): void {
+    this.userService.getWallet().subscribe({
+      next: (wallet) => {
+        this.userWallet = wallet;
+        this.isWalletExpired = this.checkWalletExpiry(wallet);
+      },
+      error: () => console.error('Failed to load user wallet')
+    });
+  }
+
+  checkWalletExpiry(wallet: UserWallet): boolean {
+    if (!wallet.expiry) return false;
+    const expiryDate = new Date(wallet.expiry);
+    return expiryDate < new Date();
   }
 
   saveUsername(): void {

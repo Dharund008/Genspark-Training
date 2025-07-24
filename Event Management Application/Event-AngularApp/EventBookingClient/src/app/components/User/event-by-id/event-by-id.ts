@@ -9,7 +9,6 @@ import { TicketService } from '../../../services/Ticket/ticket.service';
 import { ApiResponse } from '../../../models/api-response.model';
 import { CommonModule, DatePipe } from '@angular/common';
 import { signal } from '@angular/core';
-import { App } from '../../../app';
 import { SimilarEvents } from "../../similar-events/similar-events";
 import { NotificationService } from '../../../services/Notification/notification-service';
 import { UserService } from '../../../services/User/user-service';
@@ -34,16 +33,19 @@ export class EventById implements OnInit {
   EventTypeEnum = EventTypeEnum;
   imageid = signal<any[] | null>(null);
   PaymentTypeEnum = PaymentTypeEnum;
-  paymentTypes = Object.entries(PaymentTypeEnum).filter(([k, v]) => !isNaN(Number(v)));
-  similarEvents = signal<AppEvent[]>([]);
-  currentImageIndex = 0;
-  imageIntervalId: any;
+  paymentTypes: [string, number][] = Object.entries(PaymentTypeEnum)
+    .filter(([k, v]) => !isNaN(Number(v)))
+    .map(([k, v]) => [k, Number(v)]);
+  filteredPaymentTypes: [string, number][] = [];
   userWallet?: UserWallet;
   transactionBill?: TransactionBill;
   isWalletExpired: boolean = false;
   isAmountNotEnough: boolean = false;
   bookButtonDisabled: boolean = false;
   walletExpiredError: boolean = false;
+  currentImageIndex = 0;
+  imageIntervalId: any;
+  similarEvents = signal<AppEvent[]>([]);
 
   constructor(
     private route: ActivatedRoute,
@@ -53,13 +55,11 @@ export class EventById implements OnInit {
     private router: Router,
     private notify: NotificationService,
     private userService: UserService
-
   ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const eventId = params.get('id');
-      console.log(eventId)
       if (eventId) {
         this.eventId = eventId;
         this.loadEvent();
@@ -70,35 +70,15 @@ export class EventById implements OnInit {
     this.userService.getWallet().subscribe({
       next: (wallet) => {
         this.userWallet = wallet;
-        console.log("wallet: ", wallet);
         this.isWalletExpired = this.checkWalletExpiry(wallet);
         // Delay updateOrderSummary to ensure form is initialized
         setTimeout(() => {
           this.updateOrderSummary();
+          this.updatePaymentTypesFilter();
         }, 0);
       },
       error: (err) => console.warn('Failed to fetch wallet:', err)
     });
-  }
-  getTotalBooked(event  : AppEvent){
-    return event.ticketTypes.reduce((sum, ticket) => sum + (ticket.bookedQuantity), 0);
-  }
-  getTotalAvailable(event  : AppEvent){
-    return event.ticketTypes.reduce((sum, ticket) => sum + (ticket.totalQuantity), 0);
-  }
-  getSimilarEvents() {
-    const categoryLabel = this.event()!.category;
-    const categoryValue = (EventCategory[categoryLabel] as unknown) as number;
-    this.eventService.getFilteredEvents(categoryValue, "", "", "", 1, 4).subscribe({
-      next: (res: ApiResponse) => {
-        const rawItems = res.data?.items?.$values || [];
-        this.similarEvents.set(rawItems.map((e: any) => new AppEvent(e)));
-        this.similarEvents.set(this.similarEvents().filter(e => e?.title !== this.event()?.title).slice(0,3));
-      }
-    });
-  }
-  ngOnDestroy(): void {
-    if (this.imageIntervalId) clearInterval(this.imageIntervalId);
   }
 
   loadEvent() {
@@ -139,6 +119,7 @@ export class EventById implements OnInit {
 
         this.form.get('useWallet')?.valueChanges.subscribe(() => {
           this.updateOrderSummary();
+          this.updatePaymentTypesFilter();
         });
 
         this.form.get('paymentType')?.valueChanges.subscribe(() => {
@@ -162,6 +143,31 @@ export class EventById implements OnInit {
       }
     }, 2000);
   }
+
+  getTotalBooked(event: AppEvent) {
+    return event.ticketTypes.reduce((sum, ticket) => sum + (ticket.bookedQuantity), 0);
+  }
+
+  getTotalAvailable(event: AppEvent) {
+    return event.ticketTypes.reduce((sum, ticket) => sum + (ticket.totalQuantity), 0);
+  }
+
+  getSimilarEvents() {
+    const categoryLabel = this.event()!.category;
+    const categoryValue = (EventCategory[categoryLabel] as unknown) as number;
+    this.eventService.getFilteredEvents(categoryValue, "", "", "", 1, 4).subscribe({
+      next: (res: ApiResponse) => {
+        const rawItems = res.data?.items?.$values || [];
+        this.similarEvents.set(rawItems.map((e: any) => new AppEvent(e)));
+        this.similarEvents.set(this.similarEvents().filter(e => e?.title !== this.event()?.title).slice(0, 3));
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.imageIntervalId) clearInterval(this.imageIntervalId);
+  }
+
   isCancelled(event: AppEvent): boolean {
     return event.eventStatus.toString() == "Cancelled";
   }
@@ -177,6 +183,7 @@ export class EventById implements OnInit {
   ticketTypeToString(type: number): string {
     return TicketTypeEnum[type];
   }
+
   toggleSeat(seat: number) {
     const currentSeats = this.form.value.seatNumbers as number[];
     const index = currentSeats.indexOf(seat);
@@ -208,12 +215,44 @@ export class EventById implements OnInit {
     return expiryDate < new Date();
   }
 
+  updatePaymentTypesFilter() {
+    const useWallet = this.form?.get('useWallet')?.value || false;
+    const walletBalance = this.userWallet?.balance || 0;
+    const totalPrice = this.transactionBill?.totalPrice || 0;
+    const walletEnough = walletBalance >= totalPrice;
+
+    if (!useWallet) {
+      // Use wallet unchecked: show all except PayWallet
+      this.filteredPaymentTypes = this.paymentTypes.filter(([key, val]) => val !== PaymentTypeEnum.PayWallet);
+      // Only reset paymentType if current value is PayWallet
+      if (this.form && this.form.get('paymentType')?.value === PaymentTypeEnum.PayWallet) {
+        this.form.get('paymentType')?.setValue(null, { emitEvent: false });
+      }
+    } else {
+      if (walletEnough) {
+        // Wallet enough: only show PayWallet and auto-select
+        this.filteredPaymentTypes = this.paymentTypes.filter(([key, val]) => val === PaymentTypeEnum.PayWallet);
+        if (this.form && this.form.get('paymentType')?.value !== PaymentTypeEnum.PayWallet) {
+          this.form.get('paymentType')?.setValue(PaymentTypeEnum.PayWallet, { emitEvent: false });
+        }
+      } else {
+        // Wallet not enough: show all except PayWallet
+        this.filteredPaymentTypes = this.paymentTypes.filter(([key, val]) => val !== PaymentTypeEnum.PayWallet);
+        // Only reset paymentType if current value is PayWallet
+        if (this.form && this.form.get('paymentType')?.value === PaymentTypeEnum.PayWallet) {
+          this.form.get('paymentType')?.setValue(null, { emitEvent: false });
+        }
+      }
+    }
+  }
+
   updateOrderSummary() {
     if (!this.form) {
       console.warn("Form is not initialized yet.");
       this.transactionBill = undefined;
       this.isAmountNotEnough = false;
       this.bookButtonDisabled = true;
+      this.walletExpiredError = false;
       return;
     }
 
@@ -223,6 +262,7 @@ export class EventById implements OnInit {
       this.transactionBill = undefined;
       this.isAmountNotEnough = false;
       this.bookButtonDisabled = true;
+      this.walletExpiredError = false;
       return;
     }
 
@@ -235,20 +275,12 @@ export class EventById implements OnInit {
       this.transactionBill = undefined;
       this.isAmountNotEnough = false;
       this.bookButtonDisabled = true;
+      this.walletExpiredError = false;
       return;
     }
 
     const quantity = quantityControl.value || 0;
     const useWallet = useWalletControl.value || false;
-    if(useWallet == true)
-    {
-      if(this.userWallet?.isExpired == true)
-      {
-        
-      }
-    }
-    console.log("useWallet: ", useWallet);
-    
     const paymentType = paymentTypeControl.value || null;
 
     if (quantity <= 0) {
@@ -256,16 +288,15 @@ export class EventById implements OnInit {
       this.transactionBill = undefined;
       this.isAmountNotEnough = false;
       this.bookButtonDisabled = true;
+      this.walletExpiredError = false;
       return;
     }
 
     const totalPrice = ticketType.price * quantity;
     let walletDeducted = 0;
     let remainingAmount = totalPrice;
-    console.log("remainingAMount : ", remainingAmount);
-    console.log("userWallet : ", this.userWallet);
-    this.walletExpiredError = false;
 
+    this.walletExpiredError = false;
     if (useWallet && this.userWallet) {
       if (this.isWalletExpired) {
         this.walletExpiredError = true;
@@ -279,38 +310,18 @@ export class EventById implements OnInit {
       }
     }
 
-    if (useWallet && this.userWallet && !this.userWallet.isExpired) {
-      console.log("wallet balance:", this.userWallet.balance);
-      walletDeducted = Math.min(this.userWallet.balance, totalPrice);
-      remainingAmount = totalPrice - walletDeducted;
-      console.log("walletDeducted:", walletDeducted, "remainingAmount:", remainingAmount);
-    }
-
     this.isAmountNotEnough = useWallet && walletDeducted < totalPrice && remainingAmount > 0;
-    console.log("amountnotenough : ", this.isAmountNotEnough);
     if (walletDeducted === totalPrice) {
       this.isAmountNotEnough = false;
     }
-    console.log("2)amountnotenough : ", this.isAmountNotEnough);
-    // if(this.isAmountNotEnough == false)
-    // {
-    //   this.bookButtonDisabled =  false;
-    // }
-     // Disable book button if wallet expired and useWallet checked, or if amount not enough and no payment method selected
+
     if (this.walletExpiredError) {
       this.bookButtonDisabled = true;
     } else if (this.isAmountNotEnough) {
       this.bookButtonDisabled = !paymentType;
-    } else if(useWallet && walletDeducted == totalPrice && remainingAmount === 0){
-        this.bookButtonDisabled = false;
-    }
-    else {
+    } else {
       this.bookButtonDisabled = false;
     }
-    
-
-    // this.bookButtonDisabled = this.isAmountNotEnough || !paymentType;
-    console.log("bookbuttondisabled : ", this.bookButtonDisabled);
 
     this.transactionBill = {
       totalPrice,
@@ -320,22 +331,24 @@ export class EventById implements OnInit {
       paymentType,
       transactionId: uuidv4()
     };
+
+    this.updatePaymentTypesFilter();
   }
 
   submit() {
-    if (this.form.invalid || this.bookButtonDisabled){
+    if (this.form.invalid || this.bookButtonDisabled) {
       return;
     }
 
     const evt = this.event();
     if (!evt) return;
 
-    const isSeatable = this.event()?.eventType.toString() == this.eventTypeToString(0)
+    const isSeatable = this.event()?.eventType.toString() == this.eventTypeToString(0);
 
-    if(isSeatable){
+    if (isSeatable) {
       let seats = this.form.value.seatNumbers;
-      if(seats.length != this.form.value.quantity){
-        this.notify.info("select for all required quantity!")
+      if (seats.length != this.form.value.quantity) {
+        this.notify.info("select for all required quantity!");
         return;
       }
     }
@@ -348,12 +361,14 @@ export class EventById implements OnInit {
         PaymentType: this.form.value.paymentType,
         UseWallet: this.form.value.useWallet,
         TransactionId: this.transactionBill?.transactionId || uuidv4(),
-      }
+      },
     };
     this.ticketService.bookTicket(payload).subscribe({
       next: () => this.router.navigate(['/user']),
-      error: (err:any) => {console.log(err);this.notify.error(err.error.errors.message)},
+      error: (err: any) => {
+        console.log(err);
+        this.notify.error(err.error.errors.message);
+      },
     });
   }
-
 }

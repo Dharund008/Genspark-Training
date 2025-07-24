@@ -119,13 +119,27 @@
     <p>Use Wallet: {{ transactionBill?.useWallet ? 'Yes' : 'No' }}</p>
     <p *ngIf="transactionBill?.useWallet">Wallet Deducted: ₹{{ transactionBill?.walletDeducted }}</p>
     <p>Remaining Amount: ₹{{ transactionBill?.remainingAmount ?? transactionBill?.totalPrice ?? 0 }}</p>
+
+    <p *ngIf="transactionBill">
+      <ng-container *ngIf="transactionBill.useWallet && transactionBill.walletDeducted === transactionBill.totalPrice">
+        <strong>Total from Wallet: ₹{{ transactionBill.walletDeducted }}</strong>
+      </ng-container>
+      <ng-container *ngIf="transactionBill.useWallet && transactionBill.walletDeducted < transactionBill.totalPrice">
+        <strong>Total from Wallet: ₹{{ transactionBill.walletDeducted }} + 
+        Amount from {{ PaymentTypeEnum[transactionBill.paymentType] }}: ₹{{ transactionBill.remainingAmount }} =  
+        Total Price: ₹{{ transactionBill.totalPrice }}</strong>
+      </ng-container>
+      <ng-container *ngIf="!transactionBill.useWallet">
+        <strong>Total from {{ PaymentTypeEnum[transactionBill.paymentType] }}: ₹{{ transactionBill.totalPrice }}</strong>
+      </ng-container>
+    </p>
   </div>
 
   <div>
     <label class="block text-sm font-medium text-gray-700">Payment Method</label>
     <select class="form_select w-full mt-1" formControlName="paymentType">
       <option [ngValue]="null">-- Select Payment Type --</option>
-      @for (type of paymentTypes; track type[1]) {
+      @for (type of filteredPaymentTypes; track type[1]) {
         <option [ngValue]="type[1]">{{ type[0] }}</option>
       }
     </select>

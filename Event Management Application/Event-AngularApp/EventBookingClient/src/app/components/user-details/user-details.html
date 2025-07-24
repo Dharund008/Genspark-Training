@@ -11,6 +11,16 @@
       <label class="block text-sm font-medium text-gray-700">Role</label>
       <p class="text-gray-800 capitalize">{{ user.role }}</p>
     </div>
+
+    <div *ngIf="userWallet" class="space-y-1">
+      <label class="block text-sm font-medium text-gray-700">Wallet Balance</label>
+      <p class="text-gray-800 font-semibold">₹{{ userWallet.balance }}</p>
+      <label class="block text-sm font-medium text-gray-700">Wallet Expiry</label>
+      <p [ngClass]="{'text-red-600 font-bold': isWalletExpired, 'text-gray-800': !isWalletExpired}">
+        {{ userWallet.expiry | date:'mediumDate' }} 
+        <!-- <span class="text-sm text-gray-600">({{ userWallet.expiry | date:'shortTime' }})</span> -->
+      </p>
+    </div>
     
     <form [formGroup]="usernameForm" class="mt-4">
       <label class="block text-sm font-medium text-gray-700">Username</label>
@@ -22,15 +32,14 @@
           [readOnly]="!isEditingUsername"
           [ngClass]="{'bg-gray-100': !isEditingUsername, 'bg-white border-gray-300': isEditingUsername}"
         />
-        @if(isEditingUsername){
-          <button 
-            type="button"
-            class="outline_btn"
-            (click)="CancelEdit()"
-          >
-            Cancel
-          </button>
-        }
+        <button 
+          *ngIf="isEditingUsername"
+          type="button"
+          class="outline_btn"
+          (click)="CancelEdit()"
+        >
+          Cancel
+        </button>
         <button
           type="button"
           class="black_btn"
@@ -39,11 +48,9 @@
           {{ isEditingUsername ? 'Save' : 'Edit' }}
         </button>
       </div>
-      @if(usernameForm.get('username')?.invalid && isEditingUsername) {
-        <p class="text-sm text-red-600 mt-1">
-          Username is required.
-        </p>
-      }
+      <p *ngIf="usernameForm.get('username')?.invalid && isEditingUsername" class="text-sm text-red-600 mt-1">
+        Username is required.
+      </p>
     </form>
   </div>
 
@@ -55,47 +62,41 @@
       {{ isChangingPassword ? 'Hide Change Password Form' : 'Change Password' }}
     </button>
 
-    @if(isChangingPassword) {
-      <form [formGroup]="passwordForm" class="mt-4 space-y-4 bg-gray-50 p-4 border rounded-xl">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Old Password</label>
-          <input
-            type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            formControlName="oldPassword"
-          />
-          @if(passwordForm.get('oldPassword')?.invalid && passwordForm.get('oldPassword')?.touched) {
-            <p class="text-sm text-red-600 mt-1">
-              Old password is required.
-            </p>
-          }
-        </div>
+    <form *ngIf="isChangingPassword" [formGroup]="passwordForm" class="mt-4 space-y-4 bg-gray-50 p-4 border rounded-xl">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Old Password</label>
+        <input
+          type="password"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          formControlName="oldPassword"
+        />
+        <p *ngIf="passwordForm.get('oldPassword')?.invalid && passwordForm.get('oldPassword')?.touched" class="text-sm text-red-600 mt-1">
+          Old password is required.
+        </p>
+      </div>
 
-        <div>
-          <label class="block text-sm font-medium text-gray-700">New Password</label>
-          <input
-            type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            formControlName="newPassword"
-          />
-          @if(passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched) {
-            <p class="text-sm text-red-600 mt-1">
-              New password must be at least 6 characters.
-            </p>
-          }
-        </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">New Password</label>
+        <input
+          type="password"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          formControlName="newPassword"
+        />
+        <p *ngIf="passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched" class="text-sm text-red-600 mt-1">
+          New password must be at least 6 characters.
+        </p>
+      </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 mt-4">
-          <button
-            type="button"
-            class="px-4 py-2 black_btn disabled:opacity-50 disabled:cursor-not-allowed"
-            (click)="changePassword()"
-            [disabled]="passwordForm.invalid"
-          >
-            Save Password
-          </button>
-        </div>
-      </form>
-    }
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <button
+          type="button"
+          class="px-4 py-2 black_btn disabled:opacity-50 disabled:cursor-not-allowed"
+          (click)="changePassword()"
+          [disabled]="passwordForm.invalid"
+        >
+          Save Password
+        </button>
+      </div>
+    </form>
   </div>
 </section>
