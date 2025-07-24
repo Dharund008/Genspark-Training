@@ -28,6 +28,7 @@ public class UserWalletService : IUserWalletService
         }
 
         wallet.WalletBalance += amount;
+        wallet.WalletBalanceExpiry = DateTime.UtcNow.AddDays(15); //updating epxiration for every wallet transaction(add).
         await _walletRepository.Update(wallet.Id, wallet);
         return true;
     }
@@ -41,7 +42,7 @@ public class UserWalletService : IUserWalletService
             Username = user.Username,
             Role = user.Role,
             //WalletBalance = 100m,
-            WalletBalanceExpiry = DateTime.UtcNow.AddDays(1) //AddMonths(6);
+            WalletBalanceExpiry = DateTime.UtcNow.AddDays(15) //AddMonths(6);
         };
         return await _walletRepository.Add(wallet);
     }
