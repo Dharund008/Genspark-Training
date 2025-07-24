@@ -12,6 +12,7 @@ public class EventService : IEventService
     private readonly IRepository<Guid, Event> _eventRepository;
     private readonly IRepository<Guid, TicketType> _ticketTypeRepository;
     private readonly IRepository<Guid, User> _userRepository;
+    private readonly IUserWalletService _userwallet;
     private readonly IRepository<Guid, Cities> _cityRepository;
     private readonly IOtherFunctionalities _otherFunctionalities;
     private readonly ObjectMapper _mapper;
@@ -24,6 +25,7 @@ public class EventService : IEventService
                         IRepository<Guid, Ticket> ticketRepository,
                         IRepository<Guid, EventImage> imageRepository,
                         IRepository<Guid, User> userRepository,
+                        IUserWalletService userwallet,
                         IRepository<Guid, Payment> paymentRepository,
                         IRepository<Guid, Cities> cityRepository,
                         IOtherFunctionalities otherFunctionalities,
@@ -33,6 +35,7 @@ public class EventService : IEventService
         _imageRepository = imageRepository;
         _ticketTypeRepository = ticketTypeRepository;
         _userRepository = userRepository;
+        _userwallet = userwallet;
         _cityRepository = cityRepository;
         _otherFunctionalities = otherFunctionalities;
         _mapper = mapper;
@@ -183,13 +186,11 @@ public async Task<EventResponseDTO> DeleteEvent(Guid id)
             var payment = await _paymentRepository.GetById(item.PaymentId.Value);
             payment.PaymentStatus = PaymentStatusEnum.Refund;
             await _paymentRepository.Update(item.PaymentId.Value, payment);
-        }
-        var user = await _userRepository.GetById(item.UserId);
-        if( user != null)
-        {
-            user.WalletBalance += item.TotalPrice;
-            user.WalletBalanceExpiry = DateTime.UtcNow.AddDays(15); // Assuming a 30-day expiry for the wallet balance
-            await _userRepository.Update(user.Id, user);
+
+            //refund-logic
+            var userId = item.UserId;
+            var refundAmount = payment.Amount; //either totalprice from ticket![item.Payment.Amount // item.TotalPrice]
+            await _userwallet.AddToWallet(userId, refundAmount);
         }
         await _ticketRepository.Update(item.Id, item);
     }

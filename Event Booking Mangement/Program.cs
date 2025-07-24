@@ -95,6 +95,7 @@ builder.Services.AddSignalR();
 
 #region Repository
 builder.Services.AddTransient<IRepository<Guid, User>, UserRepository>();
+builder.Services.AddTransient<IRepository<int, UserWallet>, UserWalletRepository>();
 builder.Services.AddTransient<IRepository<Guid, Event>, EventRepository>();
 builder.Services.AddTransient<IRepository<Guid, Ticket>, TicketRepository>();
 builder.Services.AddTransient<IRepository<Guid, TicketType>, TicketTypeRepository>();
@@ -107,6 +108,7 @@ builder.Services.AddTransient<IRepository<Guid, Cities>, CityRepository>();
 #region Services
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IUserWalletService, UserWalletService>();
 builder.Services.AddTransient<IEncryptionService, EncryptionService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IEventService, EventService>();

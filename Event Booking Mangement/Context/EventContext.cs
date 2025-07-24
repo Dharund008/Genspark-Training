@@ -9,6 +9,8 @@ public class EventContext : DbContext
     public EventContext(DbContextOptions<EventContext> options) : base(options) { }
 
     public DbSet<User> Users { get; set; }
+
+    public DbSet<UserWallet> UserWallets { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<TicketType> TicketTypes { get; set; }
     public DbSet<Ticket> Tickets { get; set; }
@@ -33,26 +35,40 @@ public class EventContext : DbContext
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
+        modelBuilder.Entity<UserWallet>(entity =>
+            {
+                  entity.HasKey(w => w.Id);
+                  entity.Property(u => u.Email).IsRequired().HasMaxLength(200);
+                  entity.HasIndex(u => u.Email).IsUnique();
+                  entity.Property(u => u.Username).IsRequired().HasMaxLength(100);
+                  entity.Property(u => u.Role).IsRequired();
+            });
+
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(u => u.Id);
-            entity.Property(u => u.Email).IsRequired().HasMaxLength(200);
-            entity.HasIndex(u => u.Email).IsUnique();
-            entity.Property(u => u.Username).IsRequired().HasMaxLength(100);
-            entity.Property(u => u.PasswordHash).IsRequired();
-            entity.Property(u => u.Role).IsRequired();
-            entity.Property(u => u.IsDeleted).IsRequired();
-            entity.Property(u => u.CreatedAt).IsRequired();
+              entity.HasKey(u => u.Id);
+              entity.Property(u => u.Email).IsRequired().HasMaxLength(200);
+              entity.HasIndex(u => u.Email).IsUnique();
+              entity.Property(u => u.Username).IsRequired().HasMaxLength(100);
+              entity.Property(u => u.PasswordHash).IsRequired();
+              entity.Property(u => u.Role).IsRequired();
+              entity.Property(u => u.IsDeleted).IsRequired();
+              entity.Property(u => u.CreatedAt).IsRequired();
 
-            entity.HasMany(u => u.ManagedEvents)
-                  .WithOne(e => e.Manager)
-                  .HasForeignKey(e => e.ManagerId)
-                  .OnDelete(DeleteBehavior.Restrict);
+              entity.HasMany(u => u.ManagedEvents)
+                    .WithOne(e => e.Manager)
+                    .HasForeignKey(e => e.ManagerId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
-            entity.HasMany(u => u.Tickets)
-                  .WithOne(t => t.User)
-                  .HasForeignKey(t => t.UserId)
-                  .OnDelete(DeleteBehavior.Cascade);
+              entity.HasMany(u => u.Tickets)
+                    .WithOne(t => t.User)
+                    .HasForeignKey(t => t.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                  
+              entity.HasOne(u => u.Wallet)
+                    .WithOne(w => w.User)
+                    .HasForeignKey<UserWallet>(w => w.UserId)
+                    .OnDelete(DeleteBehavior.Cascade); 
         });
 
         modelBuilder.Entity<Event>(entity =>

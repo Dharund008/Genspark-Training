@@ -56,7 +56,8 @@ public enum PaymentTypeEnum
     Cash = 0,
     CreditCard = 1,
     DebitCard = 2,
-    UPI = 3
+    UPI = 3,
+    PayWallet = 4
 }
 
 public enum PaymentStatusEnum

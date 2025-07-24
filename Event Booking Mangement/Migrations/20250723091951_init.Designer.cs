@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EventBookingApi.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20250701100630_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250723091951_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -184,6 +184,9 @@ namespace EventBookingApi.Migrations
                     b.Property<Guid>("TransactionId")
                         .HasColumnType("uuid");
 
+                    b.Property<decimal>("WalletUsed")
+                        .HasColumnType("numeric");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TicketId")
@@ -319,6 +322,47 @@ namespace EventBookingApi.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("EventBookingApi.Model.UserWallet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<decimal>("WalletBalance")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("WalletBalanceExpiry")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("UserWallets");
+                });
+
             modelBuilder.Entity("EventBookingApi.Model.BookedSeat", b =>
                 {
                     b.HasOne("EventBookingApi.Model.Event", "Event")
@@ -416,6 +460,17 @@ namespace EventBookingApi.Migrations
                     b.Navigation("Event");
                 });
 
+            modelBuilder.Entity("EventBookingApi.Model.UserWallet", b =>
+                {
+                    b.HasOne("EventBookingApi.Model.User", "User")
+                        .WithOne("Wallet")
+                        .HasForeignKey("EventBookingApi.Model.UserWallet", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("EventBookingApi.Model.Cities", b =>
                 {
                     b.Navigation("Events");
@@ -444,6 +499,8 @@ namespace EventBookingApi.Migrations
                     b.Navigation("ManagedEvents");
 
                     b.Navigation("Tickets");
+
+                    b.Navigation("Wallet");
                 });
 #pragma warning restore 612, 618
         }

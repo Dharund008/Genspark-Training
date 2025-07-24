@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace EventBookingApi.Model;
+
 public class User
 {
     [Key]
@@ -26,10 +27,11 @@ public class User
 
     public ICollection<Event>? ManagedEvents { get; set; }
     public ICollection<Ticket>? Tickets { get; set; }
+    public UserWallet? Wallet { get; set; }
 
-    // New wallet balance property
-    public decimal WalletBalance { get; set; } = 0m;
+    // // New wallet balance property
+    // public decimal WalletBalance { get; set; } = 0m;
 
-    //wallet balance expiration date
-    public DateTime? WalletBalanceExpiry { get; set; }
+    // //wallet balance expiration date
+    // public DateTime? WalletBalanceExpiry { get; set; }
 }

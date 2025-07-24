@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace EventBookingApi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,6 +77,30 @@ namespace EventBookingApi.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserWallets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Email = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
+                    Username = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    Role = table.Column<int>(type: "integer", nullable: false),
+                    WalletBalance = table.Column<decimal>(type: "numeric", nullable: false),
+                    WalletBalanceExpiry = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserWallets", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserWallets_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -197,6 +222,7 @@ namespace EventBookingApi.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     TicketId = table.Column<Guid>(type: "uuid", nullable: false),
                     Amount = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
+                    WalletUsed = table.Column<decimal>(type: "numeric", nullable: false),
                     PaymentType = table.Column<int>(type: "integer", nullable: false),
                     PaymentStatus = table.Column<int>(type: "integer", nullable: false),
                     TransactionId = table.Column<Guid>(type: "uuid", nullable: false),
@@ -269,6 +295,18 @@ namespace EventBookingApi.Migrations
                 table: "Users",
                 column: "Email",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserWallets_Email",
+                table: "UserWallets",
+                column: "Email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserWallets_UserId",
+                table: "UserWallets",
+                column: "UserId",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -282,6 +320,9 @@ namespace EventBookingApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "Payments");
+
+            migrationBuilder.DropTable(
+                name: "UserWallets");
 
             migrationBuilder.DropTable(
                 name: "Tickets");

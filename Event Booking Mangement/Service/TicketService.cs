@@ -11,6 +11,7 @@ namespace EventBookingApi.Service;
 public class TicketService : ITicketService
 {
     private readonly IRepository<Guid, Ticket> _ticketRepository;
+    private readonly IUserWalletService _userWalletService;
     private readonly IRepository<Guid, Event> _eventRepository;
     private readonly IRepository<Guid, TicketType> _ticketTypeRepository;
     private readonly IRepository<Guid, User> _userRepository;
@@ -21,6 +22,7 @@ public class TicketService : ITicketService
 
     public TicketService(
         IRepository<Guid, Ticket> ticketRepository,
+        IUserWalletService userWalletService,
         IRepository<Guid, Event> eventRepository,
         IRepository<Guid, TicketType> ticketTypeRepository,
         IRepository<Guid, User> userRepository,
@@ -30,6 +32,7 @@ public class TicketService : ITicketService
         ObjectMapper mapper)
     {
         _ticketRepository = ticketRepository;
+        _userWalletService = userWalletService;
         _eventRepository = eventRepository;
         _ticketTypeRepository = ticketTypeRepository;
         _userRepository = userRepository;
@@ -70,12 +73,15 @@ public class TicketService : ITicketService
             return await BookNonSeatableTicket(dto, userId, eventObj, ticketType);
         }
     }
-    private async Task<Payment> CreatePayment(PaymentRequestDTO? paymentDto, decimal amount, Guid ticketId)
+    private async Task<Payment> CreatePayment(PaymentRequestDTO? paymentDto, decimal amount, decimal WalletUsed, Guid ticketId)
     {
+        var isFullyPaidByWallet = amount == 0;
+
         var payment = new Payment
         {
-            PaymentType = paymentDto!.PaymentType,
+            PaymentType = isFullyPaidByWallet ? PaymentTypeEnum.PayWallet : paymentDto.PaymentType ?? PaymentTypeEnum.Cash,
             Amount = amount,
+            WalletUsed = WalletUsed,
             PaymentStatus = PaymentStatusEnum.Paid,
             TransactionId = paymentDto.TransactionId,
             TicketId = ticketId
@@ -106,19 +112,56 @@ public class TicketService : ITicketService
         ticketType.BookedQuantity += dto.Quantity;
         await _ticketTypeRepository.Update(ticketType.Id, ticketType);
 
+        // Calculate total cost
+        var totalCost = dto.Quantity * ticketType.Price;
+        //Let wallet balance be used automatically
+        // ✅ If wallet covers full amount → Payment is Rs. 0
+        // ✅ Else → Use wallet + fallback to external payment
+
+        // Apply wallet
+        var wallet = await _userWalletService.GetWalletByUserId(userId);
+        decimal walletUsed = 0m;
+        decimal payable = totalCost;
+
+        if (dto.Payment.UseWallet && wallet != null && !_userWalletService.IsWalletExpired(wallet))
+        {
+            // walletUsed = Math.Min(wallet.WalletBalance, totalCost);
+            // if (walletUsed > 0)
+            // {
+            //     await _userWalletService.DeductFromWallet(userId, walletUsed);
+            //     payable -= walletUsed;
+            // }
+            if (wallet.WalletBalance >= totalCost)
+            {
+                walletUsed = totalCost;
+                payable = 0;
+            }
+            else
+            {
+                walletUsed = wallet.WalletBalance;
+                payable = totalCost - walletUsed;
+            }
+
+            if (walletUsed > 0)
+                await _userWalletService.DeductFromWallet(userId, walletUsed);
+
+        }
+
         var ticket = new Ticket
         {
             UserId = userId,
             EventId = eventObj.Id,
             TicketTypeId = ticketType.Id,
             BookedQuantity = dto.Quantity,
-            TotalPrice = dto.Quantity * ticketType.Price,
+            TotalPrice = totalCost,
             Status = TicketStatus.Booked,
             PaymentId = null
         };
 
         var createdTicket = await _ticketRepository.Add(ticket);
-        var payment = await CreatePayment(dto.Payment, createdTicket.TotalPrice, createdTicket.Id);
+        //var payment = await CreatePayment(dto.Payment, createdTicket.TotalPrice, createdTicket.Id);
+        var payment = await CreatePayment(dto.Payment, payable, walletUsed, createdTicket.Id);
+
         createdTicket.PaymentId = payment.Id;
         await _ticketRepository.Update(createdTicket.Id, createdTicket);
 
@@ -154,20 +197,39 @@ public class TicketService : ITicketService
         ticketType.BookedQuantity += dto.Quantity;
         await _ticketTypeRepository.Update(ticketType.Id, ticketType);
 
+        // Calculate total cost
+        var totalCost = dto.Quantity * ticketType.Price;
+
+        // Apply wallet
+        var wallet = await _userWalletService.GetWalletByUserId(userId);
+        decimal walletUsed = 0m;
+        decimal payable = totalCost;
+
+        if (dto.Payment.UseWallet && wallet != null && !_userWalletService.IsWalletExpired(wallet))
+        {
+            walletUsed = Math.Min(wallet.WalletBalance, totalCost);
+            if (walletUsed > 0)
+            {
+                await _userWalletService.DeductFromWallet(userId, walletUsed);
+                payable -= walletUsed;
+            }
+        }
+
         var ticket = new Ticket
         {
             UserId = userId,
             EventId = eventObj.Id,
             TicketTypeId = ticketType.Id,
             BookedQuantity = dto.Quantity,
-            TotalPrice = dto.Quantity * ticketType.Price,
+            //TotalPrice = dto.Quantity * ticketType.Price,
+            TotalPrice = totalCost,
             Status = TicketStatus.Booked,
             PaymentId = null
         };
 
         var createdTicket = await _ticketRepository.Add(ticket);
 
-        var payment = await CreatePayment(dto.Payment, createdTicket.TotalPrice, createdTicket.Id);
+        var payment = await CreatePayment(dto.Payment, payable, walletUsed, createdTicket.Id);
 
         createdTicket.PaymentId = payment.Id;
         await _ticketRepository.Update(createdTicket.Id, createdTicket);

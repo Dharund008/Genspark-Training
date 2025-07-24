@@ -10,15 +10,17 @@ public class UserService : IUserService
 {
     private readonly IRepository<Guid, User> _userRepository;
     private readonly IEncryptionService _encryptionService;
+    private readonly IUserWalletService _userwallet;
     private readonly ObjectMapper _mapper;
 
     public UserService(IRepository<Guid, User> userRepository,
                         IEncryptionService encryptionService,
-                        ObjectMapper mapper)
+                        ObjectMapper mapper, IUserWalletService userwallet)
     {
         _userRepository = userRepository;
         _encryptionService = encryptionService;
         _mapper = mapper;
+        _userwallet = userwallet;
     }
 
     private async Task<UserResponseDTO> Add(UserAddRequestDTO dto, UserRole role)
@@ -46,10 +48,15 @@ public class UserService : IUserService
         };
 
         user = await _userRepository.Add(user);
+        if (role == UserRole.User)
+        {
+            await _userwallet.CreateWalletForUser(user);
+        }
+        
         return _mapper.UserResponseDTOMapper(user);
     }
 
-    
+
 
     public async Task<UserResponseDTO> AddUser(UserAddRequestDTO dto)
     {
