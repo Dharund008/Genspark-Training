@@ -14,6 +14,7 @@ import { SimilarEvents } from "../../similar-events/similar-events";
 import { NotificationService } from '../../../services/Notification/notification-service';
 import { UserService } from '../../../services/User/user-service';
 import { UserWallet } from '../../../models/userwallet.model';
+import { TransactionBill } from '../../../models/transaction-bill.model';
 
 @Component({
   selector: 'app-event-by-id',
@@ -38,6 +39,11 @@ export class EventById implements OnInit {
   currentImageIndex = 0;
   imageIntervalId: any;
   userWallet?: UserWallet;
+  transactionBill?: TransactionBill;
+  isWalletExpired: boolean = false;
+  isAmountNotEnough: boolean = false;
+  bookButtonDisabled: boolean = false;
+  walletExpiredError: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -62,7 +68,15 @@ export class EventById implements OnInit {
 
     // Load wallet info
     this.userService.getWallet().subscribe({
-      next: (wallet) => this.userWallet = wallet,
+      next: (wallet) => {
+        this.userWallet = wallet;
+        console.log("wallet: ", wallet);
+        this.isWalletExpired = this.checkWalletExpiry(wallet);
+        // Delay updateOrderSummary to ensure form is initialized
+        setTimeout(() => {
+          this.updateOrderSummary();
+        }, 0);
+      },
       error: (err) => console.warn('Failed to fetch wallet:', err)
     });
   }
@@ -75,15 +89,11 @@ export class EventById implements OnInit {
   getSimilarEvents() {
     const categoryLabel = this.event()!.category;
     const categoryValue = (EventCategory[categoryLabel] as unknown) as number;
-    // let categoryValue : number = EventCategory[categoryLabel];
-    // console.log(categoryValue," ",typeof(categoryValue));
     this.eventService.getFilteredEvents(categoryValue, "", "", "", 1, 4).subscribe({
       next: (res: ApiResponse) => {
         const rawItems = res.data?.items?.$values || [];
         this.similarEvents.set(rawItems.map((e: any) => new AppEvent(e)));
-        // console.log(this.similarEvents());
         this.similarEvents.set(this.similarEvents().filter(e => e?.title !== this.event()?.title).slice(0,3));
-        // console.log(this.similarEvents());
       }
     });
   }
@@ -92,13 +102,10 @@ export class EventById implements OnInit {
   }
 
   loadEvent() {
-    // console.log("in Load evnt")
     this.eventService.getEventById(this.eventId).subscribe({
       next: (res: ApiResponse) => {
         const evt = new AppEvent(res.data);
-        // console.log(evt);
         this.event.set(evt);
-        console.log(this.event());
         this.imageid.set(evt.images ?? null);
 
         if ((this.imageid()?.length ?? 0) > 1) {
@@ -123,6 +130,19 @@ export class EventById implements OnInit {
           this.form.get('seatNumbers')?.setValue([]);
           this.form.get('quantity')?.setValue(1);
           this.availableToBook = (ticketType?.totalQuantity ?? 0) - (ticketType?.bookedQuantity ?? 0);
+          this.updateOrderSummary();
+        });
+
+        this.form.get('quantity')?.valueChanges.subscribe(() => {
+          this.updateOrderSummary();
+        });
+
+        this.form.get('useWallet')?.valueChanges.subscribe(() => {
+          this.updateOrderSummary();
+        });
+
+        this.form.get('paymentType')?.valueChanges.subscribe(() => {
+          this.updateOrderSummary();
         });
 
         this.form.get('ticketTypeId')?.setValue(null);
@@ -182,9 +202,128 @@ export class EventById implements OnInit {
     return Array.from({ length: total }, (_, i) => i + 1);
   }
 
+  checkWalletExpiry(wallet: UserWallet): boolean {
+    if (!wallet.expiry) return false;
+    const expiryDate = new Date(wallet.expiry);
+    return expiryDate < new Date();
+  }
+
+  updateOrderSummary() {
+    if (!this.form) {
+      console.warn("Form is not initialized yet.");
+      this.transactionBill = undefined;
+      this.isAmountNotEnough = false;
+      this.bookButtonDisabled = true;
+      return;
+    }
+
+    const ticketType = this.selectedTicketType();
+    if (!ticketType) {
+      console.warn("No ticket type selected.");
+      this.transactionBill = undefined;
+      this.isAmountNotEnough = false;
+      this.bookButtonDisabled = true;
+      return;
+    }
+
+    const quantityControl = this.form.get('quantity');
+    const useWalletControl = this.form.get('useWallet');
+    const paymentTypeControl = this.form.get('paymentType');
+
+    if (!quantityControl || !useWalletControl || !paymentTypeControl) {
+      console.warn("One or more form controls are missing.");
+      this.transactionBill = undefined;
+      this.isAmountNotEnough = false;
+      this.bookButtonDisabled = true;
+      return;
+    }
+
+    const quantity = quantityControl.value || 0;
+    const useWallet = useWalletControl.value || false;
+    if(useWallet == true)
+    {
+      if(this.userWallet?.isExpired == true)
+      {
+        
+      }
+    }
+    console.log("useWallet: ", useWallet);
+    
+    const paymentType = paymentTypeControl.value || null;
+
+    if (quantity <= 0) {
+      console.warn("Quantity is zero or negative.");
+      this.transactionBill = undefined;
+      this.isAmountNotEnough = false;
+      this.bookButtonDisabled = true;
+      return;
+    }
+
+    const totalPrice = ticketType.price * quantity;
+    let walletDeducted = 0;
+    let remainingAmount = totalPrice;
+    console.log("remainingAMount : ", remainingAmount);
+    console.log("userWallet : ", this.userWallet);
+    this.walletExpiredError = false;
+
+    if (useWallet && this.userWallet) {
+      if (this.isWalletExpired) {
+        this.walletExpiredError = true;
+        walletDeducted = 0;
+        remainingAmount = totalPrice;
+      } else {
+        console.log("wallet balance:", this.userWallet.balance);
+        walletDeducted = Math.min(this.userWallet.balance, totalPrice);
+        remainingAmount = totalPrice - walletDeducted;
+        console.log("walletDeducted:", walletDeducted, "remainingAmount:", remainingAmount);
+      }
+    }
+
+    if (useWallet && this.userWallet && !this.userWallet.isExpired) {
+      console.log("wallet balance:", this.userWallet.balance);
+      walletDeducted = Math.min(this.userWallet.balance, totalPrice);
+      remainingAmount = totalPrice - walletDeducted;
+      console.log("walletDeducted:", walletDeducted, "remainingAmount:", remainingAmount);
+    }
+
+    this.isAmountNotEnough = useWallet && walletDeducted < totalPrice && remainingAmount > 0;
+    console.log("amountnotenough : ", this.isAmountNotEnough);
+    if (walletDeducted === totalPrice) {
+      this.isAmountNotEnough = false;
+    }
+    console.log("2)amountnotenough : ", this.isAmountNotEnough);
+    // if(this.isAmountNotEnough == false)
+    // {
+    //   this.bookButtonDisabled =  false;
+    // }
+     // Disable book button if wallet expired and useWallet checked, or if amount not enough and no payment method selected
+    if (this.walletExpiredError) {
+      this.bookButtonDisabled = true;
+    } else if (this.isAmountNotEnough) {
+      this.bookButtonDisabled = !paymentType;
+    } else if(useWallet && walletDeducted == totalPrice && remainingAmount === 0){
+        this.bookButtonDisabled = false;
+    }
+    else {
+      this.bookButtonDisabled = false;
+    }
+    
+
+    // this.bookButtonDisabled = this.isAmountNotEnough || !paymentType;
+    console.log("bookbuttondisabled : ", this.bookButtonDisabled);
+
+    this.transactionBill = {
+      totalPrice,
+      useWallet,
+      walletDeducted,
+      remainingAmount,
+      paymentType,
+      transactionId: uuidv4()
+    };
+  }
+
   submit() {
-    if (this.form.invalid){
-      // alert("Enter all required details!");
+    if (this.form.invalid || this.bookButtonDisabled){
       return;
     }
 
@@ -208,10 +347,9 @@ export class EventById implements OnInit {
       Payment: {
         PaymentType: this.form.value.paymentType,
         UseWallet: this.form.value.useWallet,
-        TransactionId: uuidv4(),
+        TransactionId: this.transactionBill?.transactionId || uuidv4(),
       }
     };
-    // console.log(payload)
     this.ticketService.bookTicket(payload).subscribe({
       next: () => this.router.navigate(['/user']),
       error: (err:any) => {console.log(err);this.notify.error(err.error.errors.message)},
@@ -219,4 +357,3 @@ export class EventById implements OnInit {
   }
 
 }
-

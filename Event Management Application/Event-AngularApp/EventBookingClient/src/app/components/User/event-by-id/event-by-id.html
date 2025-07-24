@@ -83,16 +83,42 @@
   </div>
 
   <div class="md:col-span-2 flex flex-col gap-1 text-sm text-gray-700">
-      <p><strong>Wallet Balance:</strong> ₹{{ userWallet?.balance }}</p>
-      <p *ngIf="userWallet?.expiry"><strong>Expires:</strong> {{ userWallet?.expiry | date:'mediumDate' }}</p>
+    <p><strong>Wallet Balance:</strong> ₹{{ userWallet?.balance }}</p>
+    <!-- <p *ngIf="userWallet?.expiry">
+      <strong>Expires:</strong>
+      <span [ngClass]="{'text-red-600 font-bold': isWalletExpired}">
+        {{ userWallet?.expiry | date:'mediumDate' }}
+      </span>
+    </p> -->
+    <p *ngIf="userWallet?.expiry">
+      <strong>Expires:</strong>
+      <span [ngClass]="{'text-red-600 font-bold': isWalletExpired}">
+        {{ userWallet?.expiry | date:'mediumDate' }}
+      </span>
+    </p>
   </div>
-  <!-- <pre>{{ userWallet | json }}</pre> -->
-
 
   <!-- Use Wallet Toggle -->
-  <div class="md:col-span-2 flex items-center gap-3">
-    <input type="checkbox" id="useWallet" formControlName="useWallet" class="form-checkbox h-4 w-4 text-indigo-600" />
-    <label for="useWallet" class="text-sm text-gray-700">Use Wallet Balance</label>
+  <div class="md:col-span-2 flex flex-col gap-1">
+    <div class="flex items-center gap-3">
+      <input type="checkbox" id="useWallet" formControlName="useWallet" class="form-checkbox h-4 w-4 text-indigo-600" />
+      <label for="useWallet" class="text-sm text-gray-700">Use Wallet Balance</label>
+    </div>
+    <div *ngIf="walletExpiredError" class="text-red-600 font-semibold">
+      Wallet has expired! Please uncheck and select another payment method.
+    </div>
+  </div>
+  <div *ngIf="isAmountNotEnough" class="md:col-span-2 text-red-600 font-semibold">
+    Amount not enough in wallet for full payment.
+  </div>
+
+  <!-- Order Summary -->
+  <div class="md:col-span-2 border p-4 rounded bg-gray-50 text-gray-800">
+    <h3 class="font-semibold mb-2">Order Summary</h3>
+    <p>Total Price: ₹{{ transactionBill?.totalPrice ?? 0 }}</p>
+    <p>Use Wallet: {{ transactionBill?.useWallet ? 'Yes' : 'No' }}</p>
+    <p *ngIf="transactionBill?.useWallet">Wallet Deducted: ₹{{ transactionBill?.walletDeducted }}</p>
+    <p>Remaining Amount: ₹{{ transactionBill?.remainingAmount ?? transactionBill?.totalPrice ?? 0 }}</p>
   </div>
 
   <div>

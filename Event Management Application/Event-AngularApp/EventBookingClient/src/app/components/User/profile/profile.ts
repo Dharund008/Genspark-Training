@@ -74,25 +74,52 @@ export class Profile implements OnInit {
     });
   }
 
-  exportTicket(id: string) {
-    this.ticketService.exportTicket(id).subscribe({
-      next: (pdfBlob: Blob) => {
-        const url = window.URL.createObjectURL(pdfBlob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `Ticket_${id}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => {
-          document.body.removeChild(a);
-          window.URL.revokeObjectURL(url);
-        }, 100);
-        // alert('Download started successfully!');
-      },
-      error: (error) => {
-        alert(`Error: ${error.message}`);
-      }
-    });
+  exportTicket(id: string, transactionBill?: any) {
+    if (!transactionBill) {
+      this.ticketService.exportTicket(id).subscribe({
+        next: (pdfBlob: Blob) => {
+          const url = window.URL.createObjectURL(pdfBlob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `Ticket_${id}.pdf`;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+          }, 100);
+          // alert('Download started successfully!');
+        },
+        error: (error) => {
+          alert(`Error: ${error.message}`);
+        }
+      });
+    } else {
+      // Export combined ticket and transaction bill as JSON for demo purposes
+      const combinedData = {
+        ticketId: id,
+        transactionBill: transactionBill
+      };
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(combinedData, null, 2));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", `TicketWithTransactionBill_${id}.json`);
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    }
+  }
+
+  exportTransactionBill(transactionBill: any) {
+    // Implement export logic for transaction bill here
+    // For example, generate a PDF or JSON file for download
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(transactionBill, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", `TransactionBill_${transactionBill.transactionId}.json`);
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
   }
 
   loadUserDetails() {
