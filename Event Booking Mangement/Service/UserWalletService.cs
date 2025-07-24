@@ -28,8 +28,10 @@ public class UserWalletService : IUserWalletService
         }
 
         wallet.WalletBalance += amount;
-        wallet.WalletBalanceExpiry = DateTime.UtcNow.AddDays(15); //updating epxiration for every wallet transaction(add).
-        await _walletRepository.Update(wallet.Id, wallet);
+        wallet.WalletBalanceExpiry = DateTime.UtcNow.AddDays(15); //updating expiration for every wallet transaction(add).
+        Console.WriteLine($"[AddToWallet] Updating WalletBalanceExpiry to: {wallet.WalletBalanceExpiry}");
+        var updatedWallet = await _walletRepository.Update(wallet.Id, wallet);
+        Console.WriteLine($"[AddToWallet] Wallet updated: {updatedWallet != null}");
         return true;
     }
 

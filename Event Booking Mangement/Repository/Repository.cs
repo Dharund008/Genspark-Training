@@ -1,6 +1,7 @@
 using System;
 using EventBookingApi.Context;
 using EventBookingApi.Interface;
+using EventBookingApi.Model;
 
 namespace EventBookingApi.Repository;
 
@@ -43,6 +44,12 @@ public  abstract class Repository<K, T> : IRepository<K, T> where T:class
         if (myItem != null)
         {
             _eventContext.Entry(myItem).CurrentValues.SetValues(item);
+            if (item is UserWallet uw)
+            {
+                _eventContext.Entry(myItem).Property(nameof(UserWallet.WalletBalance)).IsModified = true;
+                _eventContext.Entry(myItem).Property(nameof(UserWallet.WalletBalanceExpiry)).IsModified = true;
+            }
+
             await _eventContext.SaveChangesAsync();
             return item;
         }
