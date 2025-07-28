@@ -39,7 +39,7 @@ namespace OnlineShopping.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ContactUs",
+                name: "Contacts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -51,7 +51,7 @@ namespace OnlineShopping.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ContactUs", x => x.Id);
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -139,7 +139,6 @@ namespace OnlineShopping.Migrations
                     categoryId = table.Column<int>(type: "integer", nullable: true),
                     ColorId = table.Column<int>(type: "integer", nullable: true),
                     ModelId = table.Column<int>(type: "integer", nullable: true),
-                    StorageId = table.Column<int>(type: "integer", nullable: true),
                     SellStartDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     SellEndDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsNew = table.Column<int>(type: "integer", nullable: true)
@@ -170,6 +169,26 @@ namespace OnlineShopping.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    CartId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ProductId = table.Column<int>(type: "integer", nullable: false),
+                    Quantity = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.CartId);
+                    table.ForeignKey(
+                        name: "FK_Carts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderDetails",
                 columns: table => new
                 {
@@ -194,6 +213,11 @@ namespace OnlineShopping.Migrations
                         principalColumn: "ProductId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Carts_ProductId",
+                table: "Carts",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_News_UserId",
@@ -230,7 +254,10 @@ namespace OnlineShopping.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ContactUs");
+                name: "Carts");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "News");

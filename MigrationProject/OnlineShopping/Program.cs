@@ -2,8 +2,11 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Online.Models;
+using Online.Models.DTO;
 using Online.Contexts;
-//using Online.Interfaces;
+using Online.Interfaces;
+using Online.Repositories;
+using Online.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,23 @@ builder.Services.AddControllers().AddJsonOptions(opts =>
                     opts.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
                     opts.JsonSerializerOptions.WriteIndented = true;
                 });;
+#endregion
+
+#region repositories
+builder.Services.AddTransient<IRepository<int, User>, UserRepository>();
+builder.Services.AddTransient<IRepository<int, Cart>, CartRepository>();
+builder.Services.AddTransient<IRepository<int, Model>, ModelRepository>();
+builder.Services.AddTransient<IRepository<int, Product>, ProductRepository>();
+builder.Services.AddTransient<IRepository<int, Order>, OrderRepository>();
+builder.Services.AddTransient<IRepository<int, OrderDetail>, OrderDetailsRepository>();
+builder.Services.AddTransient<IRepository<int, News>, NewsRepository>();
+builder.Services.AddTransient<IRepository<int, Color>, ColorRepository>();
+builder.Services.AddTransient<IRepository<int, Category>, CategoryRepository>();
+builder.Services.AddTransient<IRepository<int, ContactUs>, ContactUsRepository>();
+#endregion
+
+#region services
+builder.Services.AddTransient<IUserService, UserService>();
 #endregion
 
 

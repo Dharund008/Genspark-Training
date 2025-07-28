@@ -9,31 +9,32 @@ using Online.Interfaces;
 
 namespace Online.Repositories
 {
-    public class UserRepository : Repository<int, User>
+    public class OrderRepository : Repository<int, Order>
     {
-        public UserRepository(MigrationContext context) : base(context)
+        public OrderRepository(MigrationContext context) : base(context)
         {
 
         }
 
-        public override async Task<IEnumerable<User>> GetAllAsync()
+        public override async Task<IEnumerable<Order>> GetAllAsync()
         {
-            var user = _context.Users;
+            var user = _context.Orders;
             if (user.Count() == 0)
             {
-                throw new Exception("No Users found");
+                throw new Exception("No Orders found");
             }
             return await user.ToListAsync();
         }
         
-        public override async Task<User> GetByIdAsync(int id)
+        public override async Task<Order?> GetByIdAsync(int id)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+            var user = await _context.Orders.FindAsync(id);
             if (user == null)
             {
-                throw new Exception("No such User found");
+                throw new Exception("No such Order found");
             }
             return user;
         }
     }
+
 }

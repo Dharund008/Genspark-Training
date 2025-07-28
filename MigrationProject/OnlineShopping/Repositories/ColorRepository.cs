@@ -9,29 +9,29 @@ using Online.Interfaces;
 
 namespace Online.Repositories
 {
-    public class UserRepository : Repository<int, User>
+    public class ColorRepository : Repository<int, Color>
     {
-        public UserRepository(MigrationContext context) : base(context)
+        public ColorRepository(MigrationContext context) : base(context)
         {
 
         }
 
-        public override async Task<IEnumerable<User>> GetAllAsync()
+        public override async Task<IEnumerable<Color>> GetAllAsync()
         {
-            var user = _context.Users;
+            var user = _context.Colors;
             if (user.Count() == 0)
             {
-                throw new Exception("No Users found");
+                throw new Exception("No Colors found");
             }
             return await user.ToListAsync();
         }
         
-        public override async Task<User> GetByIdAsync(int id)
+        public override async Task<Color> GetByIdAsync(int id)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+            var user = await _context.Colors.FindAsync(id);
             if (user == null)
             {
-                throw new Exception("No such User found");
+                throw new Exception("No such Color found");
             }
             return user;
         }

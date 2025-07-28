@@ -22,6 +22,27 @@ namespace OnlineShopping.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Online.Models.Cart", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CartId"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("Online.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -82,7 +103,7 @@ namespace OnlineShopping.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactUs");
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("Online.Models.Model", b =>
@@ -189,12 +210,10 @@ namespace OnlineShopping.Migrations
             modelBuilder.Entity("Online.Models.OrderDetail", b =>
                 {
                     b.Property<int>("OrderID")
-                        .HasColumnType("integer")
-                        .HasColumnOrder(0);
+                        .HasColumnType("integer");
 
                     b.Property<int>("ProductID")
-                        .HasColumnType("integer")
-                        .HasColumnOrder(1);
+                        .HasColumnType("integer");
 
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
@@ -242,9 +261,6 @@ namespace OnlineShopping.Migrations
                     b.Property<DateTime?>("SellStartDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("StorageId")
-                        .HasColumnType("integer");
-
                     b.Property<int?>("categoryId")
                         .HasColumnType("integer");
 
@@ -283,6 +299,17 @@ namespace OnlineShopping.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Online.Models.Cart", b =>
+                {
+                    b.HasOne("Online.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Online.Models.News", b =>

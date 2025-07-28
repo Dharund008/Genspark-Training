@@ -18,7 +18,7 @@ namespace Online.Models
         public int? categoryId { get; set; }
         public int? ColorId { get; set; }
         public int? ModelId { get; set; }
-        public int? StorageId { get; set; }
+        //public int? StorageId { get; set; }
 
         public DateTime? SellStartDate { get; set; }
         public DateTime? SellEndDate { get; set; }

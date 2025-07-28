@@ -15,8 +15,8 @@ namespace Online.Models
         [Required]
         public string Password { get; set; } = string.Empty;
 
-        public ICollection<News> News { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<News> News { get; set; } = new List<News>();
+        public ICollection<Product> Products { get; set; } = new List<Product>();
 
     }
 }

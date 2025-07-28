@@ -9,29 +9,29 @@ using Online.Interfaces;
 
 namespace Online.Repositories
 {
-    public class UserRepository : Repository<int, User>
+    public class CartRepository : Repository<int, Cart>
     {
-        public UserRepository(MigrationContext context) : base(context)
+        public CartRepository(MigrationContext context) : base(context)
         {
 
         }
 
-        public override async Task<IEnumerable<User>> GetAllAsync()
+        public override async Task<IEnumerable<Cart>> GetAllAsync()
         {
-            var user = _context.Users;
+            var user = _context.Carts;
             if (user.Count() == 0)
             {
-                throw new Exception("No Users found");
+                throw new Exception("No Carts found");
             }
             return await user.ToListAsync();
         }
         
-        public override async Task<User> GetByIdAsync(int id)
+        public override async Task<Cart> GetByIdAsync(int id)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+            var user = await _context.Carts.SingleOrDefaultAsync(u => u.CartId == id);
             if (user == null)
             {
-                throw new Exception("No such User found");
+                throw new Exception("No such Cart found");
             }
             return user;
         }
