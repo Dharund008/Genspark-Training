@@ -10,9 +10,9 @@ namespace Online.Models
         public int ColorId { get; set; }
 
         [Required]
-        public string Color1 { get; set; }
+        public string ColorName { get; set; } = string.Empty;
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
    
 }

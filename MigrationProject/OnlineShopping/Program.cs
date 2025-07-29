@@ -1,12 +1,16 @@
 
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Online.Models;
 using Online.Models.DTO;
 using Online.Contexts;
 using Online.Interfaces;
 using Online.Repositories;
 using Online.Services;
+using Online.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +24,33 @@ builder.Services.AddDbContext<MigrationContext>(opts =>
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Migration-OnlineShopping API", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Enter 'Bearer {token}'",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new List<string>()
+        }
+    });
+});
 
 
 #region controllers
@@ -43,9 +73,28 @@ builder.Services.AddTransient<IRepository<int, Color>, ColorRepository>();
 builder.Services.AddTransient<IRepository<int, Category>, CategoryRepository>();
 builder.Services.AddTransient<IRepository<int, ContactUs>, ContactUsRepository>();
 #endregion
-
+builder.Services.AddHttpContextAccessor();
 #region services
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IEncryptionService, EncryptionService>();
+builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
+builder.Services.AddTransient<IOtherServices, OtherServices>();
+#endregion
+
+#region AuthenticationFilter
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
+                    };
+                });
 #endregion
 
 
@@ -72,6 +121,8 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseCors();
 app.MapControllers();
 

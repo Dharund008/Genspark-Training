@@ -109,3 +109,12 @@
 /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/obj/Debug/net8.0/OnlineShopping.pdb
 /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/obj/Debug/net8.0/OnlineShopping.genruntimeconfig.cache
 /Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/obj/Debug/net8.0/ref/OnlineShopping.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/MigrationProject/OnlineShopping/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

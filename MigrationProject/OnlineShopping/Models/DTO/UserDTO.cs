@@ -19,9 +19,15 @@ namespace Online.Models.DTO
 
         [Required]
         public string Password { get; set; } = string.Empty;
+        [Phone]
+        public string CustomerPhone { get; set; } = string.Empty;
+
+        [EmailAddress]
+        public string CustomerEmail { get; set; } = string.Empty;
+        public string CustomerAddress { get; set; } = string.Empty;
     }
 
-    public class UpdateUserDto
+    public class UpdateUserDTO
     {
         [Required]
         public int UserId { get; set; }
@@ -35,13 +41,30 @@ namespace Online.Models.DTO
 
     public class UsernameDTO
     {
-        public int UserId { get; set; }
+        [Required]
         public string Username { get; set; } = string.Empty;
+    }
+    public class PhoneDTO
+    {
+        [Required]
+        [Phone]
+        public string CustomerPhone { get; set; } = string.Empty;
+    }
+    public class AddressDTO
+    {
+        [Required]
+        public string CustomerAddress { get; set; } = string.Empty;
     }
 
     public class UserDTO
     {
         public int UserId { get; set; }
         public string Username { get; set; } = string.Empty;
+    }
+
+    public class LoginResponseDTO
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Token { get; set; } = string.Empty;
     }
 }
