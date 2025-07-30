@@ -18,12 +18,7 @@ namespace Online.Repositories
 
         public override async Task<IEnumerable<ContactUs>> GetAllAsync()
         {
-            var user = _context.Contacts;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No Contacts found");
-            }
-            return await user.ToListAsync();
+            return await _context.Contacts.ToListAsync();
         }
         
         public override async Task<ContactUs?> GetByIdAsync(int id)

@@ -30,7 +30,7 @@ namespace Online.Services
         {
             try
             {
-                var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username);
+                var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Username == user.Username.ToLower());
                 if (dbUser == null)
                 {
                     throw new Exception("No such user");

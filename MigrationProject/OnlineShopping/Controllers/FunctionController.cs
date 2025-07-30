@@ -15,13 +15,13 @@ namespace Online.Controllers
     [Route("api/[controller]")]
     public class FunctionController : ControllerBase
     {
-        private readonly IOtherServices _otherService;
+        private readonly IFunctionServices _otherService;
         private readonly IRepository<int, Model> _modelrepo;
         private readonly IRepository<int, Color> _colorrepo;
 
         private readonly IRepository<int, Category> _categrepo;
 
-        public FunctionController(IOtherServices otherService, IRepository<int, Model> modelrepo, IRepository<int, Color> colorrepo, IRepository<int, Category> categrepo)
+        public FunctionController(IFunctionServices otherService, IRepository<int, Model> modelrepo, IRepository<int, Color> colorrepo, IRepository<int, Category> categrepo)
         {
             _otherService = otherService;
             _modelrepo = modelrepo;
@@ -32,16 +32,17 @@ namespace Online.Controllers
         //Colors:
         #region Color
         [HttpPost("add-color")]
-        public async Task<IActionResult> AddColor([FromBody] string colorname)
+        public async Task<IActionResult> AddColor([FromQuery] string colorname)
         {
             try
             {
-                var color = new Color { ColorName = colorname.ToLower() };
+                Color c = new();
+                c.ColorName = colorname.ToLower();
 
-                var col = await _otherService.GetColorByName(color.ColorName);
+                var col = await _otherService.GetColorByName(c.ColorName);
                 if (col == null)
                 {
-                    await _colorrepo.AddAsync(color);
+                    await _colorrepo.AddAsync(c);
                     return Ok($"Color {colorname} added successfully");
                 }
                 return BadRequest($"Color {colorname} already exists");
@@ -54,7 +55,7 @@ namespace Online.Controllers
         }
 
         [HttpGet("color-by-name")]
-        public async Task<IActionResult> GetColorByName([FromBody] string colorname)
+        public async Task<IActionResult> GetColorByName([FromQuery] string colorname)
         {
             try
             {
@@ -92,7 +93,7 @@ namespace Online.Controllers
 
         #region Category
         [HttpPost("add-Category")]
-        public async Task<IActionResult> AddCategory([FromBody] string CategoryName)
+        public async Task<IActionResult> AddCategory([FromQuery] string CategoryName)
         {
             try
             {
@@ -112,7 +113,7 @@ namespace Online.Controllers
         }
 
         [HttpGet("get-category-by-name")]
-        public async Task<IActionResult> GetCategoryByName([FromBody] string CategoryName)
+        public async Task<IActionResult> GetCategoryByName([FromQuery] string CategoryName)
         {
             try
             {
@@ -151,7 +152,7 @@ namespace Online.Controllers
 
         #region Model
         [HttpPost("add-model")]
-        public async Task<IActionResult> AddModel([FromBody] string modelname)
+        public async Task<IActionResult> AddModel([FromQuery] string modelname)
         {
             try
             {
@@ -171,7 +172,7 @@ namespace Online.Controllers
         }
 
         [HttpGet("get-model-by-name")]
-        public async Task<IActionResult> GetModelByName([FromBody] string modelname)
+        public async Task<IActionResult> GetModelByName([FromQuery] string modelname)
         {
             try
             {

@@ -27,7 +27,7 @@ namespace Online.Controllers
         {
             try
             {
-                var result = await _userService.IsUsernameExists(username);
+                var result = await _userService.IsUsernameExists(username.ToLower());
                 if (result)
                 {
                     return Ok(new { message = "User exists!", result });

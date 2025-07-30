@@ -14,9 +14,9 @@ namespace Online.Models
         public string ProductName { get; set; } = string.Empty;
 
         public string? Image { get; set; }
-        public double? Price { get; set; }
-        public int? userId { get; set; }
-        public int? categoryId { get; set; }
+        public double Price { get; set; }
+        public int? UserId { get; set; }
+        public int? CategoryId { get; set; }
         public int? ColorId { get; set; }
         public int? ModelId { get; set; }
         //public int? StorageId { get; set; }
@@ -24,7 +24,9 @@ namespace Online.Models
         public DateTime? SellStartDate { get; set; }
         public DateTime? SellEndDate { get; set; }
 
-        public int? IsNew { get; set; }
+        public bool IsSaleEnded { get; set; } = false;
+
+        public bool IsSold { get; set; } = false;
 
         //properties
         public User? User { get; set; }

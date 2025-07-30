@@ -31,7 +31,7 @@ namespace OnlineShopping.Migrations
                 {
                     ColorId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Color1 = table.Column<string>(type: "text", nullable: false)
+                    ColorName = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +45,7 @@ namespace OnlineShopping.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    email = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
                     phone = table.Column<string>(type: "text", nullable: false),
                     content = table.Column<string>(type: "text", nullable: false)
                 },
@@ -60,7 +60,7 @@ namespace OnlineShopping.Migrations
                 {
                     ModelId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Model1 = table.Column<string>(type: "text", nullable: false)
+                    ModelName = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,11 +76,7 @@ namespace OnlineShopping.Migrations
                     OrderName = table.Column<string>(type: "text", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     PaymentType = table.Column<string>(type: "text", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false),
-                    CustomerName = table.Column<string>(type: "text", nullable: false),
-                    CustomerPhone = table.Column<string>(type: "text", nullable: false),
-                    CustomerEmail = table.Column<string>(type: "text", nullable: false),
-                    CustomerAddress = table.Column<string>(type: "text", nullable: false)
+                    Status = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -94,7 +90,10 @@ namespace OnlineShopping.Migrations
                     UserId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Username = table.Column<string>(type: "text", nullable: false),
-                    Password = table.Column<string>(type: "text", nullable: false)
+                    Password = table.Column<string>(type: "text", nullable: false),
+                    CustomerPhone = table.Column<string>(type: "text", nullable: false),
+                    CustomerEmail = table.Column<string>(type: "text", nullable: false),
+                    CustomerAddress = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -135,20 +134,21 @@ namespace OnlineShopping.Migrations
                     ProductName = table.Column<string>(type: "text", nullable: false),
                     Image = table.Column<string>(type: "text", nullable: true),
                     Price = table.Column<double>(type: "double precision", nullable: true),
-                    userId = table.Column<int>(type: "integer", nullable: true),
-                    categoryId = table.Column<int>(type: "integer", nullable: true),
+                    UserId = table.Column<int>(type: "integer", nullable: true),
+                    CategoryId = table.Column<int>(type: "integer", nullable: true),
                     ColorId = table.Column<int>(type: "integer", nullable: true),
                     ModelId = table.Column<int>(type: "integer", nullable: true),
                     SellStartDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     SellEndDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    IsNew = table.Column<int>(type: "integer", nullable: true)
+                    IsSaleEnded = table.Column<bool>(type: "boolean", nullable: false),
+                    IsNew = table.Column<bool>(type: "boolean", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductId);
                     table.ForeignKey(
-                        name: "FK_Products_Categories_categoryId",
-                        column: x => x.categoryId,
+                        name: "FK_Products_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryId");
                     table.ForeignKey(
@@ -162,8 +162,8 @@ namespace OnlineShopping.Migrations
                         principalTable: "Models",
                         principalColumn: "ModelId");
                     table.ForeignKey(
-                        name: "FK_Products_Users_userId",
-                        column: x => x.userId,
+                        name: "FK_Products_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId");
                 });
@@ -194,6 +194,8 @@ namespace OnlineShopping.Migrations
                 {
                     OrderID = table.Column<int>(type: "integer", nullable: false),
                     ProductID = table.Column<int>(type: "integer", nullable: false),
+                    OrderDetailID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Price = table.Column<double>(type: "double precision", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -230,9 +232,9 @@ namespace OnlineShopping.Migrations
                 column: "ProductID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_categoryId",
+                name: "IX_Products_CategoryId",
                 table: "Products",
-                column: "categoryId");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_ColorId",
@@ -245,9 +247,9 @@ namespace OnlineShopping.Migrations
                 column: "ModelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_userId",
+                name: "IX_Products_UserId",
                 table: "Products",
-                column: "userId");
+                column: "UserId");
         }
 
         /// <inheritdoc />

@@ -18,12 +18,7 @@ namespace Online.Repositories
 
         public override async Task<IEnumerable<News>> GetAllAsync()
         {
-            var user = _context.News;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No News found");
-            }
-            return await user.ToListAsync();
+            return await _context.News.ToListAsync();
         }
         
         public override async Task<News> GetByIdAsync(int id)

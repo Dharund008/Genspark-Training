@@ -18,12 +18,7 @@ namespace Online.Repositories
 
         public override async Task<IEnumerable<User>> GetAllAsync()
         {
-            var user = _context.Users;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No Users found");
-            }
-            return await user.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
         
         public override async Task<User> GetByIdAsync(int id)

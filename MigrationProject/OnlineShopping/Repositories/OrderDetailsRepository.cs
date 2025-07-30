@@ -17,12 +17,7 @@ namespace Online.Repositories
         }
         public override async Task<IEnumerable<OrderDetail>> GetAllAsync()
         {
-            var user = _context.OrderDetails;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No OrderDetails found");
-            }
-            return await user.ToListAsync();
+            return await _context.OrderDetails.ToListAsync();
         }
         
         public override async Task<OrderDetail> GetByIdAsync(int id)

@@ -9,14 +9,14 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Online.Services
 {
-    public class OtherServices : IOtherServices
+    public class FunctionServices : IFunctionServices
     {
         private readonly IRepository<int, Model> modelrepo;
         private readonly IRepository<int, Color> colorrepo;
 
         private readonly IRepository<int, Category> categrepo;
 
-        public OtherServices(IRepository<int, Model> m, IRepository<int, Color> c, IRepository<int, Category> ca)
+        public FunctionServices(IRepository<int, Model> m, IRepository<int, Color> c, IRepository<int, Category> ca)
         {
             modelrepo = m;
             colorrepo = c;

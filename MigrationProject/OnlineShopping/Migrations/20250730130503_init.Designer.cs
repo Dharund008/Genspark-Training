@@ -12,7 +12,7 @@ using Online.Contexts;
 namespace OnlineShopping.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    [Migration("20250728144023_init")]
+    [Migration("20250730130503_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -71,7 +71,7 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ColorId"));
 
-                    b.Property<string>("Color1")
+                    b.Property<string>("ColorName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -88,15 +88,15 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("content")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -117,7 +117,7 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ModelId"));
 
-                    b.Property<string>("Model1")
+                    b.Property<string>("ModelName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -174,22 +174,6 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderId"));
 
-                    b.Property<string>("CustomerAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CustomerEmail")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CustomerPhone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<DateTime?>("OrderDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -218,6 +202,12 @@ namespace OnlineShopping.Migrations
                     b.Property<int>("ProductID")
                         .HasColumnType("integer");
 
+                    b.Property<int>("OrderDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderDetailID"));
+
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
@@ -239,14 +229,20 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ProductId"));
 
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("ColorId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
-                    b.Property<int?>("IsNew")
-                        .HasColumnType("integer");
+                    b.Property<bool?>("IsNew")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsSaleEnded")
+                        .HasColumnType("boolean");
 
                     b.Property<int?>("ModelId")
                         .HasColumnType("integer");
@@ -264,21 +260,18 @@ namespace OnlineShopping.Migrations
                     b.Property<DateTime?>("SellStartDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("categoryId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("userId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("integer");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("ColorId");
 
                     b.HasIndex("ModelId");
 
-                    b.HasIndex("categoryId");
-
-                    b.HasIndex("userId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Products");
                 });
@@ -290,6 +283,18 @@ namespace OnlineShopping.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
+
+                    b.Property<string>("CustomerAddress")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -347,6 +352,10 @@ namespace OnlineShopping.Migrations
 
             modelBuilder.Entity("Online.Models.Product", b =>
                 {
+                    b.HasOne("Online.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId");
+
                     b.HasOne("Online.Models.Color", "Color")
                         .WithMany("Products")
                         .HasForeignKey("ColorId");
@@ -355,13 +364,9 @@ namespace OnlineShopping.Migrations
                         .WithMany("Products")
                         .HasForeignKey("ModelId");
 
-                    b.HasOne("Online.Models.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("categoryId");
-
                     b.HasOne("Online.Models.User", "User")
                         .WithMany("Products")
-                        .HasForeignKey("userId");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Category");
 

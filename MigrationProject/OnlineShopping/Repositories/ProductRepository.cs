@@ -17,12 +17,7 @@ namespace Online.Repositories
         }
         public override async Task<IEnumerable<Product>> GetAllAsync()
         {
-            var user = _context.Products;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No Products found");
-            }
-            return await user.ToListAsync();
+            return await _context.Products.ToListAsync();
         }
         
         public override async Task<Product?> GetByIdAsync(int id)

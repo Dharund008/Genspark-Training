@@ -11,10 +11,14 @@ namespace Online.Models
 
         [Required]
         public int ProductId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+        public int Quantity { get; set; }
         
         [ForeignKey(nameof(ProductId))]
         public Product? Product { get; set; }
-
-        public int Quantity { get; set; }
+        public User? User{ get; set; }
+       
     }
 }

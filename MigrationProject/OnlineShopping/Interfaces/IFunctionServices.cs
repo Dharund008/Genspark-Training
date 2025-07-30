@@ -3,7 +3,7 @@ using Online.Models;
 
 namespace Online.Interfaces
 {
-    public interface IOtherServices
+    public interface IFunctionServices
     {
         Task<Color> GetColorByName(string colorname);
         Task<Category> GetCategoryByName(string categoryname);

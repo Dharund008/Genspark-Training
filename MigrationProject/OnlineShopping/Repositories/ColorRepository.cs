@@ -18,12 +18,7 @@ namespace Online.Repositories
 
         public override async Task<IEnumerable<Color>> GetAllAsync()
         {
-            var user = _context.Colors;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No Colors found");
-            }
-            return await user.ToListAsync();
+            return await _context.Colors.ToListAsync();
         }
         
         public override async Task<Color> GetByIdAsync(int id)

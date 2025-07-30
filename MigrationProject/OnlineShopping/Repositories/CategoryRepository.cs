@@ -18,12 +18,7 @@ namespace Online.Repositories
 
         public override async Task<IEnumerable<Category>> GetAllAsync()
         {
-            var user = _context.Categories;
-            if (user.Count() == 0)
-            {
-                throw new Exception("No Categories found");
-            }
-            return await user.ToListAsync();
+            return await _context.Categories.ToListAsync();
         }
         
         public override async Task<Category> GetByIdAsync(int id)
