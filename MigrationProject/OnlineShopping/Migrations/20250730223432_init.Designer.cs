@@ -12,7 +12,7 @@ using Online.Contexts;
 namespace OnlineShopping.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    [Migration("20250730130503_init")]
+    [Migration("20250730223432_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -39,9 +39,14 @@ namespace OnlineShopping.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("CartId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Carts");
                 });
@@ -88,7 +93,14 @@ namespace OnlineShopping.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Message")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -96,11 +108,7 @@ namespace OnlineShopping.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("content")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("phone")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -149,8 +157,9 @@ namespace OnlineShopping.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -177,44 +186,46 @@ namespace OnlineShopping.Migrations
                     b.Property<DateTime?>("OrderDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OrderName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PaymentType")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<double>("TotalAmount")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("OrderId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Online.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("OrderID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("integer");
-
                     b.Property<int>("OrderDetailID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderDetailID"));
 
+                    b.Property<int>("OrderID")
+                        .HasColumnType("integer");
+
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("OrderID", "ProductID");
+                    b.HasKey("OrderDetailID");
+
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("ProductID");
 
@@ -238,16 +249,16 @@ namespace OnlineShopping.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("IsNew")
+                    b.Property<bool>("IsSaleEnded")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("IsSaleEnded")
+                    b.Property<bool>("IsSold")
                         .HasColumnType("boolean");
 
                     b.Property<int?>("ModelId")
                         .HasColumnType("integer");
 
-                    b.Property<double?>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("double precision");
 
                     b.Property<string>("ProductName")
@@ -317,13 +328,32 @@ namespace OnlineShopping.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Online.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Online.Models.News", b =>
                 {
                     b.HasOne("Online.Models.User", "User")
                         .WithMany("News")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Online.Models.Order", b =>
+                {
+                    b.HasOne("Online.Models.User", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

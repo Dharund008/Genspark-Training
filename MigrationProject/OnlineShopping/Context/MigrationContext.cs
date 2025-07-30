@@ -24,8 +24,8 @@ namespace Online.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<OrderDetail>()
-            .HasKey(od => new { od.OrderID, od.ProductID });
+            // modelBuilder.Entity<OrderDetail>()
+            // .HasKey(od => new { od.OrderID, od.ProductID });
         }
     }
 }

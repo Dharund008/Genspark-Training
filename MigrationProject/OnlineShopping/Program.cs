@@ -84,6 +84,10 @@ builder.Services.AddTransient<ICurrentUserService, CurrentUserService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<ICartService, CartService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<INewsService, NewsService>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IMailService, MailService>();
+builder.Services.AddHostedService<ProductExpiryService>();
 #endregion
 
 #region AuthenticationFilter

@@ -31,8 +31,12 @@ namespace Online.Services
             _productService = productService;
         }
 
-        public async Task<Cart> AddtoCart(int productid)
+        public async Task<Cart> AddtoCart(int productid, int quantity)
         {
+            if (productid <= 0 && quantity <= 0)
+            {
+                throw new Exception("Invalid product id or quantity");
+            }
             var prod = await _productService.GetByIdAsync(productid);
 
             if (prod == null)
@@ -47,7 +51,7 @@ namespace Online.Services
             {
                 throw new Exception("Product sale has ended!");
             }
-            if (prod.UserId == _currentUser.Id)
+            if (prod.UserId == _currentUser.Id) //user cant checkout his own product
             {
                 throw new Exception("You cannot buy your own product.");
             }
@@ -55,9 +59,11 @@ namespace Online.Services
             var cart = new Cart
             {
                 ProductId = productid,
-                UserId = user.UserId
+                UserId = user.UserId,
+                Quantity = quantity
             };
             var res = await _cartrepo.AddAsync(cart);
+            //var res = _context.Add(cart);
             await _context.SaveChangesAsync();
             return res;
         }
@@ -124,8 +130,12 @@ namespace Online.Services
             }
             else
             {
-                List<int> prods = new List<int>();
-                prods.Add(this_product.ProductId);
+                // List<int> prods = new List<int>();
+                // prods.Add(this_product.ProductId);
+                // var ordered = await _orderService.PlaceOrder(prods);
+
+                //return ordered;
+                List<int> prods = [this_product.ProductId];
                 var ordered = await _orderService.PlaceOrder(prods);
 
                 return ordered;

@@ -18,10 +18,12 @@ namespace Online.Models
 
         [Required]
         [Phone]
-        public string phone { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
 
         [Required]
-        public string content { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
     
 }

@@ -34,10 +34,9 @@ namespace Online.Services
         public async Task<Order> PlaceOrder(IEnumerable<int> productIds)
         {
             double total = 0;
-            int items = 0;
             bool available = true;
             var user = await _userService.GetByIdAsync(_currentUser.Id);
-
+            var car = await _cartrepo.GetAllAsync();
 
             foreach (var id in productIds)
             {
@@ -47,8 +46,8 @@ namespace Online.Services
                     available = false;
                     break;
                 }
-                total += product.Price;
-                items++;
+                var qt = car.Where(c => c.ProductId == id).Sum(c => c.Quantity);
+                total += product.Price * qt; //price as per quantity of per product!
             }
 
             if (!available)
@@ -70,12 +69,13 @@ namespace Online.Services
                 foreach (var id in productIds)
                 {
                     var product = await _prodrepo.GetByIdAsync(id);
+                    var cart = _context.Carts.Where(c => c.ProductId == id && c.UserId == user.UserId).FirstOrDefault();
                     var orderdetail = new OrderDetail
                     {
                         OrderID = ordered.OrderId,
                         ProductID = product.ProductId,
                         Price = product.Price,
-                        Quantity = items
+                        Quantity = cart.Quantity
                     };
                     //await _ODetailrepo.AddAsync(orderdetail);
                     _context.OrderDetails.Add(orderdetail);

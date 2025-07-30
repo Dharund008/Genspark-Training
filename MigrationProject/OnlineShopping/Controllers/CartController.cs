@@ -22,13 +22,13 @@ namespace Online.Controllers
         }
 
         [HttpPost("add-to-cart")]
-        public async Task<IActionResult> Addtocart([FromQuery] int productid)
+        public async Task<IActionResult> Addtocart([FromQuery] int productid, [FromQuery] int quantity)
         {
             try
             {
                 if (productid != 0)
                 {
-                    var added = await _cartService.AddtoCart(productid);
+                    var added = await _cartService.AddtoCart(productid,quantity);
                     return Ok(new { message = "Product added to cart successfully!", added });
                 }
                 return BadRequest(new { message = "Invalid product ID!" });

@@ -1,0 +1,12 @@
+//hosting service : product-expiry-service
+
+Quick Tip: Testing the Service
+
+To test it's working:
+
+Temporarily change Task.Delay(...) to 10 seconds or 30 seconds.
+Create a product with a SellEndDate = DateTime.Now.AddSeconds(5).
+Watch it get marked as IsSaleEnded = true in DB after ~10 seconds.
+Then switch it back to 10 minutes for real use:
+
+await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);

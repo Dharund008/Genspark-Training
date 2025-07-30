@@ -9,19 +9,22 @@ namespace Online.Models
         [Key]
         public int NewsId { get; set; }
 
+        [Required]
         public int UserId { get; set; }
 
         [Required]
         public string Title { get; set; } = string.Empty;
 
         public string ShortDescription { get; set; } = string.Empty;
-        public string Image { get; set; }
+
+        [Required]
+        public string? Image { get; set; } = null;
 
         [Required]
         public string Content { get; set; } = string.Empty;
 
-        public DateTime? CreatedDate { get; set; }
-        public int Status { get; set; }
+        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
+        public string Status { get; set; } = "Active";
 
         //properties
         public User? User { get; set; }

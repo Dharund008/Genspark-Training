@@ -20,8 +20,8 @@ namespace Online.Controllers
             _productService = productService;
         }
 
-        [HttpPost("upload-screenshot")]
-        public async Task<IActionResult> UploadScreenshot(IFormFile file)
+        [HttpPost("upload-product-image")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
         {
             if (file == null || file.Length == 0)
             {
@@ -30,7 +30,7 @@ namespace Online.Controllers
             }
 
             var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var savePath = Path.Combine("wwwroot/Images", fileName);
+            var savePath = Path.Combine("wwwroot/Products", fileName);
 
             using (var stream = new FileStream(savePath, FileMode.Create))
             {
