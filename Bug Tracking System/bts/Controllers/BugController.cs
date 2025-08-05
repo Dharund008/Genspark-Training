@@ -43,19 +43,17 @@ namespace Bts.Controllers
             var UserId = User.FindFirst("MyApp_Id")?.Value;
             var bugDetails = await _bugService.GetBugByIdAsync(bugId);
 
-            if (!string.IsNullOrEmpty(bugDetails.AssignedTo))
-            {
+          
                 await _hubContext.Clients.Group(bugDetails.AssignedTo)
                     .SendAsync("ReceiveMessage", 
                         $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by {UserId}");
-            }
+            
 
-            if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
-            {
+            
                 await _hubContext.Clients.Group(bugDetails.CreatedBy)
                     .SendAsync("ReceiveMessage", 
                         $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by {UserId}");
-            }
+            
             await _hubContext.Clients.Group("ADMIN")
                     .SendAsync("ReceiveMessage", $"{UserId} has updated the bug ({bugId}) status to {newStatus}");
 

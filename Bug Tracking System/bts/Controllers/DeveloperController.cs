@@ -49,9 +49,13 @@ namespace Bts.Controllers
             if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
             {
                 await _hubContext.Clients.Group(bugDetails.CreatedBy)
-                    .SendAsync("ReceiveMessage", 
+                    .SendAsync("ReceiveMessage",
                         $"Bug ({bugId} : {bugDetails.Title}) status changed to {newStatus} by {developerId}");
+                        
+                await _hubContext.Clients.Group("ADMIN")
+                    .SendAsync("ReceiveMessage", $"Status Updated Bug({bugId}) status to {newStatus}");
             }
+            
             _logger.LogInformation("Bug status updated for bug {BugId} to {NewStatus} by developer {DeveloperId}", bugId, newStatus, developerId);
             return Ok("Bug status updated");
         }

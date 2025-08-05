@@ -163,6 +163,7 @@ namespace Bts.Services
         {
             var bugs = await _context.Bugs
                 .Where(b => b.CreatedBy == testerId)
+                .OrderByDescending(b => b.CreatedAt)
                 .ToListAsync();
             _logger.LogInformation("Retrieved reported bugs for tester {TesterId}", testerId);
             return bugs;

@@ -32,7 +32,7 @@ namespace Bts.Services
             try
             {
                 var bug = await _context.Bugs.FindAsync(dto.BugId);
-                if (bug == null)
+                if (bug == null)  
                 {
                     _logger.LogWarning("Bug not found with ID {BugId} in AddCommentAsync", dto.BugId);
                     throw new Exception("Bug not found");

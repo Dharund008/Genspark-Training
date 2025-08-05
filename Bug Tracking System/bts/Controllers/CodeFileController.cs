@@ -38,14 +38,17 @@ namespace Bts.Controllers
         public async Task<IActionResult> Upload(IFormFile file)
         {
             if (file == null || file.Length == 0)
-                return BadRequest("No file to upload");
+            {
+                _logger.LogWarning("No file provided for upload.");
+                return BadRequest("File is missing or empty.");
+            }
             using var stream = file.OpenReadStream();
 
             await _codeFileService.UploadFile(stream, file.FileName, "codefiles");
             var UserId = User.FindFirst("MyApp_Id")?.Value;
             await _hubContext.Clients.All
                 .SendAsync("ReceiveMessage", $"File {file.FileName} uploaded successfully by Developer:{UserId}");
-            return Ok("File uploaded");
+            return Ok("File uploaded - " + file.FileName);
         }
 
         [Authorize]

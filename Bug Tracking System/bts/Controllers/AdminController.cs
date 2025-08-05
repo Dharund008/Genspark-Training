@@ -126,7 +126,7 @@ namespace Bts.Controllers
                     return NotFound("Bug not found");
                 }
                 var bugDetails = await _bugService.GetBugByIdAsync(bugId);
-                await _hubContext.Clients.Group(developerId)
+                await _hubContext.Clients.Group("DEVELOPER")
                     .SendAsync("ReceiveMessage", $"Admin has assigned a new bug to you. Bug ID: {bugId}");
 
                 if (!string.IsNullOrEmpty(bugDetails.CreatedBy))

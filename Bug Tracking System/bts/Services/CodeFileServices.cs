@@ -38,7 +38,7 @@ namespace Bts.Services
                 var developerId = _currentUserService.Id;
                 var relativePath = $"/api/CodeFile/downloadfile?fileName={fileName}&containername={containerName}";
 
-                // You can now store or return this path as needed
+                
                 Console.WriteLine($"Download URL: {relativePath}");
 
                  // Save to DB
