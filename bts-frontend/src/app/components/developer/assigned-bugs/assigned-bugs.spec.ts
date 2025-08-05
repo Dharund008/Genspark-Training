@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 import { AssignedBugs } from './assigned-bugs';
 
@@ -8,7 +11,16 @@ describe('AssignedBugs', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AssignedBugs]
+      imports: [AssignedBugs, HttpClientTestingModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}),
+            snapshot: { paramMap: { get: () => null } }
+          }
+        }
+      ]
     })
     .compileComponents();
 

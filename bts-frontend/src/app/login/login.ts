@@ -95,24 +95,24 @@ export class LoginComponent implements OnInit {
   // Demo login methods for testing
   loginAsAdmin(): void {
     this.loginForm.patchValue({
-      username: 'admin',
-      password: 'admin123'
+      username: 'admin4@gmail.com',
+      password: 'adminpass4'
     });
     this.onLogin();
   }
 
   loginAsDeveloper(): void {
     this.loginForm.patchValue({
-      username: 'developer',
-      password: 'dev123'
+      username: 'developer5@gmail.com',
+      password: 'developerpass5'
     });
     this.onLogin();
   }
 
   loginAsTester(): void {
     this.loginForm.patchValue({
-      username: 'tester',
-      password: 'test123'
+      username: 'tester4@gmail.com',
+      password: 'testerpass4'
     });
     this.onLogin();
   }

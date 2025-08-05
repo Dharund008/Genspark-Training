@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthService } from './AuthService';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationService {
@@ -12,7 +13,7 @@ export class NotificationService {
   public messages$: Observable<string | null> = this.messagesSubject.asObservable();
 
 
-  constructor(private zone: NgZone) {}
+  constructor(private zone: NgZone, private authService: AuthService) {}
 
   startConnection(loggedInUserId: string, loggedInUserRole: string): void {
     if (this.isStarted) {
@@ -24,8 +25,11 @@ export class NotificationService {
 
     this.hubConnection = new signalR.HubConnectionBuilder()
       .withUrl(hubUrl, {
+        // skipNegotiation: true,
+        skipNegotiation: false,
+        accessTokenFactory: () => this.authService.getToken() || '',
         transport: signalR.HttpTransportType.WebSockets,
-        skipNegotiation: true
+        //transport: signalR.HttpTransportType.WebSockets
       })
       .withAutomaticReconnect()
       .configureLogging(signalR.LogLevel.Information)

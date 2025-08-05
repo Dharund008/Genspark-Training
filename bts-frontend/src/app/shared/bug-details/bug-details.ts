@@ -25,12 +25,16 @@ export class BugDetails implements OnInit {
   selectedStatus: BugStatus = BugStatus.New;
   currentUser : any;
   
-  
   isLoading = true;
   isAddingComment = false;
   isUpdating = false;
   errorMessage = '';
   successMessage = '';
+
+  // Add getter for codeFileName to ensure it is accessible in template
+  get codeFileName(): string | undefined {
+    return this.bug?.codeFileName;
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -136,7 +140,7 @@ export class BugDetails implements OnInit {
   }
 
   canComment(): boolean {
-    return !!this.currentUser && !this.bug?.isDeleted;
+    return !!this.currentUser && !this.bug?.isDeleted && this.bug?.status !== BugStatus.Closed;
   }
 
   canUpdateStatus(): boolean {

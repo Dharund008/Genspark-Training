@@ -16,7 +16,7 @@ export class AuthService {
   private userUrl = 'http://localhost:5088/api/User';
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
-  private isLoggedInSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
+  private isLoggedInSubject = new BehaviorSubject<boolean>(!!sessionStorage.getItem('token'));
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
   role$ = new BehaviorSubject<string>('');
   token:string|null="";
@@ -41,7 +41,8 @@ export class AuthService {
   }
   authorization()
     {
-        this.token = localStorage.getItem('token');
+        //this.token = localStorage.getItem('token');
+        this.token = sessionStorage.getItem('token');
 
         this.headers = new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
@@ -91,7 +92,8 @@ export class AuthService {
     });
   }
   logout(): void {
-    localStorage.removeItem('authToken');
+    //localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
     this.clearToken();
     this.currentUserSubject.next(null);
     this.isLoggedInSubject.next(false); 
@@ -114,15 +116,18 @@ export class AuthService {
   }
 
   setToken(token: string): void {
-    localStorage.setItem('authToken', token);
+    //localStorage.setItem('authToken', token);
+    sessionStorage.setItem('authToken', token);
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    //return localStorage.getItem('authToken');
+    return sessionStorage.getItem('authToken');
   }
 
   clearToken(): void {
-    localStorage.removeItem('authToken');
+    //localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
     this.isLoggedInSubject.next(false); 
   }
 

@@ -28,6 +28,7 @@ export interface Bug {
   createdAt: string;
   updatedAt?: string;
   screenshotUrl?: string;
+  codeFileName?: string;
 }
 
 export interface BugSubmissionDTO {
@@ -35,6 +36,7 @@ export interface BugSubmissionDTO {
   description: string;
   priority: BugPriority;
   screenshotUrl?: string;
+  codeFileName?: string;
 }
 
 export interface UpdateBugPatchDTO {

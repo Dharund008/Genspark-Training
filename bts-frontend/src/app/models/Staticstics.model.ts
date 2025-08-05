@@ -5,7 +5,7 @@ export interface DashboardStats {
   openBugs: number;
   totalBugsDeleted: number;
   totalBugsClosed: number;
-  totalBugsInPorgress?: number;
+  totalBugsInProgress?: number;
   resolvedBugs?: number;
   totalDevelopers?: number;
   totalTesters?: number;

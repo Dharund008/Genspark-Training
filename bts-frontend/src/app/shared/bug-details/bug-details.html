@@ -53,6 +53,10 @@
           <label>Last Updated:</label>
           <span>{{ bug.updatedAt | date:'medium' }}</span>
         </div>
+        <div class="info-item" *ngIf="bug.codeFileName">
+          <label>Corrupted Code File:</label>
+          <span>{{ bug.codeFileName }}</span>
+        </div>
       </div>
 
       <div class="description-section">
@@ -100,6 +104,9 @@
               class="add-comment-btn">
         {{ isAddingComment ? 'Adding...' : 'Add Comment' }}
       </button>
+    </div>
+    <div *ngIf="!canComment()" class="text-muted">
+      Comments are disabled for closed or deleted bugs.
     </div>
 
     <!-- Comments List -->

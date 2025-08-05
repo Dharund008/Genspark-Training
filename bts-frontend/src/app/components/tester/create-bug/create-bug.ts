@@ -17,7 +17,8 @@ export class CreateBug {
     title: '',
     description: '',
     priority: BugPriority.Medium,
-    screenshotUrl: undefined
+    screenshotUrl: undefined,
+    codeFileName: undefined
   };
 
   selectedFile: File | null = null;

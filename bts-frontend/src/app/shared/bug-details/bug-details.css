@@ -342,6 +342,14 @@
   padding: 3rem 2rem;
   color: #6c757d;
 }
+.text-muted {
+  color: #6c757d;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 1rem 0;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
 
 .no-comments p {
   margin: 0;

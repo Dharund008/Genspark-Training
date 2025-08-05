@@ -54,6 +54,19 @@
         </div>
 
         <div class="form-group">
+          <label for="codeFileName">Corrupted Code File Name (Optional)</label>
+          <input
+            type="text"
+            id="codeFileName"
+            name="codeFileName"
+            [(ngModel)]="bug.codeFileName"
+            class="form-control"
+            placeholder="Enter the name of the corrupted code file"
+          />
+          <small class="help-text">Specify which code file has the bug/corruption</small>
+        </div>
+
+        <div class="form-group">
           <label for="screenshot">Screenshot (Optional)</label>
           <input
             type="file"

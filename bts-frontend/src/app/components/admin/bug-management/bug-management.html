@@ -69,7 +69,7 @@
         <button 
           class="btn btn-danger btn-sm" 
           (click)="deleteBug(bug.id)"
-          *ngIf="!bug.isDeleted"
+          *ngIf="!bug.isDeleted && bug.status !== 7"
         >
           Delete
         </button>
