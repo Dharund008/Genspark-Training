@@ -58,6 +58,7 @@ namespace Bts.Services
         {
             var bugs = await _context.Bugs
                 .Where(b => b.AssignedTo == developerId && !b.IsDeleted)
+                .OrderByDescending(b => b.CreatedAt)
                 .ToListAsync();
             _logger.LogInformation("Retrieved assigned bugs for developer {DeveloperId}", developerId);
             return bugs;

@@ -44,7 +44,7 @@
       </div>
 
       <div class="bug-actions">
-        <div class="assign-section" *ngIf="canAssign(bug) && !bug.assignedTo && !bug.isDeleted">
+        <div class="assign-section" *ngIf="canAssign(bug) && !bug.assignedTo && !bug.isDeleted && !showReasonInput[bug.id]">
           <select [(ngModel)]="selectedDeveloperIds[bug.id]" class="developer-select">
             <option value="">Select Developer</option>
             <option *ngFor="let dev of availableDevelopers" [value]="dev.id">{{ dev.name }} ({{ dev.id }})</option>
@@ -68,11 +68,30 @@
 
         <button 
           class="btn btn-danger btn-sm" 
+          *ngIf="!bug.isDeleted && bug.status !== 7 && !showReasonInput[bug.id]"
+          (click)="showDeleteReason(bug.id)">
+          Delete
+        </button>
+        <div class="text-muted" *ngIf="bug.isDeleted && bug.reason">
+          <strong>Reason:</strong> {{ bug.reason }}
+        </div>
+
+        <div *ngIf="showReasonInput[bug.id]" class="delete-reason-box">
+          <input type="text" [(ngModel)]="deleteReason[bug.id]" placeholder="Enter reason for deletion " class="form-control mb-2" />
+         <div class="button-group">
+            <button class="btn btn-danger btn-sm" (click)="deleteBug(bug.id)">Confirm Delete</button>
+            <button class="btn btn-secondary btn-sm" (click)="cancelDelete(bug.id)">Cancel</button>
+          </div>
+          <div class="text-muted" *ngIf="errorMessage">{{ errorMessage }}</div>
+        </div>
+
+        <!-- <button 
+          class="btn btn-danger btn-sm" 
           (click)="deleteBug(bug.id)"
           *ngIf="!bug.isDeleted && bug.status !== 7"
         >
           Delete
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

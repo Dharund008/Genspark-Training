@@ -18,7 +18,7 @@
       <label class="block text-sm font-medium text-gray-700">Wallet Expiry</label>
       <p [ngClass]="{'text-red-600 font-bold': isWalletExpired, 'text-gray-800': !isWalletExpired}">
         {{ userWallet.expiry | date:'mediumDate' }} 
-        <!-- <span class="text-sm text-gray-600">({{ userWallet.expiry | date:'shortTime' }})</span> -->
+        <span class="text-sm text-gray-600">({{ userWallet.expiry | date:'shortTime':'Asia/Kolkata' }})</span>
       </p>
     </div>
     

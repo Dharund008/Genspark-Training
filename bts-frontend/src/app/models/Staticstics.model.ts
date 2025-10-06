@@ -22,7 +22,7 @@ export interface DashboardStats {
   bugsAssigned?: number;
   bugsFixedByUser?: number;
   codeFiles?: number;
-  developerComments?: number;
+  comments?: number;
 
 
 }

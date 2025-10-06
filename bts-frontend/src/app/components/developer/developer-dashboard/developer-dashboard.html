@@ -14,13 +14,13 @@
         </div>
         
         <div class="stat-card">
-          <h3>CodeFiles Uploaded</h3>
+          <h3>Files Uploaded</h3>
           <p class="stat-number resolved">{{ stats.codeFiles || 0 }}</p>
         </div>
         
         <div class="stat-card">
           <h3>Comments</h3>
-          <p class="stat-number closed">{{ stats.developerComments || 0 }}</p>
+          <p class="stat-number closed">{{ stats.comments || 0 }}</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
             View Assigned Bugs
           </a>
           <a routerLink="/developer/files" class="btn btn-secondary">
-            Manage Code Files
+            Manage Files
           </a>
           <button (click)="openUploadModal()" class="nav-button">
             <i class="icon">⬆️</i> Upload File
@@ -54,7 +54,7 @@
   <div *ngIf="showUploadModal" class="modal-overlay" (click)="closeUploadModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
       <div class="modal-header">
-        <h3>Upload Code File</h3>
+        <h3>Upload File</h3>
         <button (click)="closeUploadModal()" class="close-btn">&times;</button>
       </div>
       

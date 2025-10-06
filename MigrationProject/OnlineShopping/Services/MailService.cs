@@ -35,7 +35,7 @@ public class MailService : IMailService
         var message = new MailMessage
         {
             From = new MailAddress(_config["Mail:From"]),
-            Subject = $"Thanks for contacting us, {contact.Name}",
+            Subject = $"Shopify - Thanks for contacting us, {contact.Name}",
             Body = body,
             IsBodyHtml = true
         };

@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\VC\\.nuget\\packages\\": {}
+    "/Users/dharund/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Genspark-Training\\may20\\task-questions\\task-questions.csproj",
+      "projectUniqueName": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-questions/task-questions.csproj",
       "projectName": "task-questions",
-      "projectPath": "D:\\Genspark-Training\\may20\\task-questions\\task-questions.csproj",
-      "packagesPath": "C:\\Users\\VC\\.nuget\\packages\\",
-      "outputPath": "D:\\Genspark-Training\\may20\\task-questions\\obj\\",
+      "projectPath": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-questions/task-questions.csproj",
+      "packagesPath": "/Users/dharund/.nuget/packages/",
+      "outputPath": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-questions/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/dharund/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

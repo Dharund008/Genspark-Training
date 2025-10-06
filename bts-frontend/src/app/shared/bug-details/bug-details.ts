@@ -7,6 +7,7 @@ import { BugService } from '../../services/BugService';
 import { TesterService } from '../../services/TesterService'
 import { CommentService } from '../../services/Comments.service';
 import { AuthService } from '../../services/AuthService';
+import { NotificationService } from '../../services/notification.service';
 import { Bug, BugPriority, BugStatus } from '../../models/bug.model';
 import { Comment, CommentRequestDTO } from '../../models/Comments.model';
 import { Location } from '@angular/common';
@@ -43,6 +44,7 @@ export class BugDetails implements OnInit {
     private bugService: BugService,
     private commentService: CommentService,
     private authService: AuthService,
+   private notificationService: NotificationService,
     private testerService: TesterService
   ) {}
 
@@ -53,6 +55,14 @@ export class BugDetails implements OnInit {
     if (bugId) {
       this.loadBugDetails(bugId);
       this.loadComments(bugId);
+
+       // Auto-refresh on notification
+      this.notificationService.messages$.subscribe(message => {
+      if (message) {
+        this.loadBugDetails(bugId);
+        this.loadComments(bugId);
+      }
+    });
     }
   }
 

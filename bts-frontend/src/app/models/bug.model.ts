@@ -25,6 +25,7 @@ export interface Bug {
   assignedTo?: string;
   createdBy: string;
   isDeleted: boolean;
+  reason?: string;
   createdAt: string;
   updatedAt?: string;
   screenshotUrl?: string;

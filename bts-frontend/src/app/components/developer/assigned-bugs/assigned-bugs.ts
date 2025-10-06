@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { Navigation } from '../../../shared/navigation/navigation';
 import { DeveloperService } from '../../../services/DeveloperService';
 import { Bug, BugStatus, BugPriority, UpdateBugPatchDTO } from '../../../models/bug.model';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-assigned-bugs',
@@ -23,10 +24,16 @@ export class AssignedBugs implements OnInit {
   errorMessage = '';
   successMessage = '';
 
-  constructor(private developerService: DeveloperService) {}
+  constructor(private developerService: DeveloperService, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.loadAssignedBugs();
+    // Auto-refresh bug list on notification
+    this.notificationService.messages$.subscribe(message => {
+      if (message) {
+        this.loadAssignedBugs();
+      }
+    });
   }
 
   loadAssignedBugs() {

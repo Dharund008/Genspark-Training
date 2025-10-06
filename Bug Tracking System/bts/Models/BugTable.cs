@@ -35,6 +35,7 @@ namespace Bts.Models
             public Developer? AssignedToDeveloper { get; set; }
 
             public bool IsDeleted { get; set; } = false;
+            public string? Reason { get; set; } = null;
 
             public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
             public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;

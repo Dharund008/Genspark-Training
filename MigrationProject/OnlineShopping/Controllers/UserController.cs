@@ -11,6 +11,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -32,7 +33,7 @@ namespace Online.Controllers
                 {
                     return Ok(new { message = "User exists!", result });
                 }
-                return BadRequest(new { error = "Failed to check User!" });
+                return Ok(new { error = "Failed to check User!" });
             }
             catch (Exception ex)
             {
@@ -72,7 +73,7 @@ namespace Online.Controllers
                         return Ok(new { message = "Username updated successfully!" });
                     }
                 }
-                return BadRequest(new { error = "Failed to update Username!" });
+                return Ok(new { error = "Failed to update Username!" });
             }
             catch (Exception ex)
             {
@@ -94,7 +95,7 @@ namespace Online.Controllers
                         return Ok(new { message = "PhoneNumber updated successfully!" });
                     }
                 }
-                return BadRequest(new { error = "Failed to update PhoneNumber!" });
+                return Ok(new { error = "Failed to update PhoneNumber!" });
             }
             catch (Exception ex)
             {
@@ -116,7 +117,7 @@ namespace Online.Controllers
                         return Ok(new { message = "Address updated successfully!" });
                     }
                 }
-                return BadRequest(new { error = "Failed to update Address!" });
+                return Ok(new { error = "Failed to update Address!" });
             }
             catch (Exception ex)
             {

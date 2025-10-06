@@ -95,6 +95,9 @@ namespace bts.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Reason")
+                        .HasColumnType("text");
+
                     b.Property<string>("ScreenshotUrl")
                         .HasColumnType("text");
 

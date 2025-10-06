@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Genspark-Training\\may20\\task-medium\\task-medium.csproj": {}
+    "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-medium/task-medium.csproj": {}
   },
   "projects": {
-    "D:\\Genspark-Training\\may20\\task-medium\\task-medium.csproj": {
+    "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-medium/task-medium.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Genspark-Training\\may20\\task-medium\\task-medium.csproj",
+        "projectUniqueName": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-medium/task-medium.csproj",
         "projectName": "task-medium",
-        "projectPath": "D:\\Genspark-Training\\may20\\task-medium\\task-medium.csproj",
-        "packagesPath": "C:\\Users\\VC\\.nuget\\packages\\",
-        "outputPath": "D:\\Genspark-Training\\may20\\task-medium\\obj\\",
+        "projectPath": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-medium/task-medium.csproj",
+        "packagesPath": "/Users/dharund/.nuget/packages/",
+        "outputPath": "/Users/dharund/Desktop/Presidio-Genspark/Genspark-Training/May20/task-medium/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/dharund/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

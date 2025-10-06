@@ -163,6 +163,20 @@
       cursor: not-allowed;
     }
 
+    .text-muted {
+    color: #6c757d;
+    background: #f8f9fa;
+    border-left: 4px solid #dc3545;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1rem;
+    font-style: italic;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(220,53,69,0.05);
+    text-align: left;
+    letter-spacing: 0.2px;
+  }
+
     .loading, .error, .success {
       text-align: center;
       padding: 2rem;
@@ -203,4 +217,52 @@
     .page-info {
       font-weight: 600;
       color: #2c3e50;
+    }
+
+
+    .delete-reason-box {
+      background: white;
+      border: 1px solid #3498db;
+      border-radius: 8px;
+      padding: 1rem 2.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(220,53,69,0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .delete-reason-box input[type="text"] {
+      width: 100%;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      padding: 0.6rem 5rem;
+      font-size: 0.89rem;
+      background: #fff;
+      color: #212529;
+      margin-bottom: 0.5rem;
+    }
+
+    .delete-reason-box .text-muted {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #6c757d;
+      font-style: italic;
+    }
+
+   .delete-reason-box .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .delete-reason-box .btn-danger {
+      display: inline-block;
+    }
+
+    .delete-reason-box .btn-secondary {
+      background: #f8f9fa;
+      color: #212529;
+      border: 1px solid #ced4da;
     }

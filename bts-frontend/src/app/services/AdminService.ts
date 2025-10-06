@@ -89,9 +89,11 @@ export class AdminService {
     });
   }
 
-  deleteBug(bugId: number): Observable<any> {
+  deleteBug(bugId: number, reason: string = ''): Observable<any> {
+    const params = new HttpParams().set('reason', reason);
     return this.http.delete(`${this.apiUrl}/Admin/delete-bug/${bugId}`, {
-      headers: this.getHeaders()
+      headers: this.getHeaders(),
+      params
     });
   }
 

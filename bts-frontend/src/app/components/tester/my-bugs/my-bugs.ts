@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Navigation } from '../../../shared/navigation/navigation';
 import { TesterService } from '../../../services/TesterService';
+import { NotificationService } from '../../../services/notification.service';
 import { Bug, BugStatus, BugPriority } from '../../../models/bug.model';
 
 @Component({
@@ -21,10 +22,17 @@ export class MyBugs implements OnInit {
   isLoading = true;
   errorMessage = '';
 
-  constructor(private testerService: TesterService) {}
+  constructor(private testerService: TesterService, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.loadMyBugs();
+
+    // Auto-refresh bug list on notification
+    this.notificationService.messages$.subscribe(message => {
+      if (message) {
+        this.loadMyBugs();
+      }
+    });
   }
 
   loadMyBugs(): void {

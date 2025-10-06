@@ -28,7 +28,7 @@ namespace Online.Services
             _userService = userService;
             _currentUser = currentUser;
         }
-        
+
         public async Task<Product> GetProductByName(string productname) //unsold
         {
             productname = productname.ToLower();
@@ -95,7 +95,7 @@ namespace Online.Services
                 ModelId = model.ModelId,
                 UserId = user.UserId,
                 SellStartDate = DateTime.UtcNow,
-                SellEndDate = DateTime.UtcNow.AddDays(1),
+                SellEndDate = DateTime.UtcNow.AddMinutes(4), //AddDays()
             };
 
             var res = await _prodrepo.AddAsync(prod);
@@ -197,30 +197,37 @@ namespace Online.Services
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             var products = await _prodrepo.GetAllAsync();
-            var now = DateTime.Now;
+            // var now = DateTime.Now;
 
-            foreach (var prod in products)
-            {
-                // If end date has passed and not marked yet
-                if (prod.SellEndDate.HasValue && prod.SellEndDate.Value < now)
-                {
-                    if (prod.IsSaleEnded == false)
-                    {
-                        prod.IsSaleEnded = true;
-                        await _prodrepo.Update(prod.ProductId, prod);
-                    } 
-                }
-            }
+            // foreach (var prod in products)
+            // {
+            //     // If end date has passed and not marked yet
+            //     if (prod.SellEndDate.HasValue && prod.SellEndDate.Value < now)
+            //     {
+            //         if (prod.IsSaleEnded == false)
+            //         {
+            //             prod.IsSaleEnded = true;
+            //             await _prodrepo.Update(prod.ProductId, prod);
+            //         } 
+            //     }
+            // }
 
             // Return only active (non-ended) products
-            return await _context.Products.Where(p => p.IsSaleEnded == false && p.IsSold == false ).ToListAsync();
+            return await _context.Products.Where(p => p.IsSaleEnded == false && p.IsSold == false).ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetAllProductAsync() //including both sold-unsold
         {
             return await _prodrepo.GetAllAsync();
         }
-        
+
+        public async Task<IEnumerable<Product>> MyProducts()
+        {
+            var products = await _prodrepo.GetAllAsync();
+            var res = products.Where(p => p.UserId == _currentUser.Id).ToList();
+            return res;
+        }
+
         public async Task<IEnumerable<Product>> GetFilteredProducts(string cat, string color, string model, string prodname)
         {
             var products = await _prodrepo.GetAllAsync();
@@ -228,29 +235,39 @@ namespace Online.Services
             if (!string.IsNullOrEmpty(cat))
             {
                 var categ = await _otherService.GetCategoryByName(cat);
-                products = products.Where(p => p.Category != null && p.Category.Name.ToLower().Contains(cat.ToLower()) && p.CategoryId == categ.CategoryId);
+                products = products
+                    .Where(p => p.Category != null &&
+                                p.Category.Name.ToLower().Contains(cat.ToLower()) &&
+                                p.CategoryId == categ.CategoryId);
             }
 
             if (!string.IsNullOrEmpty(color))
             {
                 var col = await _otherService.GetColorByName(color);
-                products = products.Where(p => p.Color != null && p.Color.ColorName.ToLower().Contains(color.ToLower()) && p.ColorId == col.ColorId);
+                products = products
+                    .Where(p => p.Color != null &&
+                                p.Color.ColorName.ToLower().Contains(color.ToLower()) &&
+                                p.ColorId == col.ColorId);
             }
-
 
             if (!string.IsNullOrEmpty(model))
             {
                 var mod = await _otherService.GetModelByName(model);
-                products = products.Where(p => p.Model != null && p.Model.ModelName.ToLower().Contains(model.ToLower()) && p.ModelId == mod.ModelId);
+                products = products
+                    .Where(p => p.Model != null &&
+                                p.Model.ModelName.ToLower().Contains(model.ToLower()) &&
+                                p.ModelId == mod.ModelId);
             }
-
 
             if (!string.IsNullOrEmpty(prodname))
             {
                 products = products.Where(p => p.ProductName.ToLower().Contains(prodname.ToLower()));
             }
+
             products = products.Where(p => p.IsSold == false);
+
             return products;
         }
+
     }
 }

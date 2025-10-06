@@ -69,16 +69,24 @@ export class LoginComponent implements OnInit {
       if (user) {
         switch (this.role) {
           case 'ADMIN':
-            this.router.navigate(['/admin/dashboard']);
+            this.router.navigate(['/admin/dashboard']).then(() => {
+                  window.location.reload();
+                });
             break;
           case 'DEVELOPER':
-            this.router.navigate(['/developer/dashboard']);
+            this.router.navigate(['/developer/dashboard']).then(() => {
+                  window.location.reload();
+                });
             break;
           case 'TESTER':
-            this.router.navigate(['/tester/dashboard']);
+            this.router.navigate(['/tester/dashboard']).then(() => {
+                  window.location.reload();
+                });
             break;
           default:
-            this.router.navigate(['/home']);
+            this.router.navigate(['/home']).then(() => {
+                  window.location.reload();
+                });
         }
       } else {
         // Fallback if user is still not available
@@ -96,7 +104,7 @@ export class LoginComponent implements OnInit {
   loginAsAdmin(): void {
     this.loginForm.patchValue({
       username: 'admin4@gmail.com',
-      password: 'adminpass4'
+      password: 'dharun23'
     });
     this.onLogin();
   }

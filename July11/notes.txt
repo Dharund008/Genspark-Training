@@ -1,0 +1,136 @@
+BLOB STORAGE :-
+
+https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal
+
+-- helpfull to have file stored in cloud
+-- surfing docs,images....
+-- hosting our web application
+--distributed access
+--backups , logs...
+
+azure portal > create storage account
+
+        *Primary service:
+
+        if your datas are really huge : data light
+        if  your datas are normal : azure files
+        if u want to reuse / : table format
+
+Creating an storage Account, container and uploading a file in it:-
+
+1)open Azure portal > search for storage account > create storage account
+
+2) choose the resource group > name > location > performance > replication > access tier > review + create
+
+* primary service : data lake - for high large data's
+                  : azure files - for normal data's(regualr data)
+                  : table format - for reusing data's
+
+* then in advanced tab : 
+                        Allow enabling anonymous access on invidual container : enable this checkbox!!!!!...
+
+3)after creating storage account: 
+        in data storage > containers > Add container 
+
+        * name
+        * access level : either blob(public) or container acc to req.....
+
+4) Upload Files (Blobs)
+    Open the container
+    Click Upload
+    Choose a file from your local system (e.g., image.jpg)
+    Click Upload
+
+    -- then by clicking the file : copy the url of file and paste it in browser : u can view it. 
+
+
+
+
+-- next uploading and getting the files from azure blob storage using api (local)...
+
+1) create an dotnet webapi project ..
+2) install the azure storage package 
+            dotnet add package azure.storage.blobs
+
+3)create an respective controller ,sevice,dto files ...
+
+4)in appsettings.json 
+// "AzureBlob": {
+  //   "ContainerSasUrl": "https://dharunblob.blob.core.windows.net/attachments?sp=r&st=2025-07-11T06:32:55Z&se=2025-07-11T14:32:55Z&spr=https&sv=2024-11-04&sr=c&sig=rGMP4%2Bd7uKGmmGhly3qDEugc4g24QgglJL42slTMl7k%3D"
+  // },
+    this is a saasurl , get it from
+
+    * storage account > container > settngs > shared access tokens > Generate saas token and url > copy the blob saas url ... and paste it here..
+
+  add this ... 
+
+
+  but had an error , while uploading the file :- 
+        "the request is not auhtorised for this permission" - refer image in priamry folder...
+
+        then made changes like :- 
+            * in storage account > security + networking tab > access keys > copy the connection string.
+            * add it in appsettings.json - refer to current appsettings.json file....
+
+            * also update service file : 
+                in constructor - will be applying the usual saas key ... so,
+                    - update it with current code (check the service file - getting the container name and connection string , and coniguring it)
+
+            check with by swagger:
+                - now u can upload the file and get the file (downlaod) from the azure blob....
+
+--- next : static website hosting in azure storage 
+
+    https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
+
+    https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal
+
+
+    1) go to storage account > data management > static webstie 
+            * enable it
+            * asks index doc name and error doc path (404.html)...
+
+            here an container named '$web' will be created and shown in your container list.
+
+    2) then , in your frontend folder :
+            terminal > npm run build / ng build --configuration production
+
+    3) this creates an disk folder to work on .. > browser > index.html,styles,main,polyish ...all required files..
+
+    4)move to the $web contianer > upload the files under disk>browser (all necessary files)
+
+    5) next , after uploading it . go again to static website : storage account > data management > static website
+
+        -- will be displaying 2 endpoints primary and secondary 
+        --copy any (primary endpoint) and paste it in ur browser
+
+        now your static website is up and running in azure storage...
+
+
+
+"Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.AzureBlobStorage" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console"
+      },
+      {
+        "Name": "AzureBlobStorage",
+        "Args": {
+          "connectionString": "DefaultEndpointsProtocol=https;AccountName=dharunblob;AccountKey=b4x2uJFselbIm8lD2E4nIojfhhi/BZhSRiZY/20xYYbg6/4MsslasfSfWgMelHa5H3lMVrpx2Vi2+ASt+vcIog==;EndpointSuffix=core.windows.net",
+          "storageContainerName": "logs",
+          "storageFileName": "{yyyy}/{MM}/{dd}/log.txt",
+          "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}",
+          "period": "00:00:30",
+          "batchPostingLimit": 50
+        }
+      }
+    ]
+  },

@@ -12,6 +12,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class CartController : ControllerBase
     {
         private readonly ICartService _cartService;
@@ -21,6 +22,7 @@ namespace Online.Controllers
             _cartService = cartService;
         }
 
+
         [HttpPost("add-to-cart")]
         public async Task<IActionResult> Addtocart([FromQuery] int productid, [FromQuery] int quantity)
         {
@@ -28,10 +30,10 @@ namespace Online.Controllers
             {
                 if (productid != 0)
                 {
-                    var added = await _cartService.AddtoCart(productid,quantity);
+                    var added = await _cartService.AddtoCart(productid, quantity);
                     return Ok(new { message = "Product added to cart successfully!", added });
                 }
-                return BadRequest(new { message = "Invalid product ID!" });
+                return Ok(new { message = "Invalid product ID!" });
             }
             catch (Exception ex)
             {
@@ -39,7 +41,7 @@ namespace Online.Controllers
             }
         }
 
-        [HttpPost("buy-this-product-from-cart")]
+        [HttpPost("buy-product-from-cart")]
         public async Task<IActionResult> BuythisCart([FromQuery] int productid)
         {
             try
@@ -49,7 +51,7 @@ namespace Online.Controllers
                     var bought = await _cartService.BuySpecificItemFromCart(productid);
                     return Ok(new { message = "Product purchased successfully from cart!", bought });
                 }
-                return BadRequest(new { message = "Invalid product ID!" });
+                return Ok(new { message = "Invalid product ID!" });
             }
             catch (Exception ex)
             {
@@ -67,7 +69,7 @@ namespace Online.Controllers
                 {
                     return Ok(new { message = "Cart retrieved successfully!", mycart });
                 }
-                return BadRequest(new { message = "Nothing in your cart!" });
+                return Ok(new { message = "Nothing in your cart!" });
             }
             catch (Exception ex)
             {
@@ -101,9 +103,9 @@ namespace Online.Controllers
                     {
                         return Ok(new { message = "Item removed from cart successfully!", removed });
                     }
-                    return BadRequest(new { message = "No such product exists in your cart!" });
+                    return Ok(new { message = "No such product exists in your cart!" });
                 }
-                return BadRequest(new { message = "Invalid product ID!" });
+                return Ok(new { message = "Invalid product ID!" });
             }
             catch (Exception ex)
             {

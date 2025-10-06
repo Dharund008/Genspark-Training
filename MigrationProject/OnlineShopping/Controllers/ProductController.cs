@@ -11,6 +11,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -30,7 +31,7 @@ namespace Online.Controllers
             }
 
             var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var savePath = Path.Combine("wwwroot/Products", fileName);
+            var savePath = Path.Combine("images/Products", fileName);
 
             using (var stream = new FileStream(savePath, FileMode.Create))
             {
@@ -52,7 +53,7 @@ namespace Online.Controllers
                     var result = await _productService.AddProduct(req);
                     return Ok(new { message = "Product added successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to add product!" });
+                return Ok(new { message = "Failed to add product!" });
             }
             catch (Exception ex)
             {
@@ -60,7 +61,7 @@ namespace Online.Controllers
             }
         }
 
-        
+
 
         [HttpPut("update-price")]
         public async Task<IActionResult> UpdatePrice([FromBody] PriceDTO req)
@@ -72,7 +73,7 @@ namespace Online.Controllers
                     var result = await _productService.UpdatePrice(req);
                     return Ok(new { message = "Price updated successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to update price!" });
+                return Ok(new { message = "Failed to update price!" });
             }
             catch (Exception ex)
             {
@@ -80,7 +81,7 @@ namespace Online.Controllers
             }
         }
 
-        [HttpPut("update-used")]
+        [HttpPut("update-sold")]
         public async Task<IActionResult> UpdateSold([FromQuery] int productID)
         {
             try
@@ -90,7 +91,7 @@ namespace Online.Controllers
                     var result = await _productService.UpdateSold(productID);
                     return Ok(new { message = "Product status-used updated successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to update product status-used!" });
+                return Ok(new { message = "Failed to update product status-used!" });
             }
             catch (Exception ex)
             {
@@ -108,7 +109,7 @@ namespace Online.Controllers
                     var result = await _productService.ExtendSale(req);
                     return Ok(new { message = "Sale extended successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to update extend sale!" });
+                return Ok(new { message = "Failed to update extend sale!" });
             }
             catch (Exception ex)
             {
@@ -126,11 +127,30 @@ namespace Online.Controllers
                     var result = await _productService.DeleteProduct(productID, productName);
                     return Ok(new { message = "Product deleted successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to delete product!" });
+                return Ok(new { message = "Failed to delete product!" });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, new { error = "An error occurred in ProductController : DeleteProduct, please try again later.", ex.Message });
+            }
+        }
+
+        [HttpGet("my-product")]
+        public async Task<IActionResult> GetMyProduct()
+        {
+            try
+            {
+                var result = await _productService.MyProducts();
+                if (result != null && result.Any())
+                {
+                    return Ok(new { message = "Products retrieved successfully!", result });
+                }
+                return Ok(new { message = "No products found!", result = new List<Product>() });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "An error occurred in ProductController : GetMyProduct, please try again later.", ex.Message });
             }
         }
 
@@ -144,7 +164,7 @@ namespace Online.Controllers
                     var result = await _productService.GetProductByName(productName.ToLower());
                     return Ok(new { message = "Product found successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to find product!" });
+                return Ok(new { message = "Failed to find product!" });
             }
             catch (Exception ex)
             {
@@ -162,7 +182,7 @@ namespace Online.Controllers
                     var result = await _productService.GetByIdAsync(productID);
                     return Ok(new { message = "Product found successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to find product!" });
+                return Ok(new { message = "Failed to find product!" });
             }
             catch (Exception ex)
             {
@@ -176,11 +196,11 @@ namespace Online.Controllers
             try
             {
                 var result = await _productService.GetAllAsync();
-                if (result != null)
+                if (result != null && result.Any())
                 {
                     return Ok(new { message = "Products found successfully!", result });
                 }
-                return BadRequest(new { message = "No products found!" });
+                return Ok(new { message = "No products found!" });
             }
             catch (Exception ex)
             {
@@ -201,7 +221,7 @@ namespace Online.Controllers
                         return Ok(new { message = "Filtered products found successfully!", result });
                     }
                 }
-                return BadRequest(new { message = "Failed to find filtered products!" });
+                return Ok(new { message = "Failed to find filtered products!" });
             }
             catch (Exception ex)
             {
@@ -222,7 +242,7 @@ namespace Online.Controllers
                         return Ok(new { message = "Sold product found successfully!", result });
                     }
                 }
-                return BadRequest(new { message = "Failed to find sold product!" });
+                return Ok(new { message = "Failed to find sold product!" });
             }
             catch (Exception ex)
             {
@@ -236,18 +256,18 @@ namespace Online.Controllers
             try
             {
                 var result = await _productService.GetAllProductAsync();
-                if (result != null)
+                if (result != null && result.Any())
                 {
                     return Ok(new { message = "All products found successfully!", result });
                 }
-                return BadRequest(new { message = "Failed to find all products!" });
+                return Ok(new { message = "Failed to find all products!" });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, new { error = "An error occurred in ProductController : GetAllProducts, please try again later.", ex.Message });
             }
         }
-       
+
 
     }
 }

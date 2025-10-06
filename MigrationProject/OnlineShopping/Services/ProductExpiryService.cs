@@ -24,7 +24,7 @@ namespace Online.Services
                     var now = DateTime.UtcNow;
 
                     var expiredProducts = await context.Products
-                        .Where(p => !p.IsSaleEnded && p.SellEndDate < now)
+                        .Where(p => !p.IsSaleEnded && p.SellEndDate < now && !p.IsSold)
                         .ToListAsync();
 
                     foreach (var product in expiredProducts)
@@ -38,7 +38,7 @@ namespace Online.Services
                     }
                 }
 
-                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); // runs every 10 minutes
+                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken); // runs every 10 minutes
             }
         }
     }

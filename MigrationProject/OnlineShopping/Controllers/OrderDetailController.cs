@@ -11,6 +11,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
 
     public class OrderDetailController : ControllerBase
     {
@@ -21,14 +22,14 @@ namespace Online.Controllers
             _orderService = orderService;
         }
 
-        [HttpGet("get-my-order-details")]
+        [HttpGet("my-order-details")]
         public async Task<IActionResult> GetMyOrderDetails(int orderid)
         {
             try
             {
                 if (orderid <= 0)
                 {
-                    return BadRequest(new { message = "Invalid order ID provided!" });
+                    return Ok(new { message = "Invalid order ID provided!" });
                 }
 
                 var dts = await _orderService.GetMyOrderDetails(orderid);

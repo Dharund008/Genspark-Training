@@ -6,6 +6,8 @@ import { Navigation } from '../../../shared/navigation/navigation';
 import { AdminService } from '../../../services/AdminService';
 import { Bug, BugStatus, BugPriority } from '../../../models/bug.model';
 import { Developer } from '../../../models/UserModel';
+import { NotificationService } from '../../../services/notification.service'; // Import if not already
+
 
 @Component({
   selector: 'app-bug-management',
@@ -27,13 +29,23 @@ export class BugManagement implements OnInit {
   currentPage = 1;
   pageSize = 4;
   totalBugs = 0;
+  showReasonInput: { [bugId: number]: boolean } = {};
+  deleteReason: { [bugId: number]: string } = {};
   public Math = Math;
 
-  constructor(private adminService: AdminService) {}
+  constructor(private adminService: AdminService, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.loadBugs();
     this.loadAvailableDevelopers();
+
+    // Auto-refresh bug list on notification
+    this.notificationService.messages$.subscribe(message => {
+      if (message) {
+        this.loadBugs();
+        this.loadAvailableDevelopers();
+      }
+    });
   }
 
   loadBugs() {
@@ -99,6 +111,7 @@ export class BugManagement implements OnInit {
         this.setTimedMessage('success', 'Bug assigned successfully');
          this.successMessage = 'Bug assigned successfully';
         this.loadBugs();
+        this.loadAvailableDevelopers();
         // Clear selected developer for this bug
       delete this.selectedDeveloperIds[bugId];
 
@@ -125,19 +138,48 @@ export class BugManagement implements OnInit {
     }
   }
 
+  // deleteBug(bugId: number) {
+  //   if (confirm('Are you sure you want to delete this bug? This action cannot be undone.')) {
+  //     this.adminService.deleteBug(bugId).subscribe({
+  //       next: () => {
+  //         this.setTimedMessage('success', 'Bug deleted successfully');
+  //         this.loadBugs();
+  //       },
+  //       error: () => {
+  //         this.setTimedMessage('error', 'Failed to delete bug');
+  //       }
+  //     });
+  //   }
+  // }
+
   deleteBug(bugId: number) {
-    if (confirm('Are you sure you want to delete this bug? This action cannot be undone.')) {
-      this.adminService.deleteBug(bugId).subscribe({
-        next: () => {
-          this.setTimedMessage('success', 'Bug deleted successfully');
-          this.loadBugs();
-        },
-        error: () => {
-          this.setTimedMessage('error', 'Failed to delete bug');
-        }
-      });
+  const bug = this.bugs.find(b => b.id === bugId);
+  let reason = '';
+
+  // Require reason if bug is not closed
+  if (bug && bug.status !== BugStatus.Closed) {
+    reason = this.deleteReason[bugId]?.trim() || '';
+    if (!reason) {
+      this.errorMessage = 'Please provide a reason for deletion.';
+      setTimeout(() => this.errorMessage = '', 3000);
+      return;
     }
   }
+
+  if (confirm('Are you sure you want to delete this bug? This action cannot be undone.')) {
+    this.adminService.deleteBug(bugId, reason).subscribe({
+      next: () => {
+        this.setTimedMessage('success', 'Bug deleted successfully');
+        this.loadBugs();
+        this.showReasonInput[bugId] = false;
+        this.deleteReason[bugId] = '';
+      },
+      error: () => {
+        this.setTimedMessage('error', 'Failed to delete bug');
+      }
+    });
+  }
+}
 
   getPriorityText(priority: BugPriority): string {
     return BugPriority[priority] ?? 'Unknown';
@@ -163,6 +205,15 @@ export class BugManagement implements OnInit {
 
   canClose(bug: Bug): boolean {
     return bug.status === BugStatus.Verified;
+  }
+  showDeleteReason(bugId: number) {
+    this.showReasonInput[bugId] = true;
+  }
+
+  cancelDelete(bugId: number) {
+    this.showReasonInput[bugId] = false;
+    this.deleteReason[bugId] = '';
+    this.errorMessage = '';
   }
 
    nextPage(): void {

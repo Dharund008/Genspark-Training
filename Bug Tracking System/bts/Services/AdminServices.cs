@@ -191,7 +191,6 @@ namespace Bts.Services
         {
             try
             {
-                throw new ArgumentNullException(nameof(tesreq));
                 if (tesreq == null)
                 {
                     throw new ArgumentNullException(nameof(tesreq));
@@ -214,10 +213,10 @@ namespace Bts.Services
                 user.Password = encryptedData.EncryptedString;
 
                 user = await _userRepository.Add(user);
-                Console.WriteLine($"New developer-user Registered : {user.Username} ");
+                Console.WriteLine($"New Tester-user Registered : {user.Username} ");
                 if (user == null)
                 {
-                    throw new Exception("Failed to add Developer");
+                    throw new Exception("Failed to add Tester");
                 }
                 var tes = new Tester
                 {
@@ -227,7 +226,7 @@ namespace Bts.Services
                     Password = encryptedData.EncryptedString
                 };
                 tes = await _testerRepository.Add(tes);
-                Console.WriteLine($"New developer Registered : {tes.Name} ");
+                Console.WriteLine($"New Tester Registered : {tes.Name} ");
                 if (tes == null)
                 {
                     throw new Exception("Failed to add Tester");
@@ -300,12 +299,14 @@ namespace Bts.Services
 
             return true;
         }
-        public async Task<bool> DeleteBugAsync(int bugId)
+        public async Task<bool> DeleteBugAsync(int bugId, string reason)
         {
             var bug = await _context.Bugs.FindAsync(bugId);
             if (bug == null) return false;
 
             bug.IsDeleted = true;
+            bug.Reason = reason;
+            bug.UpdatedAt = DateTime.UtcNow;
             _context.Bugs.Update(bug);
             await _context.SaveChangesAsync();
             var admin = _httpContextAccessor.HttpContext?.User?.FindFirst("MyApp_Id")?.Value;

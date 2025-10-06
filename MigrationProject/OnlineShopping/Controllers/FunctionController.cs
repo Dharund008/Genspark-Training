@@ -13,6 +13,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class FunctionController : ControllerBase
     {
         private readonly IFunctionServices _otherService;
@@ -45,7 +46,7 @@ namespace Online.Controllers
                     await _colorrepo.AddAsync(c);
                     return Ok($"Color {colorname} added successfully");
                 }
-                return BadRequest($"Color {colorname} already exists");
+                return Ok($"Color {colorname} already exists");
             }
             catch (Exception ex)
             {
@@ -62,7 +63,7 @@ namespace Online.Controllers
                 var col = await _otherService.GetColorByName(colorname.ToLower());
                 if (col == null)
                 {
-                    return BadRequest($"{colorname} doesnt exist!");
+                    return Ok($"{colorname} doesnt exist!");
                 }
                 return Ok(new { message = "Color found!", col });
             }
@@ -80,7 +81,7 @@ namespace Online.Controllers
                 var col = await _colorrepo.GetAllAsync();
                 if (col == null)
                 {
-                    return BadRequest("No colors found!");
+                    return Ok("No colors found!");
                 }
                 return Ok(new { message = "Colors found!", col });
             }
@@ -104,7 +105,7 @@ namespace Online.Controllers
                     await _categrepo.AddAsync(cat);
                     return Ok($"Color {CategoryName} added successfully");
                 }
-                return BadRequest($"Color {CategoryName} already exists");
+                return Ok($"Color {CategoryName} already exists");
             }
             catch (Exception ex)
             {
@@ -120,7 +121,7 @@ namespace Online.Controllers
                 var cat = await _otherService.GetCategoryByName(CategoryName.ToLower());
                 if (cat == null)
                 {
-                    return BadRequest($"Category {CategoryName} not found!");
+                    return Ok($"Category {CategoryName} not found!");
                 }
                 return Ok(new { message = "Category found!", cat });
             }
@@ -138,7 +139,7 @@ namespace Online.Controllers
                 var cats = await _categrepo.GetAllAsync();
                 if (cats == null)
                 {
-                    return BadRequest("No categories found!");
+                    return Ok("No categories found!");
                 }
                 return Ok(new { message = "Categories found!", cats });
             }
@@ -163,7 +164,7 @@ namespace Online.Controllers
                     await _modelrepo.AddAsync(mod);
                     return Ok(new { message = $"Model {modelname} added successfully!", mod });
                 }
-                return BadRequest($"Model {modelname} already exists!");
+                return Ok($"Model {modelname} already exists!");
             }
             catch (Exception ex)
             {
@@ -197,7 +198,7 @@ namespace Online.Controllers
                 var mods = await _modelrepo.GetAllAsync();
                 if (mods == null)
                 {
-                    return BadRequest("No models found!");
+                    return Ok("No models found!");
                 }
                 return Ok(new { message = "Models found!", mods });
             }

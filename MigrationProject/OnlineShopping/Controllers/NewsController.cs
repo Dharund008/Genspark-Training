@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Online.Interfaces;
 using Online.Models;
@@ -7,6 +8,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class NewsController : ControllerBase
     {
         private readonly INewsService _newsService;
@@ -26,7 +28,7 @@ namespace Online.Controllers
             }
 
             var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var savePath = Path.Combine("wwwroot/News", fileName);
+            var savePath = Path.Combine("images/News", fileName);
 
             using (var stream = new FileStream(savePath, FileMode.Create))
             {
@@ -37,7 +39,7 @@ namespace Online.Controllers
             return Ok(new { url = $"/NewsImage/{fileName}" });
         }
 
-        [HttpPost]
+        [HttpPost("add-news-slidder")]
         public async Task<IActionResult> AddNews([FromBody] AddNewsDTO news)
         {
             try
@@ -51,11 +53,11 @@ namespace Online.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return Ok(new { message = ex.Message });
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-news")]
         public async Task<IActionResult> DeleteNews([FromQuery] int id)
         {
             var result = await _newsService.DeleteNewsAsync(id);
@@ -65,14 +67,14 @@ namespace Online.Controllers
             return Ok(new { message = "Deleted successfully." });
         }
 
-        [HttpGet]
+        [HttpGet("all-news-slidder")]
         public async Task<IActionResult> GetAllNews()
         {
             var news = await _newsService.GetAllNewsAsync();
             return Ok(news);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("news-by-id")]
         public async Task<IActionResult> GetNewsById([FromQuery] int id)
         {
             try

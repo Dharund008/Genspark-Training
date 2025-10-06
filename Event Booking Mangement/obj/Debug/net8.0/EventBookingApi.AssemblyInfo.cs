@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventBookingApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ddf296bb0cd7ef7d2b9758acfca031786d102df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfad53f60899c5cfd6a8f6bc5c75f718c470fc0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventBookingApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventBookingApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

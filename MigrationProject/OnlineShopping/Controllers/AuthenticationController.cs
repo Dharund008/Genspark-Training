@@ -17,11 +17,15 @@ namespace Online.Controllers
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly ITokenService _tokenService;
+        private readonly ICurrentUserService _currentService;
+        private readonly MigrationContext _context;
 
-        public AuthenticationController(IAuthenticationService authenticationService, ITokenService tokenService)
+        public AuthenticationController(IAuthenticationService authenticationService, ITokenService tokenService, ICurrentUserService currentService, MigrationContext context)
         {
             _authenticationService = authenticationService;
             _tokenService = tokenService;
+            _currentService = currentService;
+            _context = context;
         }
 
         [HttpPost("Login")]
@@ -61,6 +65,26 @@ namespace Online.Controllers
                     return BadRequest("Invalid sign up request");
                 }
                 return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [Authorize]
+        [HttpGet("my-details")]
+        public async Task<IActionResult> GetMyDetails()
+        {
+            try
+            {
+                var userId = User.FindFirst("MyApp_Id")?.Value;
+                var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == int.Parse(userId));
+                if (user == null)
+                {
+                    return BadRequest("User not matching!");
+                }
+                return Ok(new { message = "User details retrieved successfully!", user });
             }
             catch (Exception ex)
             {

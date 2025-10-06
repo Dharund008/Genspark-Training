@@ -23,7 +23,7 @@ namespace Bts.Interfaces
 
         Task<bool> AssignBugToDeveloperAsync(int bugId, string developerId);
         Task<bool> CloseBugAsync(int bugId);
-        Task<bool> DeleteBugAsync(int bugId);
+        Task<bool> DeleteBugAsync(int bugId, string reason);
 
         Task<IEnumerable<Bug>> GetAllBugsTesterAsync(string testerId); //can get all bugs created by a tester;
 

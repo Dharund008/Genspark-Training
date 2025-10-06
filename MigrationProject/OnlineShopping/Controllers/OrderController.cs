@@ -11,6 +11,7 @@ namespace Online.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
@@ -20,7 +21,7 @@ namespace Online.Controllers
             _orderService = orderService;
         }
 
-        [HttpPost("place-order")]
+        [HttpPost("placing-order")]
         public async Task<IActionResult> PlaceOrder(IEnumerable<int> productids)
         {
             try
@@ -30,7 +31,7 @@ namespace Online.Controllers
                     var ordered = await _orderService.PlaceOrder(productids);
                     return Ok(new { message = "Order placed successfully!", ordered });
                 }
-                return BadRequest(new { message = "Product ID list is empty or null!" });
+                return Ok(new { message = "Product ID list is empty or null!" });
             }
             catch (Exception ex)
             {
@@ -38,7 +39,7 @@ namespace Online.Controllers
             }
         }
 
-        [HttpGet("get-my-orders")]
+        [HttpGet("my-orders")]
         public async Task<IActionResult> GetMyorders()
         {
             try
@@ -48,7 +49,7 @@ namespace Online.Controllers
                 {
                     return Ok(new { message = "Orders retrieved successfully!", ordered });
                 }
-                return BadRequest(new { message = "No orders found for this user!" });
+                return Ok(new { message = "No orders found for this user!" });
             }
             catch (Exception ex)
             {

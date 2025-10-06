@@ -96,7 +96,7 @@ namespace Online.Services
             }
             if (!available)
             {
-                throw new Exception("Some of the items in your cart has been sold!");
+                throw new Exception("Some of the items in your cart has been sold / SaleEnded!");
             }
             else
             {

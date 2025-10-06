@@ -63,7 +63,7 @@ export class ForgotPasswordComponent implements OnInit {
           this.showTokenAlert = true;
           setTimeout(() => {
             this.showTokenAlert = false;
-          }, 20000);
+          }, 5000);
 
         this.step = 2;
         this.successMessage = 'Reset token sent! Enter the token.';

@@ -37,7 +37,7 @@ namespace Online.Services
             bool available = true;
             var user = await _userService.GetByIdAsync(_currentUser.Id);
             var car = await _cartrepo.GetAllAsync();
-
+            
             foreach (var id in productIds)
             {
                 var product = await _prodrepo.GetByIdAsync(id);
@@ -45,6 +45,10 @@ namespace Online.Services
                 {
                     available = false;
                     break;
+                }
+                if (product.UserId == _currentUser.Id) //user cant checkout his own product
+                {
+                    throw new Exception("You cannot buy your own product.");
                 }
                 var qt = car.Where(c => c.ProductId == id).Sum(c => c.Quantity);
                 total += product.Price * qt; //price as per quantity of per product!
@@ -60,7 +64,7 @@ namespace Online.Services
                 ord.OrderDate = DateTime.UtcNow;
                 ord.TotalAmount = total;
                 ord.UserId = user.UserId;
-                ord.Status = "ORDERED";
+                ord.Status = "ORDERED-PLACED";
 
                 var ordered = await _orderrepo.AddAsync(ord);
                 //var ordered = _context.Orders.Add(ord);

@@ -125,16 +125,16 @@ namespace Bts.Controllers
                     _logger.LogWarning("Bug not found for assignment: {BugId}", bugId);
                     return NotFound("Bug not found");
                 }
-                var bugDetails = await _bugService.GetBugByIdAsync(bugId);
-                await _hubContext.Clients.Group("DEVELOPER")
+                var bugDetails = await _context.Bugs.SingleOrDefaultAsync(b => b.Id == bugId);
+                
+                await _hubContext.Clients.Group(bugDetails.AssignedTo)
                     .SendAsync("ReceiveMessage", $"Admin has assigned a new bug to you. Bug ID: {bugId}");
 
-                if (!string.IsNullOrEmpty(bugDetails.CreatedBy))
-                {
-                    await _hubContext.Clients.Group(bugDetails.CreatedBy)
+                
+                await _hubContext.Clients.Group(bugDetails.CreatedBy)
                         .SendAsync("ReceiveMessage", 
-                            $"Admin has assigned a New bug to {developerId}, Bug ID: {bugId} : {bugDetails.Title}");
-                }
+                            $"Admin has assigned a bug to {developerId}, Bug ID: {bugId} : {bugDetails.Title}");
+                
                 _logger.LogInformation("Bug {BugId} assigned to developer {DeveloperId}", bugId, developerId);
 
                 return Ok(new { message = "Bug assigned successfully.", result });
@@ -202,18 +202,18 @@ namespace Bts.Controllers
 
         [Authorize(Roles = "ADMIN")]
         [HttpDelete("delete-bug/{bugId}")]
-        public async Task<IActionResult> DeleteBug(int bugId)
+        public async Task<IActionResult> DeleteBug(int bugId, [FromQuery] string reason)
         {
             try
             {
                  _logger.LogInformation("DeleteBug called for BugId: {BugId}", bugId);
-                var result = await _adminService.DeleteBugAsync(bugId);
+                var result = await _adminService.DeleteBugAsync(bugId, reason);
                  if (!result)
                 {
                     _logger.LogWarning("Bug not found for deletion: {BugId}", bugId);
                     return NotFound("Bug not found.");
                 }
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"Bug ID: {bugId} has been deleted by Admin!.");
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"Bug ID: {bugId} has been deleted by Admin ({reason})!.");
 
                 _logger.LogInformation("Bug {BugId} deleted by admin", bugId);
                 return Ok(new { message = "Bug deleted successfully." });

@@ -18,6 +18,8 @@ namespace Online.Interfaces
         Task<Product> UpdatePrice(PriceDTO price);
         Task<Product> DeleteProduct(int id,string name);
 
+        Task<IEnumerable<Product>> MyProducts();
+
         Task<IEnumerable<Product>> GetAllAsync();
         Task<IEnumerable<Product>> GetAllProductAsync();
         Task<IEnumerable<Product>> GetFilteredProducts(string cat, string color, string model, string prodname);
